@@ -1,0 +1,280 @@
+This is BibTeX, Version 0.99d (TeX Live 2017/W32TeX)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: demo.aux
+The style file: GBT7714-2005NLang.bst
+A level-1 auxiliary file: chapters/abstract.aux
+A level-1 auxiliary file: chapters/chapter1.aux
+A level-1 auxiliary file: chapters/chapter2.aux
+A level-1 auxiliary file: chapters/chapter3.aux
+A level-1 auxiliary file: chapters/chapter4.aux
+A level-1 auxiliary file: chapters/chapter5.aux
+A level-1 auxiliary file: chapters/conclusion.aux
+A level-1 auxiliary file: chapters/pub.aux
+Database file #1: reference/chap1.bib
+Repeated entry---line 688 of file reference/chap1.bib
+ : @article{mur2015orb
+ :                    ,
+I'm skipping whatever remains of this entry
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+0 is an integer literal, not a function, for entry barfoot2017state
+while executing---line 1615 of file GBT7714-2005NLang.bst
+You can't pop an empty literal stack for entry barfoot2017state
+while executing---line 1615 of file GBT7714-2005NLang.bst
+You can't pop an empty literal stack for entry barfoot2017state
+while executing---line 1615 of file GBT7714-2005NLang.bst
+0 is an integer literal, not a function, for entry smith1990estimating
+while executing---line 1615 of file GBT7714-2005NLang.bst
+You can't pop an empty literal stack for entry smith1990estimating
+while executing---line 1615 of file GBT7714-2005NLang.bst
+You can't pop an empty literal stack for entry smith1990estimating
+while executing---line 1615 of file GBT7714-2005NLang.bst
+0 is an integer literal, not a function, for entry durrant1996localization
+while executing---line 1615 of file GBT7714-2005NLang.bst
+You can't pop an empty literal stack for entry durrant1996localization
+while executing---line 1615 of file GBT7714-2005NLang.bst
+You can't pop an empty literal stack for entry durrant1996localization
+while executing---line 1615 of file GBT7714-2005NLang.bst
+Warning--empty booktitle in Davison03real-timesimultaneous
+0 is an integer literal, not a function, for entry Davison03real-timesimultaneous
+while executing---line 1615 of file GBT7714-2005NLang.bst
+You can't pop an empty literal stack for entry Davison03real-timesimultaneous
+while executing---line 1615 of file GBT7714-2005NLang.bst
+You can't pop an empty literal stack for entry Davison03real-timesimultaneous
+while executing---line 1615 of file GBT7714-2005NLang.bst
+0 is an integer literal, not a function, for entry Shi94goodfeatures
+while executing---line 1615 of file GBT7714-2005NLang.bst
+You can't pop an empty literal stack for entry Shi94goodfeatures
+while executing---line 1615 of file GBT7714-2005NLang.bst
+You can't pop an empty literal stack for entry Shi94goodfeatures
+while executing---line 1615 of file GBT7714-2005NLang.bst
+0 is an integer literal, not a function, for entry klein2007parallel
+while executing---line 1615 of file GBT7714-2005NLang.bst
+You can't pop an empty literal stack for entry klein2007parallel
+while executing---line 1615 of file GBT7714-2005NLang.bst
+You can't pop an empty literal stack for entry klein2007parallel
+while executing---line 1615 of file GBT7714-2005NLang.bst
+0 is an integer literal, not a function, for entry klein2009parallel
+while executing---line 1615 of file GBT7714-2005NLang.bst
+You can't pop an empty literal stack for entry klein2009parallel
+while executing---line 1615 of file GBT7714-2005NLang.bst
+You can't pop an empty literal stack for entry klein2009parallel
+while executing---line 1615 of file GBT7714-2005NLang.bst
+0 is an integer literal, not a function, for entry engel2014lsd
+while executing---line 1615 of file GBT7714-2005NLang.bst
+You can't pop an empty literal stack for entry engel2014lsd
+while executing---line 1615 of file GBT7714-2005NLang.bst
+You can't pop an empty literal stack for entry engel2014lsd
+while executing---line 1615 of file GBT7714-2005NLang.bst
+0 is an integer literal, not a function, for entry engel2013semi
+while executing---line 1615 of file GBT7714-2005NLang.bst
+You can't pop an empty literal stack for entry engel2013semi
+while executing---line 1615 of file GBT7714-2005NLang.bst
+You can't pop an empty literal stack for entry engel2013semi
+while executing---line 1615 of file GBT7714-2005NLang.bst
+0 is an integer literal, not a function, for entry forster2014svo
+while executing---line 1615 of file GBT7714-2005NLang.bst
+You can't pop an empty literal stack for entry forster2014svo
+while executing---line 1615 of file GBT7714-2005NLang.bst
+You can't pop an empty literal stack for entry forster2014svo
+while executing---line 1615 of file GBT7714-2005NLang.bst
+0 is an integer literal, not a function, for entry tan2013robust
+while executing---line 1615 of file GBT7714-2005NLang.bst
+You can't pop an empty literal stack for entry tan2013robust
+while executing---line 1615 of file GBT7714-2005NLang.bst
+You can't pop an empty literal stack for entry tan2013robust
+while executing---line 1615 of file GBT7714-2005NLang.bst
+0 is an integer literal, not a function, for entry liu2016robust
+while executing---line 1615 of file GBT7714-2005NLang.bst
+You can't pop an empty literal stack for entry liu2016robust
+while executing---line 1615 of file GBT7714-2005NLang.bst
+You can't pop an empty literal stack for entry liu2016robust
+while executing---line 1615 of file GBT7714-2005NLang.bst
+0 is an integer literal, not a function, for entry mourikis2007multi
+while executing---line 1615 of file GBT7714-2005NLang.bst
+You can't pop an empty literal stack for entry mourikis2007multi
+while executing---line 1615 of file GBT7714-2005NLang.bst
+You can't pop an empty literal stack for entry mourikis2007multi
+while executing---line 1615 of file GBT7714-2005NLang.bst
+0 is an integer literal, not a function, for entry bloesch2015robust
+while executing---line 1615 of file GBT7714-2005NLang.bst
+You can't pop an empty literal stack for entry bloesch2015robust
+while executing---line 1615 of file GBT7714-2005NLang.bst
+You can't pop an empty literal stack for entry bloesch2015robust
+while executing---line 1615 of file GBT7714-2005NLang.bst
+0 is an integer literal, not a function, for entry lynen2013robust
+while executing---line 1615 of file GBT7714-2005NLang.bst
+You can't pop an empty literal stack for entry lynen2013robust
+while executing---line 1615 of file GBT7714-2005NLang.bst
+You can't pop an empty literal stack for entry lynen2013robust
+while executing---line 1615 of file GBT7714-2005NLang.bst
+0 is an integer literal, not a function, for entry Leutenegger_keyframe-basedvisual-inertial
+while executing---line 1615 of file GBT7714-2005NLang.bst
+You can't pop an empty literal stack for entry Leutenegger_keyframe-basedvisual-inertial
+while executing---line 1615 of file GBT7714-2005NLang.bst
+You can't pop an empty literal stack for entry Leutenegger_keyframe-basedvisual-inertial
+while executing---line 1615 of file GBT7714-2005NLang.bst
+Warning--empty year in Leutenegger_keyframe-basedvisual-inertial
+Warning--empty year in Leutenegger_keyframe-basedvisual-inertial
+0 is an integer literal, not a function, for entry leutenegger2011brisk
+while executing---line 1615 of file GBT7714-2005NLang.bst
+You can't pop an empty literal stack for entry leutenegger2011brisk
+while executing---line 1615 of file GBT7714-2005NLang.bst
+You can't pop an empty literal stack for entry leutenegger2011brisk
+while executing---line 1615 of file GBT7714-2005NLang.bst
+0 is an integer literal, not a function, for entry falquez2016inertial
+while executing---line 1615 of file GBT7714-2005NLang.bst
+You can't pop an empty literal stack for entry falquez2016inertial
+while executing---line 1615 of file GBT7714-2005NLang.bst
+You can't pop an empty literal stack for entry falquez2016inertial
+while executing---line 1615 of file GBT7714-2005NLang.bst
+0 is an integer literal, not a function, for entry more1978levenberg
+while executing---line 1615 of file GBT7714-2005NLang.bst
+You can't pop an empty literal stack for entry more1978levenberg
+while executing---line 1615 of file GBT7714-2005NLang.bst
+You can't pop an empty literal stack for entry more1978levenberg
+while executing---line 1615 of file GBT7714-2005NLang.bst
+0 is an integer literal, not a function, for entry vagner2012experience
+while executing---line 1615 of file GBT7714-2005NLang.bst
+You can't pop an empty literal stack for entry vagner2012experience
+while executing---line 1615 of file GBT7714-2005NLang.bst
+You can't pop an empty literal stack for entry vagner2012experience
+while executing---line 1615 of file GBT7714-2005NLang.bst
+0 is an integer literal, not a function, for entry furgale2012continuous
+while executing---line 1615 of file GBT7714-2005NLang.bst
+You can't pop an empty literal stack for entry furgale2012continuous
+while executing---line 1615 of file GBT7714-2005NLang.bst
+You can't pop an empty literal stack for entry furgale2012continuous
+while executing---line 1615 of file GBT7714-2005NLang.bst
+0 is an integer literal, not a function, for entry furgale2013unified
+while executing---line 1615 of file GBT7714-2005NLang.bst
+You can't pop an empty literal stack for entry furgale2013unified
+while executing---line 1615 of file GBT7714-2005NLang.bst
+You can't pop an empty literal stack for entry furgale2013unified
+while executing---line 1615 of file GBT7714-2005NLang.bst
+0 is an integer literal, not a function, for entry Fairchild2016ROS
+while executing---line 1615 of file GBT7714-2005NLang.bst
+You can't pop an empty literal stack for entry Fairchild2016ROS
+while executing---line 1615 of file GBT7714-2005NLang.bst
+You can't pop an empty literal stack for entry Fairchild2016ROS
+while executing---line 1615 of file GBT7714-2005NLang.bst
+0 is an integer literal, not a function, for entry harris1988combined
+while executing---line 1615 of file GBT7714-2005NLang.bst
+You can't pop an empty literal stack for entry harris1988combined
+while executing---line 1615 of file GBT7714-2005NLang.bst
+You can't pop an empty literal stack for entry harris1988combined
+while executing---line 1615 of file GBT7714-2005NLang.bst
+0 is an integer literal, not a function, for entry rosten2006machine
+while executing---line 1615 of file GBT7714-2005NLang.bst
+You can't pop an empty literal stack for entry rosten2006machine
+while executing---line 1615 of file GBT7714-2005NLang.bst
+You can't pop an empty literal stack for entry rosten2006machine
+while executing---line 1615 of file GBT7714-2005NLang.bst
+0 is an integer literal, not a function, for entry blaschko2011branch
+while executing---line 1615 of file GBT7714-2005NLang.bst
+You can't pop an empty literal stack for entry blaschko2011branch
+while executing---line 1615 of file GBT7714-2005NLang.bst
+You can't pop an empty literal stack for entry blaschko2011branch
+while executing---line 1615 of file GBT7714-2005NLang.bst
+Warning--empty booktitle in forster2015imu
+0 is an integer literal, not a function, for entry forster2015imu
+while executing---line 1615 of file GBT7714-2005NLang.bst
+You can't pop an empty literal stack for entry forster2015imu
+while executing---line 1615 of file GBT7714-2005NLang.bst
+You can't pop an empty literal stack for entry forster2015imu
+while executing---line 1615 of file GBT7714-2005NLang.bst
+0 is an integer literal, not a function, for entry shen2015tightly
+while executing---line 1615 of file GBT7714-2005NLang.bst
+You can't pop an empty literal stack for entry shen2015tightly
+while executing---line 1615 of file GBT7714-2005NLang.bst
+You can't pop an empty literal stack for entry shen2015tightly
+while executing---line 1615 of file GBT7714-2005NLang.bst
+0 is an integer literal, not a function, for entry hartley2003multiple
+while executing---line 1615 of file GBT7714-2005NLang.bst
+You can't pop an empty literal stack for entry hartley2003multiple
+while executing---line 1615 of file GBT7714-2005NLang.bst
+You can't pop an empty literal stack for entry hartley2003multiple
+while executing---line 1615 of file GBT7714-2005NLang.bst
+0 is an integer literal, not a function, for entry triggs1999bundle
+while executing---line 1615 of file GBT7714-2005NLang.bst
+You can't pop an empty literal stack for entry triggs1999bundle
+while executing---line 1615 of file GBT7714-2005NLang.bst
+You can't pop an empty literal stack for entry triggs1999bundle
+while executing---line 1615 of file GBT7714-2005NLang.bst
+0 is an integer literal, not a function, for entry huber1992robust
+while executing---line 1615 of file GBT7714-2005NLang.bst
+You can't pop an empty literal stack for entry huber1992robust
+while executing---line 1615 of file GBT7714-2005NLang.bst
+You can't pop an empty literal stack for entry huber1992robust
+while executing---line 1615 of file GBT7714-2005NLang.bst
+0 is an integer literal, not a function, for entry hahnel2003efficient
+while executing---line 1615 of file GBT7714-2005NLang.bst
+You can't pop an empty literal stack for entry hahnel2003efficient
+while executing---line 1615 of file GBT7714-2005NLang.bst
+You can't pop an empty literal stack for entry hahnel2003efficient
+while executing---line 1615 of file GBT7714-2005NLang.bst
+0 is an integer literal, not a function, for entry ulrich2000appearance
+while executing---line 1615 of file GBT7714-2005NLang.bst
+You can't pop an empty literal stack for entry ulrich2000appearance
+while executing---line 1615 of file GBT7714-2005NLang.bst
+You can't pop an empty literal stack for entry ulrich2000appearance
+while executing---line 1615 of file GBT7714-2005NLang.bst
+0 is an integer literal, not a function, for entry filliat2007visual
+while executing---line 1615 of file GBT7714-2005NLang.bst
+You can't pop an empty literal stack for entry filliat2007visual
+while executing---line 1615 of file GBT7714-2005NLang.bst
+You can't pop an empty literal stack for entry filliat2007visual
+while executing---line 1615 of file GBT7714-2005NLang.bst
+0 is an integer literal, not a function, for entry sivic2003video
+while executing---line 1615 of file GBT7714-2005NLang.bst
+You can't pop an empty literal stack for entry sivic2003video
+while executing---line 1615 of file GBT7714-2005NLang.bst
+You can't pop an empty literal stack for entry sivic2003video
+while executing---line 1615 of file GBT7714-2005NLang.bst
+0 is an integer literal, not a function, for entry delmerico2018benchmark
+while executing---line 1615 of file GBT7714-2005NLang.bst
+You can't pop an empty literal stack for entry delmerico2018benchmark
+while executing---line 1615 of file GBT7714-2005NLang.bst
+You can't pop an empty literal stack for entry delmerico2018benchmark
+while executing---line 1615 of file GBT7714-2005NLang.bst
+You've used 78 entries,
+            3342 wiz_defined-function locations,
+            1202 strings with 19104 characters,
+and the built_in function-call counts, 193685 in all, are:
+= -- 3957
+> -- 25239
+< -- 16667
++ -- 9001
+- -- 455
+* -- 2538
+:= -- 22257
+add.period$ -- 263
+call.type$ -- 78
+change.case$ -- 156
+chr.to.int$ -- 8018
+cite$ -- 82
+duplicate$ -- 17526
+empty$ -- 4211
+format.name$ -- 496
+if$ -- 42629
+int.to.chr$ -- 2
+int.to.str$ -- 79
+missing$ -- 0
+newline$ -- 428
+num.names$ -- 234
+pop$ -- 8741
+preamble$ -- 1
+purify$ -- 78
+quote$ -- 0
+skip$ -- 17651
+stack$ -- 0
+substring$ -- 10256
+swap$ -- 83
+text.length$ -- 161
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 734
+warning$ -- 4
+while$ -- 442
+width$ -- 0
+write$ -- 1218
+(There were 109 error messages)

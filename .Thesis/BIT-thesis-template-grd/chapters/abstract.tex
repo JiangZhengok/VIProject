@@ -1,0 +1,30 @@
+%%==================================================
+%% abstract.tex for BIT Master Thesis
+%% modified by yang yating
+%% version: 0.1
+%% last update: Dec 25th, 2016
+%%==================================================
+
+\begin{abstract}
+视觉SLAM技术能够使机器人在未知的场景中，仅依靠相机进行定位和建图。然而单目视觉SLAM有众多的缺点，其中最显著的就是缺乏尺度信息，这使得纯粹的单目视觉SLAM无法在实际环境中使用。而IMU是一个在很多方面与相机互补的传感器，将IMU和单目视觉融合可构成一个具有绝对尺度的六自由度状态估计器。本文正是研究如何将视觉和IMU进行融合，获得高精度的状态估计。
+
+本文首先对传感器进行数学建模与标定，使用高精度的工业级传感器搭建了一套独特的、简单的高精度硬件平台。然后针对硬件平台设计了多传感器融合算法，包括前端、初始化、后端和闭环。从前端提取图像的FAST特征，利用LK光流跟踪图像特征，预积分IMU数据。初始化将视觉与IMU对齐，得到状态估计的初始值。与其他初始化算法不同，本文研究的初始化算法能够在运动中实时初始化，并通过磁力计获得绝对的航向信息。后端采用一种基于紧耦合、非线性优化的方法，融合前端预积分的IMU数据和相机的特征观测数据。闭环采用词袋模型进行检测，并对检测到的闭环帧进行重定位，然后实施位姿优化，获得全局一致的定位轨迹。最后本文做了公开数据集实验和本地车载实验，并分析了每个实验的定位精度，验证了本系统硬件及软件算法的可行性和鲁棒性。
+
+实验结果表明，本系统能够搭载在飞行器和汽车上，在室内或者室外进行高精度、鲁棒性的状态估计，从而定位自身的位置。
+
+
+\keywords{视觉SLAM；惯性测量单元；视觉-惯性里程计；非线性优化 }
+\end{abstract}
+
+\begin{englishabstract}
+
+   Visual SLAM technology enables the robot to locate and map in unknown scenes only depending on the camera. However, monocular visual SLAM has many disadvantages, the most significant of which is the lack of scale information, which makes the pure monocular visual SLAM unable to be used in the actual environment. The IMU is a sensor complementary to the camera in many aspects. The fusion of IMU and monocular vision can constitute a six-dof state estimator with absolute scale. This paper is to study how to integrate vision and IMU to obtain high-precision state estimation.
+   
+   In this paper, the sensor is firstly modeled and calibrated, and a set of unique and simple high-precision hardware platform is built by using high-precision industrial-grade sensors. Then the multi-sensor fusion algorithm is designed for the hardware platform, including front end, initialization, back end and closed loop. FAST features of images were extracted from the front end, and LK optical flow was used to track image features, and pre-integration IMU data was obtained. The initialization aligns the vision with the IMU to obtain the initial value of the state estimation. Different from other initialization algorithms, the initialization algorithm studied in this paper can be initialized in real time in motion and obtain absolute yaw information through magnetometer. The back end adopts a method based on tight coupling and nonlinear optimization, and integrates the IMU data of the front end pre-integration with the feature observation data of the camera. The closed loop is detected by the word bag model, and the detected closed loop frame is repositioned, and then the pose optimization is carried out to obtain globally consistent positioning trajectory. Finally, this paper makes public data set experiment and local vehicle-mounted experiment, analyzes the positioning accuracy of each experiment, and verifies the feasibility and robustness of the system's hardware and software algorithm.
+   
+   Experimental results show that the system can be mounted on aircraft and vehicles, indoor or outdoor for high-precision, robust state estimation, so as to locate its own position.
+   
+
+\englishkeywords{VSLAM; IMU; VIO; Nonlinear Optimization}
+
+\end{englishabstract}

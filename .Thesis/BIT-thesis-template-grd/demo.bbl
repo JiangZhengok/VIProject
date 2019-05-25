@@ -1,0 +1,514 @@
+\begin{thebibliography}{78}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{#1}
+\providecommand{\href}[2]{#2}
+\providecommand{\doi}[1]{DOI: \href{http://dx.doi.org/#1}{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax\relax\else
+  \urlstyle{same}\fi
+
+\bibitem[GU\ et~al.(2015)GU and LIU]{Zhaopeng2015}
+GU Z, LIU H.
+\newblock A survey of monocular simultaneous localization and
+  mapping\allowbreak[J].
+\newblock CAAI Transactions on Intelligent Systems, 2015, 10\penalty0 (4):
+  499--507.
+
+\bibitem[Davison\ et~al.(2007)Davison, Reid, Molton, and
+  Stasse]{davison2007monoslam}
+Davison A J, Reid I D, Molton N D, et~al.
+\newblock Monoslam: Real-time single camera slam\allowbreak[J].
+\newblock IEEE Transactions on Pattern Analysis \& Machine Intelligence,
+  2007\penalty0 (6): 1052--1067.
+
+\bibitem[Barfoot(2017)]{barfoot2017state}
+Barfoot T D.
+\newblock State estimation for robotics
+\newblock Cambridge University Press, 2017.
+
+\bibitem[Smith\ et~al.(1986)Smith and Cheeseman]{smith1986representation}
+Smith R C, Cheeseman P.
+\newblock On the representation and estimation of spatial
+  uncertainty\allowbreak[J].
+\newblock The international journal of Robotics Research, 1986, 5\penalty0 (4):
+  56--68.
+
+\bibitem[Durrant-Whyte(1988)]{durrant1988uncertain}
+Durrant-Whyte H F.
+\newblock Uncertain geometry in robotics\allowbreak[J].
+\newblock IEEE Journal on Robotics and Automation, 1988, 4\penalty0 (1):
+  23--31.
+
+\bibitem[Smith\ et~al.(1990)Smith, Self, and Cheeseman]{smith1990estimating}
+Smith R, Self M, Cheeseman P.
+\newblock Estimating uncertain spatial relationships in robotics\allowbreak[M].
+\newblock
+\newblock Springer, 1990: 167--193.
+
+\bibitem[Durrant-Whyte\ et~al.(1996)Durrant-Whyte, Rye, and
+  Nebot]{durrant1996localization}
+Durrant-Whyte H, Rye D, Nebot E.
+\newblock Localization of autonomous guided vehicles\allowbreak[M].
+\newblock
+\newblock Springer, 1996: 613--625.
+
+\bibitem[Thrun\ et~al.(1998)Thrun, Burgard, and Fox]{thrun1998probabilistic}
+Thrun S, Burgard W, Fox D.
+\newblock A probabilistic approach to concurrent mapping and localization for
+  mobile robots\allowbreak[J].
+\newblock Autonomous Robots, 1998, 5\penalty0 (3-4): 253--271.
+
+\bibitem[Davison(2003)]{Davison03real-timesimultaneous}
+Davison A J.
+\newblock Real-time simultaneous localisation and mapping with a single camera
+\newblock , 2003: 1403--1410.
+
+\bibitem[Shi\ et~al.(1994)Shi and Tomasi]{Shi94goodfeatures}
+Shi J, Tomasi C.
+\newblock Good features to track
+\newblock \allowbreak[M], 1994.
+
+\bibitem[Klein\ et~al.(2007)Klein and Murray]{klein2007parallel}
+Klein G, Murray D.
+\newblock Parallel tracking and mapping for small ar workspaces\allowbreak[C].
+\newblock
+\newblock IEEE Computer Society, 2007: 1--10.
+
+\bibitem[Klein\ et~al.(2009)Klein and Murray]{klein2009parallel}
+Klein G, Murray D.
+\newblock Parallel tracking and mapping on a camera phone\allowbreak[C].
+\newblock
+\newblock IEEE, 2009: 83--86.
+
+\bibitem[Mur-Artal\ et~al.(2015)Mur-Artal, Montiel, and Tardos]{mur2015orb}
+Mur-Artal R, Montiel J M M, Tardos J D.
+\newblock Orb-slam: a versatile and accurate monocular slam
+  system\allowbreak[J].
+\newblock IEEE transactions on robotics, 2015, 31\penalty0 (5): 1147--1163.
+
+\bibitem[Lowe(2004)]{lowe2004distinctive}
+Lowe D G.
+\newblock Distinctive image features from scale-invariant
+  keypoints\allowbreak[J].
+\newblock International journal of computer vision, 2004, 60\penalty0 (2):
+  91--110.
+
+\bibitem[Bay\ et~al.(2008)Bay, Ess, Tuytelaars, and Van~Gool]{bay2008speeded}
+Bay H, Ess A, Tuytelaars T, et~al.
+\newblock Speeded-up robust features (surf)\allowbreak[J].
+\newblock Computer vision and image understanding, 2008, 110\penalty0 (3):
+  346--359.
+
+\bibitem[Engel\ et~al.(2014)Engel, Sch{\"o}ps, and Cremers]{engel2014lsd}
+Engel J, Sch{\"o}ps T, Cremers D.
+\newblock Lsd-slam: Large-scale direct monocular slam\allowbreak[C].
+\newblock
+\newblock Springer, 2014: 834--849.
+
+\bibitem[Engel\ et~al.(2013)Engel, Sturm, and Cremers]{engel2013semi}
+Engel J, Sturm J, Cremers D.
+\newblock Semi-dense visual odometry for a monocular camera\allowbreak[C].
+\newblock
+\newblock Proceedings of the IEEE international conference on computer vision,
+  2013: 1449--1456.
+
+\bibitem[Forster\ et~al.(2014)Forster, Pizzoli, and Scaramuzza]{forster2014svo}
+Forster C, Pizzoli M, Scaramuzza D.
+\newblock Svo: Fast semi-direct monocular visual odometry\allowbreak[C].
+\newblock
+\newblock IEEE, 2014: 15--22.
+
+\bibitem[权美香\ 等(2016)权美香, 朴松昊, and
+  李国]{权美香2016视觉}
+权美香, 朴松昊, 李国.
+\newblock 视觉 slam 综述\allowbreak[M].
+\newblock 北京: 智能系统学报, 2016.
+
+\bibitem[刘浩敏\ 等(2016)刘浩敏, 章国锋, and
+  鲍虎军]{刘浩敏2016基于单目视觉的同时定位与地图构建方法综述}
+刘浩敏, 章国锋, 鲍虎军.
+\newblock
+  基于单目视觉的同时定位与地图构建方法综述\allowbreak[J].
+\newblock 计算机辅助设计与图形学学报, 2016, 28\penalty0 (6):
+  855--868.
+
+\bibitem[何俊学\ 等(2010)何俊学 and
+  李战明]{何俊学2010基于视觉的同时定位与地图构建方法综述}
+何俊学, 李战明.
+\newblock 基于视觉的同时定位与地图构建方法综述\allowbreak[J].
+\newblock 計算機應用研究, 2010, 27\penalty0 (8): 2839--2844.
+
+\bibitem[Zhou\ et~al.(2015)Zhou, Zou, Pei, Ying, Liu, and
+  Yu]{zhou2015structslam}
+Zhou H, Zou D, Pei L, et~al.
+\newblock Structslam: Visual slam with building structure lines\allowbreak[J].
+\newblock IEEE Transactions on Vehicular Technology, 2015, 64\penalty0 (4):
+  1364--1375.
+
+\bibitem[Zou\ et~al.(2013)Zou and Tan]{zou2013coslam}
+Zou D, Tan P.
+\newblock Coslam: Collaborative visual slam in dynamic
+  environments\allowbreak[J].
+\newblock IEEE transactions on pattern analysis and machine intelligence, 2013,
+  35\penalty0 (2): 354--366.
+
+\bibitem[Tan\ et~al.(2013)Tan, Liu, Dong, Zhang, and Bao]{tan2013robust}
+Tan W, Liu H, Dong Z, et~al.
+\newblock Robust monocular slam in dynamic environments\allowbreak[C].
+\newblock
+\newblock IEEE, 2013: 209--218.
+
+\bibitem[Fischler\ et~al.(1981{\natexlab{a}})Fischler and
+  Bolles]{fischler1981random}
+Fischler M A, Bolles R C.
+\newblock Random sample consensus: a paradigm for model fitting with
+  applications to image analysis and automated cartography\allowbreak[J].
+\newblock Communications of the ACM, 1981{\natexlab{a}}, 24\penalty0 (6):
+  381--395.
+
+\bibitem[Liu\ et~al.(2016)Liu, Zhang, and Bao]{liu2016robust}
+Liu H, Zhang G, Bao H.
+\newblock Robust keyframe-based monocular slam for augmented
+  reality\allowbreak[C].
+\newblock
+\newblock IEEE, 2016: 1--10.
+
+\bibitem[Liu\ et~al.(2017)Liu, Li, Chen, Zhang, Kaess, and
+  Bao]{liu2017robustRGB}
+Liu H, Li C, Chen G, et~al.
+\newblock Robust keyframe-based dense slam with an rgb-d camera\allowbreak[J].
+\newblock arXiv preprint arXiv:1711.05166, 2017.
+
+\bibitem[Martinelli(2014)]{martinelli2014closed}
+Martinelli A.
+\newblock Closed-form solution of visual-inertial structure from
+  motion\allowbreak[J].
+\newblock International journal of computer vision, 2014, 106\penalty0 (2):
+  138--152.
+
+\bibitem[Mourikis\ et~al.(2007)Mourikis and Roumeliotis]{mourikis2007multi}
+Mourikis A I, Roumeliotis S I.
+\newblock A multi-state constraint kalman filter for vision-aided inertial
+  navigation\allowbreak[C].
+\newblock
+\newblock IEEE, 2007: 3565--3572.
+
+\bibitem[Li\ et~al.(2013)Li and Mourikis]{li2013high}
+Li M, Mourikis A I.
+\newblock High-precision, consistent ekf-based visual-inertial
+  odometry\allowbreak[J].
+\newblock The International Journal of Robotics Research, 2013, 32\penalty0
+  (6): 690--711.
+
+\bibitem[Bloesch\ et~al.(2015)Bloesch, Omari, Hutter, and
+  Siegwart]{bloesch2015robust}
+Bloesch M, Omari S, Hutter M, et~al.
+\newblock Robust visual inertial odometry using a direct ekf-based
+  approach\allowbreak[C].
+\newblock
+\newblock IEEE, 2015: 298--304.
+
+\bibitem[Lynen\ et~al.(2013)Lynen, Achtelik, Weiss, Chli, and
+  Siegwart]{lynen2013robust}
+Lynen S, Achtelik M W, Weiss S, et~al.
+\newblock A robust and modular multi-sensor fusion approach applied to mav
+  navigation\allowbreak[C].
+\newblock
+\newblock IEEE, 2013: 3923--3929.
+
+\bibitem[Leutenegger\ et~al.()Leutenegger, Furgale, Rabaud, Chli, and
+  Konolige]{Leutenegger_keyframe-basedvisual-inertial}
+Leutenegger S, Furgale P, Rabaud V, et~al.
+\newblock Keyframe-based visual-inertial slam using nonlinear optimization
+\newblock \allowbreak[M].
+
+\bibitem[Leutenegger\ et~al.(2011)Leutenegger, Chli, and
+  Siegwart]{leutenegger2011brisk}
+Leutenegger S, Chli M, Siegwart R.
+\newblock Brisk: Binary robust invariant scalable keypoints\allowbreak[C].
+\newblock
+\newblock Ieee, 2011: 2548--2555.
+
+\bibitem[Smith(2002)]{smith2002fast}
+Smith S M.
+\newblock Fast robust automated brain extraction\allowbreak[J].
+\newblock Human brain mapping, 2002, 17\penalty0 (3): 143--155.
+
+\bibitem[Qin\ et~al.(2018)Qin, Li, and Shen]{qin2018vins}
+Qin T, Li P, Shen S.
+\newblock Vins-mono: A robust and versatile monocular visual-inertial state
+  estimator\allowbreak[J].
+\newblock IEEE Transactions on Robotics, 2018, 34\penalty0 (4): 1004--1020.
+
+\bibitem[Falquez\ et~al.(2016)Falquez, Kasper, and Sibley]{falquez2016inertial}
+Falquez J M, Kasper M, Sibley G.
+\newblock Inertial aided dense \& semi-dense methods for robust direct visual
+  odometry\allowbreak[C].
+\newblock
+\newblock IEEE, 2016: 3601--3607.
+
+\bibitem[Sola(2017)]{sola2017quaternion}
+Sola J.
+\newblock Quaternion kinematics for the error-state kalman
+  filter\allowbreak[J].
+\newblock arXiv preprint arXiv:1711.02508, 2017.
+
+\bibitem[Orey\ et~al.(1973)Orey and Pruitt]{orey1973sample}
+Orey S, Pruitt W E.
+\newblock Sample functions of the n-parameter wiener process\allowbreak[J].
+\newblock The Annals of Probability, 1973: 138--163.
+
+\bibitem[Butala\ et~al.(2017)Butala, Kazerooni, Makela, Kamalabadi, Gannon,
+  Zhu, and Overbye]{butala2017modeling}
+Butala M D, Kazerooni M, Makela J J, et~al.
+\newblock Modeling geomagnetically induced currents from magnetometer
+  measurements: Spatial scale assessed with reference
+  measurements\allowbreak[J].
+\newblock Space Weather, 2017, 15\penalty0 (10): 1357--1372.
+
+\bibitem[Zhang(2000)]{zhang2000flexible}
+Zhang Z.
+\newblock A flexible new technique for camera calibration\allowbreak[J].
+\newblock IEEE Transactions on pattern analysis and machine intelligence, 2000,
+  22.
+
+\bibitem[Mor{\'e}(1978)]{more1978levenberg}
+Mor{\'e} J J.
+\newblock The levenberg-marquardt algorithm: implementation and
+  theory\allowbreak[M].
+\newblock
+\newblock Springer, 1978: 105--116.
+
+\bibitem[Vagner\ et~al.(2012)Vagner, Bene{\v{s}}, and
+  Havr{\'a}nek]{vagner2012experience}
+Vagner M, Bene{\v{s}} P, Havr{\'a}nek Z.
+\newblock Experience with allan variance method for mems gyroscope performance
+  characterization\allowbreak[C].
+\newblock
+\newblock IEEE, 2012: 1343--1347.
+
+\bibitem[Furgale\ et~al.(2012)Furgale, Barfoot, and
+  Sibley]{furgale2012continuous}
+Furgale P, Barfoot T D, Sibley G.
+\newblock Continuous-time batch estimation using temporal basis
+  functions\allowbreak[C].
+\newblock
+\newblock IEEE, 2012: 2088--2095.
+
+\bibitem[Furgale\ et~al.(2013)Furgale, Rehder, and
+  Siegwart]{furgale2013unified}
+Furgale P, Rehder J, Siegwart R.
+\newblock Unified temporal and spatial calibration for multi-sensor
+  systems\allowbreak[C].
+\newblock
+\newblock IEEE, 2013: 1280--1286.
+
+\bibitem[Fairchild\ et~al.(2016)Fairchild and Harman]{Fairchild2016ROS}
+Fairchild C, Harman T L.
+\newblock Ros robotics by example
+\newblock \allowbreak[M], 2016.
+
+\bibitem[高翔(2017)]{高翔2017视觉}
+高翔.
+\newblock 视觉 slam 十四讲: 从理论到实践\allowbreak[M].
+\newblock 北京: 电子工业出版社, 2017.
+
+\bibitem[Harris\ et~al.(1988)Harris, Stephens, et~al.]{harris1988combined}
+Harris C G, Stephens M, et~al.
+\newblock A combined corner and edge detector.\allowbreak[C].
+\newblock
+\newblock Citeseer, 1988: 10--5244.
+
+\bibitem[Rosten\ et~al.(2006)Rosten and Drummond]{rosten2006machine}
+Rosten E, Drummond T.
+\newblock Machine learning for high-speed corner detection\allowbreak[C].
+\newblock
+\newblock Springer, 2006: 430--443.
+
+\bibitem[Blaschko(2011)]{blaschko2011branch}
+Blaschko M B.
+\newblock Branch and bound strategies for non-maximal suppression in object
+  detection\allowbreak[C].
+\newblock
+\newblock Springer, 2011: 385--398.
+
+\bibitem[Bouguet\ et~al.(2001)Bouguet et~al.]{bouguet2001pyramidal}
+Bouguet J Y, et~al.
+\newblock Pyramidal implementation of the affine lucas kanade feature tracker
+  description of the algorithm\allowbreak[J].
+\newblock Intel Corporation, 2001, 5\penalty0 (1-10): 4.
+
+\bibitem[Fischler\ et~al.(1981{\natexlab{b}})Fischler and
+  Bolles]{fischler1981random2}
+Fischler M A, Bolles R C.
+\newblock Random sample consensus: a paradigm for model fitting with
+  applications to image analysis and automated cartography\allowbreak[J].
+\newblock Communications of the ACM, 1981{\natexlab{b}}, 24\penalty0 (6):
+  381--395.
+
+\bibitem[Forster\ et~al.(2015)Forster, Carlone, Dellaert, and
+  Scaramuzza]{forster2015imu}
+Forster C, Carlone L, Dellaert F, et~al.
+\newblock Imu preintegration on manifold for efficient visual-inertial
+  maximum-a-posteriori estimation
+\newblock Georgia Institute of Technology, 2015.
+
+\bibitem[Shen\ et~al.(2015)Shen, Michael, and Kumar]{shen2015tightly}
+Shen S, Michael N, Kumar V.
+\newblock Tightly-coupled monocular visual-inertial fusion for autonomous
+  flight of rotorcraft mavs\allowbreak[C].
+\newblock
+\newblock IEEE, 2015: 5303--5310.
+
+\bibitem[Nist{\'e}r(2004)]{nister2004efficient}
+Nist{\'e}r D.
+\newblock An efficient solution to the five-point relative pose
+  problem\allowbreak[J].
+\newblock IEEE transactions on pattern analysis and machine intelligence, 2004,
+  26\penalty0 (6): 0756--777.
+
+\bibitem[Hartley\ et~al.(2003)Hartley and Zisserman]{hartley2003multiple}
+Hartley R, Zisserman A.
+\newblock Multiple view geometry in computer vision
+\newblock Cambridge university press, 2003.
+
+\bibitem[Hartley(1997)]{Hartley1997In}
+Hartley R I.
+\newblock In defense of the eight-point algorithm\allowbreak[J].
+\newblock IEEE Pami, 1997, 19\penalty0 (6): 580--593.
+
+\bibitem[Longuet-Higgins(1981)]{longuet1981computer}
+Longuet-Higgins H C.
+\newblock A computer algorithm for reconstructing a scene from two
+  projections\allowbreak[J].
+\newblock Nature, 1981, 293\penalty0 (5828): 133.
+
+\bibitem[Gao\ et~al.(2003)Gao, Hou, Tang, and Cheng]{gao2003complete}
+Gao X S, Hou X R, Tang J, et~al.
+\newblock Complete solution classification for the perspective-three-point
+  problem\allowbreak[J].
+\newblock IEEE transactions on pattern analysis and machine intelligence, 2003,
+  25\penalty0 (8): 930--943.
+
+\bibitem[Lepetit\ et~al.(2009)Lepetit, Moreno-Noguer, and Fua]{lepetit2009epnp}
+Lepetit V, Moreno-Noguer F, Fua P.
+\newblock Epnp: An accurate o (n) solution to the pnp problem\allowbreak[J].
+\newblock International journal of computer vision, 2009, 81\penalty0 (2): 155.
+
+\bibitem[Penate-Sanchez\ et~al.(2013)Penate-Sanchez, Andrade-Cetto, and
+  Moreno-Noguer]{penate2013exhaustive}
+Penate-Sanchez A, Andrade-Cetto J, Moreno-Noguer F.
+\newblock Exhaustive linearization for robust camera pose and focal length
+  estimation\allowbreak[J].
+\newblock IEEE transactions on pattern analysis and machine intelligence, 2013,
+  35\penalty0 (10): 2387--2400.
+
+\bibitem[Triggs\ et~al.(1999)Triggs, McLauchlan, Hartley, and
+  Fitzgibbon]{triggs1999bundle}
+Triggs B, McLauchlan P F, Hartley R I, et~al.
+\newblock Bundle adjustment—a modern synthesis\allowbreak[C].
+\newblock
+\newblock Springer, 1999: 298--372.
+
+\bibitem[Granshaw(1980)]{granshaw1980bundle}
+Granshaw S.
+\newblock Bundle adjustment methods in engineering
+  photogrammetry\allowbreak[J].
+\newblock The Photogrammetric Record, 1980, 10\penalty0 (56): 181--207.
+
+\bibitem[Ullman(1979)]{ullman1979interpretation}
+Ullman S.
+\newblock The interpretation of structure from motion\allowbreak[J].
+\newblock Proceedings of the Royal Society of London. Series B. Biological
+  Sciences, 1979, 203\penalty0 (1153): 405--426.
+
+\bibitem[Mur-Artal\ et~al.(2017)Mur-Artal and Tard{\'o}s]{mur2017visual}
+Mur-Artal R, Tard{\'o}s J D.
+\newblock Visual-inertial monocular slam with map reuse\allowbreak[J].
+\newblock IEEE Robotics and Automation Letters, 2017, 2\penalty0 (2): 796--803.
+
+\bibitem[Huber(1992)]{huber1992robust}
+Huber P J.
+\newblock Robust estimation of a location parameter\allowbreak[M].
+\newblock
+\newblock Springer, 1992: 492--518.
+
+\bibitem[Paz\ et~al.(2008)Paz, Tardos, and Neira]{Paz2008Divide}
+Paz L M, Tardos J D, Neira J.
+\newblock Divide and conquer: Ekf slam in o(n)\allowbreak[J].
+\newblock IEEE Transactions on Robotics, 2008, 24\penalty0 (5): 1107--1120.
+
+\bibitem[Sibley\ et~al.(2010)Sibley, Matthies, and Sukhatme]{sibley2010sliding}
+Sibley G, Matthies L, Sukhatme G.
+\newblock Sliding window filter with application to planetary
+  landing\allowbreak[J].
+\newblock Journal of Field Robotics, 2010, 27\penalty0 (5): 587--608.
+
+\bibitem[Hahnel\ et~al.(2003)Hahnel, Burgard, Fox, and
+  Thrun]{hahnel2003efficient}
+Hahnel D, Burgard W, Fox D, et~al.
+\newblock An efficient fastslam algorithm for generating maps of large-scale
+  cyclic environments from raw laser range measurements\allowbreak[C].
+\newblock
+\newblock IEEE, 2003: 206--211.
+
+\bibitem[Ulrich\ et~al.(2000)Ulrich and Nourbakhsh]{ulrich2000appearance}
+Ulrich I, Nourbakhsh I.
+\newblock Appearance-based place recognition for topological
+  localization\allowbreak[C].
+\newblock
+\newblock Ieee, 2000: 1023--1029.
+
+\bibitem[Latif\ et~al.(2013)Latif, Cadena, and Neira]{latif2013robust}
+Latif Y, Cadena C, Neira J.
+\newblock Robust loop closing over time for pose graph slam\allowbreak[J].
+\newblock The International Journal of Robotics Research, 2013, 32\penalty0
+  (14): 1611--1626.
+
+\bibitem[Filliat(2007)]{filliat2007visual}
+Filliat D.
+\newblock A visual bag of words method for interactive qualitative localization
+  and mapping\allowbreak[C].
+\newblock
+\newblock IEEE, 2007: 3921--3926.
+
+\bibitem[G{\'a}lvez-L{\'o}pez\ et~al.(2012)G{\'a}lvez-L{\'o}pez and
+  Tardos]{galvez2012bags}
+G{\'a}lvez-L{\'o}pez D, Tardos J D.
+\newblock Bags of binary words for fast place recognition in image
+  sequences\allowbreak[J].
+\newblock IEEE Transactions on Robotics, 2012, 28\penalty0 (5): 1188--1197.
+
+\bibitem[Jain(2010)]{jain2010data}
+Jain A K.
+\newblock Data clustering: 50 years beyond k-means\allowbreak[J].
+\newblock Pattern recognition letters, 2010, 31\penalty0 (8): 651--666.
+
+\bibitem[Sivic\ et~al.(2003)Sivic and Zisserman]{sivic2003video}
+Sivic J, Zisserman A.
+\newblock Video google: A text retrieval approach to object matching in
+  videos\allowbreak[C].
+\newblock
+\newblock IEEE, 2003: 1470.
+
+\bibitem[Robertson(2004)]{robertson2004understanding}
+Robertson S.
+\newblock Understanding inverse document frequency: on theoretical arguments
+  for idf\allowbreak[J].
+\newblock Journal of documentation, 2004, 60\penalty0 (5): 503--520.
+
+\bibitem[Burri\ et~al.(2016)Burri, Nikolic, Gohl, Schneider, Rehder, Omari,
+  Achtelik, and Siegwart]{burri2016euroc}
+Burri M, Nikolic J, Gohl P, et~al.
+\newblock The euroc micro aerial vehicle datasets\allowbreak[J].
+\newblock The International Journal of Robotics Research, 2016, 35\penalty0
+  (10): 1157--1163.
+
+\bibitem[Delmerico\ et~al.(2018)Delmerico and
+  Scaramuzza]{delmerico2018benchmark}
+Delmerico J, Scaramuzza D.
+\newblock A benchmark comparison of monocular visual-inertial odometry
+  algorithms for flying robots\allowbreak[C].
+\newblock
+\newblock IEEE, 2018: 2502--2509.
+
+\end{thebibliography}

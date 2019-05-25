@@ -1,0 +1,176 @@
+
+%%==================================================
+%% demo.tex for BIT Thesis
+%% modified by yang yating
+%% version: 1.2
+%% last update: Jan. 4th, 2018
+%%==================================================
+
+% 默认单面打印 oneside 、硕士论文模板 master
+
+\documentclass[oneside, master]{BIT-thesis-grd}
+\raggedbottom
+
+% 模板选项： 硕士论文 master； 博士论文 doctor
+
+%==============更改数学字体设置，Latin Modern Math 默认的的确有点细，看个人需要，下面提供一种方法，需要的可以取消注释=========%
+
+%\usepackage[bold-style=ISO]{unicode-math} %采用unicode-math，可以直接输入Unicode公式，当然传统的输入就行
+%\setmathfont{XITS Math}  %目前unicode-math 支持几种数学字体，具体用法可以查看帮助文档，这里采用类似times字体科学数学字体，可以取消注释对比
+\usepackage{pifont}
+\usepackage{array}
+\usepackage{tikz}
+\newcommand*{\mycircled}[1]{\lower.7ex\hbox{\tikz\draw (0pt, 0pt)%
+		circle (.5em) node {\makebox[1em][c]{\small #1}};}}
+	
+\DeclareFontFamily{OT1}{cmrx}{}
+\DeclareFontShape{OT1}{cmrx}{m}{n}{<->cmr10}{}
+\let\saveLongrightarrow\Longrightarrow
+\makeatletter
+\renewcommand*{\Longrightarrow}{%
+	\mathrel{\rlap{\fontfamily{cmrx}\fontencoding{OT1}\selectfont=}%
+		\hphantom{\saveLongrightarrow}%
+		\llap{$\m@th\Rightarrow$}}}
+\makeatother
+
+%\usepackage{extarrows}	 %数学箭头宏包
+%\usepackage{latexsym,bm}        % 处理数学公式中和黑斜体的宏包
+%\usepackage{amsmath,amssymb}    % AMSLaTeX宏包 用来排出更加漂亮的公式
+%\makeatletter
+%\renewcommand\normalsize{%
+%	\abovedisplayskip 1\p@ \@plus1\p@ \@minus6\p@
+%	\abovedisplayshortskip \z@ \@plus3\p@
+%	\belowdisplayshortskip 3\p@ \@plus3\p@ \@minus3\p@
+%	\belowdisplayskip \abovedisplayskip
+%	\let\@listi\@listI}
+%\makeatother
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 封面
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% 中文封面内容(关注内容而不是表现形式)
+\classification{\zihao{5} \setmainfont{Times New Roman} TP242.6}
+\UDC{\zihao{5} \setmainfont{Times New Roman} 621.3}
+
+\title{基于ROS的实时视觉/惯性/地磁等 \\ 多传感器融合定位系统研究}
+\vtitle{基于 \rotatebox[origin=cc]{-90}{ROS} 的实时视觉惯性地磁等多传感器融合定位系统研究}
+
+%\author{江正}
+\author{}
+%\institute{自动化学院}
+\institute{}
+%\advisor{李磊磊副研究员}
+\advisor{}
+%\chairman{陈家斌教授}
+\chairman{}
+\degree{工程硕士}
+\major{控制工程}
+%\school{北京理工大学}
+\school{}
+%\defenddate{2019年6月}
+\defenddate{}
+
+%\studentnumber{**********}
+
+
+% 英文封面内容(关注内容而不是表现形式)
+\englishtitle{Research on real-time vision/inertia/geomagnetic multi- \\ sensor fusion positioning system based on ROS}
+%\englishauthor{Jiang Zheng}
+\englishauthor{}
+%\englishadvisor{A/Prof. Li Leilei}
+%\englishchairman{Prof. Chen Jiabin}
+\englishadvisor{}
+\englishchairman{}
+%\englishschool{Beijing Institute of Technology}
+\englishschool{}
+%\englishinstitute{School of Automation}
+\englishinstitute{}
+\englishdegree{Master of Engineering}
+\englishmajor{Control Engineering}
+%\englishdate{June，2019}
+\englishdate{}
+
+% 封面绘制
+\maketitle
+
+% 中文信息
+\makeInfo
+
+% 英文信息
+\makeEnglishInfo
+
+%打印竖排论文题目
+\makeVerticalTitle
+
+% 论文原创性声明和使用授权
+\makeDeclareOriginal
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 前置部分
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frontmatter
+
+% 摘要
+\include{chapters/abstract}
+%% 符号对照表，可选，如不用可注释掉
+%\input{chapters/denotation}
+% 加入目录
+\tableofcontents
+
+
+%加入图、表索引(同时取消图表索引中章之间的垂直间隔)
+%\let\origaddvspace\addvspace
+%\renewcommand{\addvspace}[1]{}
+%\listoffigures
+%\listoftables
+%\renewcommand{\addvspace}[1]{\origaddvspace{#1}}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 正主体部分
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\mainmatter
+
+%% 各章正文内容
+\include{chapters/chapter1}
+\include{chapters/chapter2}
+\include{chapters/chapter3}
+\include{chapters/chapter4}
+\include{chapters/chapter5}
+\include{chapters/conclusion}
+
+%% 参考文献，五号字，使用 BibTeX，包含参考文献文件.bib
+
+%\bibliography{reference/chap1,reference/chap2} %多个章节的参考文献
+\bibliography{reference/chap1}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 后置部分
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% 附录(章节编号重新计算，使用字母进行编号)
+%\appendix
+%\renewcommand\theequation{\Alph{chapter}--\arabic{equation}}  % 附录中编号形式是"A-1"的样子
+%\renewcommand\thefigure{\Alph{chapter}--\arabic{figure}}
+%\renewcommand\thetable{\Alph{chapter}--\arabic{table}}
+
+%\include{chapters/app1} 
+%\include{chapters/app2} 
+
+%(其后部分无编号)
+\backmatter
+
+% 发表文章目录
+\include{chapters/pub}
+% 致谢
+%\include{chapters/thanks}
+% 作者简介（博士论文需要）
+%\include{chapters/resume}
+
+
+\end{document}
