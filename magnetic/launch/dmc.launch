@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<launch>
+    <node name="dmc" pkg="magnetic" type="magnetic_pub" output="screen">
+        <param name="device_id"  value="/dev/dmc"/>
+        <param name="topic_name" value="dmc_data"/>
+        <param name="frame_id" value="dmclink" />
+    </node>
+</launch>
