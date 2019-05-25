@@ -1,0 +1,3 @@
+/home/bit/my/serilport/linux/build/CMakeFiles/rebuild_cache.dir
+/home/bit/my/serilport/linux/build/CMakeFiles/edit_cache.dir
+/home/bit/my/serilport/linux/build/CMakeFiles/uart_linux.dir

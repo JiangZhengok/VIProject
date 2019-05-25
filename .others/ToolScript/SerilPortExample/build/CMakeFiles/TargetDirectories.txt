@@ -1,0 +1,3 @@
+/home/bit/my/serilport/build/CMakeFiles/rebuild_cache.dir
+/home/bit/my/serilport/build/CMakeFiles/edit_cache.dir
+/home/bit/my/serilport/build/CMakeFiles/dmc.dir

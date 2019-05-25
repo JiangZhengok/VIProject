@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/bit/data/my_tool/C++Filter/medFilter.cpp
+stdio.h
+/home/bit/data/my_tool/C++Filter/stdio.h
+iostream
+-
+fstream
+-
+algorithm
+-
+

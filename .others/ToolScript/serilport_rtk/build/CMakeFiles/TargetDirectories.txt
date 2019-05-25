@@ -1,0 +1,3 @@
+/home/bit/my/RTK/serilport_rtk/build/CMakeFiles/edit_cache.dir
+/home/bit/my/RTK/serilport_rtk/build/CMakeFiles/rebuild_cache.dir
+/home/bit/my/RTK/serilport_rtk/build/CMakeFiles/D_GPS.dir

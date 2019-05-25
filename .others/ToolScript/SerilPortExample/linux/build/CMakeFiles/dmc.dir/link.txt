@@ -1,0 +1,1 @@
+/usr/bin/cc     CMakeFiles/dmc.dir/uart_linux.c.o  -o dmc -rdynamic 
