@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<launch>
+    <node name="gps" pkg="rtk" type="rtk_pub" output="screen">
+        <param name="device_id"  value="/dev/rtk"/>
+        <param name="topic_name" value="rtk_data"/>
+        <param name="frame_id" value="rtklink" />
+    </node>
+</launch>
