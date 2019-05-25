@@ -7,6 +7,6 @@
 * rtk：差分gps ROS驱动
 * show_gps：gps轨迹显示
 * VINS-Mono：VINS代码
-* .others：其他资料，传感器手册,毕业论文等。
+* .others：其他资料，传感器手册，毕业论文等。
 
 
