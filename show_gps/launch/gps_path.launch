@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<launch>
+    <node name="gpspath" pkg="show_gps" type="gpspath_pub" output="screen">
+        <param name="topic_name" value="gps_path"/>
+        <param name="frame_id" value="world" />
+        
+        <!-- vins_bit_3km -->
+        <!--
+        <param name="file_path" value="/home/bit/data/12.24/gps/xyz_100_half.csv" />
+        -->
+       
+        <!-- vins_bit_5km -->
+        <!--
+        <param name="file_path" value="/home/bit/data/11.28/gps/xygps_bit5_one.csv" />
+        -->
+
+        <!-- vins_beiQL -->
+        <param name="file_path" value="/home/bit/data/2.21_1/kown_p.csv" />        
+
+       <!-- <param name="loop_rate" value="10" /> -->
+    </node>
+</launch>
