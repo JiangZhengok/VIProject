@@ -1,0 +1,1 @@
+KERNEL=="ttyUSB*", ATTRS{idVendor}=="2639", ATTRS{idProduct}=="0017", MODE:="0777", SYMLINK+="MTi-G-710" 

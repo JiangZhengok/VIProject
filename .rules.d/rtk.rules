@@ -1,0 +1,1 @@
+KERNELS=="1-2",  MODE:="0666", GROUP:="dialout",  SYMLINK+="rtk"
