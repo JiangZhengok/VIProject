@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=VIO
+#Exec=sh /home/nuc/Desktop/a.sh
+Exec=bash -c "source /opt/ros/kinetic/setup.bash; source /home/nuc/catkin_ws/devel/setup.bash; /home/nuc/dmc_imu_cam.sh; exec bash"
+Icon=/home/nuc/Pictures/vio3.jpeg
+Info="Spark"
+Terminal=true
+Type=Application
+StartupNotify=true
