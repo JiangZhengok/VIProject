@@ -39,7 +39,7 @@
 
 增加预判操作确实可以大大提高算法效率，但是到此为止算法还存在一个缺点，检测出来的很多相邻的角点挤在一起。为了消除这种邻近位置有多个角点重合的情况，需要进行非大极值抑制（Non-Maximal Suppression，NMS）\upcite{blaschko2011branch}。方法如下：
 
-（1）计算每一个检测到的角点的响应值（score function） $V$，这里$V$ 定义为角点点 $p$ 和它邻域16个像素点的绝对差值之和，即，
+（1）计算每一个检测到的角点的响应值（score function） $V$，这里$V$ 定义为角点点 $p$ 和它邻域16个像素点的绝对差值之和，即：
 \[
 \setlength{\abovedisplayskip}{6pt}
 \setlength{\belowdisplayskip}{6pt}
@@ -48,7 +48,7 @@ V = \Sigma_{x \in S} |I_{p\rightarrow x} - I_p|
 其中 $S$ 表示16的邻域像素点的集合。
 
 （2）考虑两个相邻的角点，并比较它们的 $V$ 值，并删除 $V$ 值较小的角点。
-图\ref{fig3_2}展示了FAST角点提取。其中，（a）是原始图像，（b）是不加NMS 的FAST角点提取，（c）是加入NMS的FAST角点提取。
+图\ref{fig3_2}展示了FAST角点提取。其中（a）是原始图像，（b）是不加NMS 的FAST角点提取，（c）是加入NMS的FAST角点提取。
 \begin{figure}[h]\setlength{\belowcaptionskip}{-12pt}
 	\centering
 	\includegraphics[width=0.9\textwidth]{figures/chapter3/fig3_2}
@@ -65,17 +65,17 @@ V = \Sigma_{x \in S} |I_{p\rightarrow x} - I_p|
 \end{figure}
 
 在LK光流中，相机是运动的，也就是说相机的图像随着时间的变化而变化。所以，图像和时间之间存在一个映射关系：$\bm{I}(t) $ 。那么，在 $t$ 时刻，图像中 $(x,y)$ 处的像素的灰度可以记作：$ \boldsymbol{I}(x, y, t) $ 。这样，图像就是关于位置和时间的函数，该函数的值域就是图像的灰度。假设三维空间中的一个点 $p$ 在 $t$  时刻时的像素坐标为 $(x,y)$ 。随着时间的变化，$p$ 的像素坐标将发生变化。要估计出每一时刻该点的像素坐标。
-首先，需要提出一个基本的假设：灰度不变假设。即三维空间中的点在每张图像中的像素灰度值是固定不变的。例如，在 $t+\mathrm{d} t $ 时刻点  $p$ 的像素坐标为 $(x+\mathrm{d} x, y+\mathrm{d} y) $ ，则，
+首先，需要提出一个基本的假设：灰度不变假设。即三维空间中的点在每张图像中的像素灰度值是固定不变的。例如，在 $t+\mathrm{d} t $ 时刻点  $p$ 的像素坐标为 $(x+\mathrm{d} x, y+\mathrm{d} y) $ ，则：
 \begin{equation}
 \label{eqn:3.1}
 \boldsymbol{I}(x+\mathrm{d} x, y+\mathrm{d} y, t+\mathrm{d} t)=\boldsymbol{I}(x, y, t)
 \end{equation}
-对式(\ref{eqn:3.1})左边用泰勒公式展开并保留一阶项，得，
+对式(\ref{eqn:3.1})左边用泰勒公式展开并保留一阶项，得：
 \begin{equation}
 \label{eqn:3.2}
 \boldsymbol{I}(x+\mathrm{d} x, y+\mathrm{d} y, t+\mathrm{d} t) \approx \boldsymbol{I}(x, y, t)+\frac{\partial \boldsymbol{I}}{\partial x} \mathrm{d} x+\frac{\partial \boldsymbol{I}}{\partial y} \mathrm{d} y+\frac{\partial \boldsymbol{I}}{\partial t} \mathrm{d} t
 \end{equation}
-由式(\ref{eqn:3.1})和(\ref{eqn:3.2})得，
+由式(\ref{eqn:3.1})和(\ref{eqn:3.2})得：
 \begin{equation}
 \label{eqn:3.3}
 \frac{\partial \boldsymbol{I}}{\partial x} \mathrm{d} x+\frac{\partial \boldsymbol{I}}{\partial y} \mathrm{d} y+\frac{\partial \boldsymbol{I}}{\partial t} \mathrm{d} t=0
@@ -84,23 +84,23 @@ V = \Sigma_{x \in S} |I_{p\rightarrow x} - I_p|
 \label{eqn:3.4}
 \frac{\partial \boldsymbol{I}}{\partial x} \frac{\mathrm{d} x}{\mathrm{d} t}+\frac{\partial \boldsymbol{I}}{\partial y} \frac{\mathrm{d} y}{\mathrm{d} t}=-\frac{\partial \boldsymbol{I}}{\partial t}
 \end{equation}
-其中，$\mathrm{d} x / \mathrm{d} t $ 和 $\mathrm{d} y / \mathrm{d} t $ 分别表示像素在 $x$ 轴方向和 $y$ 轴方向上的速度分量，将其分别记为 $u, v $ 。$\partial \boldsymbol{I} / \partial x $ 和 $\partial \boldsymbol{I} / \partial y $ 表示 $x$ 轴方向和 $y$轴方向上的像素梯度，分别记为 $\boldsymbol{I}_{x}, \boldsymbol{I}_{y} $ 。$\partial \boldsymbol{I} / \partial t $ 表示图像灰度随时间的变化量，记为$\boldsymbol{I}_{t} $ 。这样可以将式(\ref{eqn:3.4})写成如下矩阵形式，
+其中$\mathrm{d} x / \mathrm{d} t $ 和 $\mathrm{d} y / \mathrm{d} t $ 分别表示像素在 $x$ 轴方向和 $y$ 轴方向上的速度分量，将其分别记为 $u, v $ 。$\partial \boldsymbol{I} / \partial x $ 和 $\partial \boldsymbol{I} / \partial y $ 表示 $x$ 轴方向和 $y$轴方向上的像素梯度，分别记为 $\boldsymbol{I}_{x}, \boldsymbol{I}_{y} $ 。$\partial \boldsymbol{I} / \partial t $ 表示图像灰度随时间的变化量，记为$\boldsymbol{I}_{t} $ 。这样可以将式(\ref{eqn:3.4})写成如下矩阵形式：
 \begin{equation}
 \label{eqn:3.5}
 \left[ \begin{array}{ll}{\boldsymbol{I}_{x}} & {\boldsymbol{I}_{y}}\end{array}\right] \left[ \begin{array}{l}{u} \\ {v}\end{array}\right]=-\boldsymbol{I}_{t}
 \end{equation}
 
-假设在图像中的某一个 $w \times w $ 大小的窗口内所有的像素（共有 $w^2 $ 个）具有相同的运动，那么可以得到 $w^2 $ 个方程，
+假设在图像中的某一个 $w \times w $ 大小的窗口内所有的像素（共有 $w^2 $ 个）具有相同的运动，那么可以得到 $w^2 $ 个方程：
 \begin{equation}
 \label{eqn:3.6}
 \left[ \begin{array}{cc}{\boldsymbol{I}_{x}} & {\boldsymbol{I}_{y}}\end{array}\right]_{k} \left[ \begin{array}{c}{u} \\ {v}\end{array}\right]=-\boldsymbol{I}_{t k}, \quad k=1, \ldots, w^{2}
 \end{equation}
-记，
+记
 \begin{equation}
 \label{eqn:3.7}
 A=\left[ \begin{array}{c}{\left[\boldsymbol{I}_{x}, \boldsymbol{I}_{y}\right]_{1}} \\ {\vdots} \\ {\left[\boldsymbol{I}_{x}, \boldsymbol{I}_{y}\right]_{k}}\end{array}\right], \boldsymbol{b}=\left[ \begin{array}{c}{\boldsymbol{I}_{t 1}} \\ {\vdots} \\ {\boldsymbol{I}_{t k}}\end{array}\right]
 \end{equation}
-所以，式(\ref{eqn:3.6})可以写为，
+所以，式(\ref{eqn:3.6})可以写为：
 \begin{equation}
 \label{eqn:3.8}
 \boldsymbol{A} \left[ \begin{array}{l}{u} \\ {v}\end{array}\right]=-\boldsymbol{b}
@@ -148,7 +148,7 @@ A=\left[ \begin{array}{c}{\left[\boldsymbol{I}_{x}, \boldsymbol{I}_{y}\right]_{1
 
 （5）如果迭代次数大于等于 $k$ ，则停止，否则重复上述步骤。
 
-关键在于如何确定 $k$ 值。假设在样本数据集中“局内点”的概率是 $w $ ，则，
+关键在于如何确定 $k$ 值。假设在样本数据集中“局内点”的概率是 $w $ ，则：
 \begin{equation}
 \label{eqn:3.10}
 w = \frac{n_{inliers}}{n_{inliers} + n_{outliers}}
@@ -161,7 +161,7 @@ w = \frac{n_{inliers}}{n_{inliers} + n_{outliers}}
 \setlength{\belowdisplayskip}{6pt}
 P=1-(1-w^n)^k
 \end{equation}
-“局内点”的概率 $w$  是一个先验值，可以根据先验假设一个初值。此时，可以计算出迭代次数 $k$  ，
+“局内点”的概率 $w$  是一个先验值，可以根据先验假设一个初值。此时，可以计算出迭代次数 $k$：
 \begin{equation}
 \label{eqn:3.12}
 k = \frac{log(1-P)}{log(1-w^n)}
@@ -193,7 +193,7 @@ k = \frac{log(1-P)}{log(1-w^n)}
 
 首先定义本节使用得符号和坐标系。定义 $\left(\cdot\right)^w $ 是世界坐标系。重力的方向与世界坐标系的 $z$ 轴对齐。 $\left(\cdot\right)^b $是本体坐标系，本文把它定义为与IMU坐标系相同。 $\left(\cdot\right)^c $ 是相机坐标系。$\mathbf{q}_b^w $ ，$\mathbf{p}_b^w $ 是从本体坐标系到世界坐标系的旋转和平移。$b_k $ 是第 $k$ 个图像对应的本体帧（IMU帧）。 $c_k$ 是第 $k$ 个相机帧。$\otimes  $ 表示两个四元数之间的乘法运算。在世界坐标系下 $\mathbf{g}^w=[0,0,g]^T $ 。 $\hat{\left(\cdot\right)} $ 表示为某一量的噪声测量值或估计值。
 \subsection{当前帧的位置、速度和姿态}
-假设图像的第 $k+1$  帧为当前帧，根据2.1.3小结研究的IMU状态模型，将图像的第 $k$  帧和第 $k+1$  帧之间的IMU进行积分，得到第 $k+1$ 帧的IMU位置、速度和姿态。
+假设图像的第 $k+1$  帧为当前帧，根据2.1.3小结研究的IMU状态模型，将图像的第 $k$  帧和第 $k+1$  帧之间的IMU进行积分，得到第 $k+1$ 帧的IMU位置、速度和姿态:
 \begin{equation}
 \label{eqn:3.13}
 \begin{split}
@@ -202,9 +202,9 @@ k = \frac{log(1-P)}{log(1-w^n)}
 \mathbf{q}_{b_{k+1}}^w&=\mathbf{q}_{b_k}^w \otimes \int_{t\in[t_k,t_{k+1}]}\frac{1}{2}\bm{\Omega}(\hat{\bm{\omega}}_t-\mathbf{b}_{w_t}-\mathbf{n}_w)\mathbf{q}_t^{b_k}dt,
 \end{split}
 \end{equation}
-其中，$\mathbf{R}_t^w $ 表示从IMU坐标系到世界坐标系的变换，与式(\ref{eqn:2.43})中的 $\mathbf{R}_w^t $ 正好相反。
+其中$\mathbf{R}_t^w $ 表示从IMU坐标系到世界坐标系的变换，与式(\ref{eqn:2.43})中的 $\mathbf{R}_w^t $ 正好相反。
 
-式(\ref{eqn:3.13})是当前帧的位置、速度和姿态的连续表达形式，在实际工程中，为了方便编程，需要离散的形式。使用中值法对式(\ref{eqn:3.13})进行离散化，得，
+式(\ref{eqn:3.13})是当前帧的位置、速度和姿态的连续表达形式，在实际工程中，为了方便编程，需要离散的形式。使用中值法对式(\ref{eqn:3.13})进行离散化，得：
 \begin{equation}
 \label{eqn:3.14}
 \begin{split}
@@ -213,7 +213,7 @@ k = \frac{log(1-P)}{log(1-w^n)}
 \mathbf{q}_{{i+1}}^w&=\mathbf{q}_{i}^w\otimes \begin{bmatrix} 1\\ \frac{1}{2} \overline{\hat{\bm{\omega}}}_{l} \delta t\end{bmatrix},
 \end{split}
 \end{equation}
-其中，
+其中
 \begin{equation}
 \label{eqn:3.15}
 \begin{aligned}
@@ -231,7 +231,7 @@ $i$ 是与$[t_k,t_{k+1}] $ 内的IMU时刻，$\delta t $ 是时间间隔。
 
 （3） $\mathbf{R}_t^w $实际上是需要求解的未知量。
 
-为了解决上述问题，考虑将优化的状态量从第 $k$ 帧到第 $k+1$ 帧的积分项中提取出来，并将参考坐标系从世界坐标系变化为IMU坐标系。在公式(3.13)的等式两边同时乘以 $\mathbf{R}_w^{b_k} $ ，得，
+为了解决上述问题，考虑将优化的状态量从第 $k$ 帧到第 $k+1$ 帧的积分项中提取出来，并将参考坐标系从世界坐标系变化为IMU坐标系。在公式(3.13)的等式两边同时乘以 $\mathbf{R}_w^{b_k} $ ，得：
 \begin{equation}
 \label{eqn:3.16}
 \begin{split}
@@ -240,7 +240,7 @@ $i$ 是与$[t_k,t_{k+1}] $ 内的IMU时刻，$\delta t $ 是时间间隔。
 \mathbf{q}_w^{b_k}\otimes\mathbf{q}_{b_{k+1}}^w&=\bm{\gamma}_{b_{k+1}}^{b_k},
 \end{split}
 \end{equation}
-其中，
+其中
 \begin{equation}
 \label{eqn:3.17}
 \begin{split}
@@ -260,7 +260,7 @@ $i$ 是与$[t_k,t_{k+1}] $ 内的IMU时刻，$\delta t $ 是时间间隔。
 \end{equation}
 其中得Jacobian矩阵计算及含义参考\ref{chap:3.2.3}小节中的递推公式(\ref{eqn:3.38})和(\ref{eqn:3.40})。否则就进行重新传播。这种方法为基于非线性优化的算法节省了大量的计算资源。
 
-在开始时，$\bm{\alpha}_{b_k}^{b_k},\bm{\beta}_{b_k}^{b_k} $ 是0，$\bm{\gamma}_{b_k}^{b_k} $ 是单位四元数。注意，噪声项 $\mathbf{n}_a,\mathbf{n}_w $ 是未知的，在实现中被视为零，所以这里使用预积分的估计值，记为 $\hat{(\cdot)} $ 。仍然使用中值法对式(\ref{eqn:3.18})进行离散化，得，
+在开始时，$\bm{\alpha}_{b_k}^{b_k},\bm{\beta}_{b_k}^{b_k} $ 是0，$\bm{\gamma}_{b_k}^{b_k} $ 是单位四元数。注意，噪声项 $\mathbf{n}_a,\mathbf{n}_w $ 是未知的，在实现中被视为零，所以这里使用预积分的估计值，记为 $\hat{(\cdot)} $ 。仍然使用中值法对式(\ref{eqn:3.18})进行离散化，得：
 \begin{equation}
 \label{eqn:3.19}
 \begin{aligned}
@@ -269,7 +269,7 @@ $i$ 是与$[t_k,t_{k+1}] $ 内的IMU时刻，$\delta t $ 是时间间隔。
 \hat{\bm{\gamma}}_{i+1}^{b_{k}} &= \hat{\bm{\gamma}}_{i}^{b_{k}} \otimes \hat{\bm{\gamma}}_{i+1}^{i}=\hat{\bm{\gamma}}_{i}^{b_{k}} \otimes \begin{bmatrix} 1\\ \frac{1}{2} \overline{\hat{\bm{\omega}}}_{l} \delta t\end{bmatrix},
 \end{aligned}
 \end{equation}
-其中，
+其中
 \begin{equation}
 \label{eqn:3.20}
 \begin{aligned}
@@ -285,7 +285,7 @@ IMU在两个图像帧之间积分出来的值是有误差的，然后研究IMU�
 \label{eqn:3.21}
 \delta \dot{\bm{\alpha}}_t^{b_k} = \delta \bm{\beta}_t^{b_k}
 \end{equation}
-由式(\ref{eqn:2.45})得，
+由式(\ref{eqn:2.45})得：
 \begin{equation}
 \label{eqn:3.22}
 \begin{aligned}
@@ -298,7 +298,7 @@ IMU在两个图像帧之间积分出来的值是有误差的，然后研究IMU�
 \label{eqn:3.23}
 \delta \dot{\bm{\beta}} = \dot{\bm{\beta}}_{true} - \dot{\bm{\beta}}_{norminal}
 \end{equation}
-其中，
+其中
 \begin{equation}
 \label{eqn:3.24}
 \begin{aligned}
@@ -313,7 +313,7 @@ IMU在两个图像帧之间积分出来的值是有误差的，然后研究IMU�
 \label{eqn:3.25}
 \dot{\bm{\beta}}_{norminal} = \mathbf{R}_t^{b_k}(\hat{\mathbf{a}}_t-\mathbf{b}_{a_t})
 \end{equation}
-将式(\ref{eqn:3.23})、(\ref{eqn:3.24})代入式(\ref{eqn:3.25})得，
+将式(\ref{eqn:3.23})、(\ref{eqn:3.24})代入式(\ref{eqn:3.25})得：
 \begin{equation}
 \label{eqn:3.26}
 \begin{aligned}
@@ -321,7 +321,7 @@ IMU在两个图像帧之间积分出来的值是有误差的，然后研究IMU�
 &= -\mathbf{R}_{t}^{b_{k}} [\left(\hat{\mathbf{a}}_{t}-\mathbf{b}_{a_{t}}\right)]_{\times} \delta \theta - \mathbf{R}_{t}^{b_{k}} \delta \mathbf{b}_{a_{t}} - \mathbf{R}_{t}^{b_{k}} \mathbf{n}_{a}
 \end{aligned}
 \end{equation}
-由式(\ref{eqn:2.42})可得，
+由式(\ref{eqn:2.42})可得：
 \begin{equation}
 \label{eqn:3.27}
 \begin{aligned}
@@ -329,7 +329,7 @@ IMU在两个图像帧之间积分出来的值是有误差的，然后研究IMU�
 &= \frac{1}{2} \mathbf{q}_{t} \otimes \delta \mathbf{q} \otimes \left[ \begin{array}{c}{\hat{\bm{\omega}}_{t}-\mathbf{b}_{\omega_{t}}-\mathbf{n}_{\omega}-\delta \mathbf{b}_{\omega_{t}}} \\ {0}\end{array}\right]
 \end{aligned}
 \end{equation}
-由四元数导数性质可得，
+由四元数导数性质可得：
 \begin{equation}
 \label{eqn:3.28}
 \begin{aligned}
@@ -338,7 +338,7 @@ IMU在两个图像帧之间积分出来的值是有误差的，然后研究IMU�
 &= \frac{1}{2} \mathbf{q}_{t} \otimes \left[ \begin{array}{c}{\hat{\bm{\omega}}_{t}-\mathbf{b}_{\omega_{t}}} \\ {0}\end{array}\right] \otimes \delta \mathbf{q}+\mathbf{q}_{t} \otimes \dot{\delta \mathbf{q}} 
 \end{aligned}
 \end{equation}
-联立式(\ref{eqn:3.27})、(\ref{eqn:3.28})可得，
+联立式(\ref{eqn:3.27})、(\ref{eqn:3.28})可得：
 \begin{equation}
 \label{eqn:3.29}
 \begin{aligned}
@@ -361,12 +361,12 @@ IMU在两个图像帧之间积分出来的值是有误差的，然后研究IMU�
 \end{bmatrix},
 \end{aligned}     
 \end{equation}
-又因为，
+又因为
 \begin{equation}
 \label{eqn:3.30}
 2 \dot{\delta} \mathbf{q}= \left[ \begin{array}{c}{\dot{\delta} \bm{\theta}} \\ {0}\end{array}\right]
 \end{equation}
-所以，
+所以
 \begin{equation}
 \label{eqn:3.31}
 \left[ \begin{array}{c}{\dot{\delta} \bm{\theta}} \\ {0}\end{array}\right]
@@ -379,7 +379,7 @@ IMU在两个图像帧之间积分出来的值是有误差的，然后研究IMU�
 1
 \end{bmatrix},   
 \end{equation}
-从而得到 $\dot{\delta \bm{\theta} }$ 得表达式，
+从而得到 $\dot{\delta \bm{\theta} }$ 得表达式：
 \begin{equation}
 \label{eqn:3.32}
 \begin{aligned}
@@ -428,31 +428,31 @@ IMU在两个图像帧之间积分出来的值是有误差的，然后研究IMU�
 \end{split}
 \end{equation}
 
-式(\ref{eqn:3.33})是式(\ref{eqn:3.17})在连续时间下的IMU误差状态方程，其中，$ \mathbf{F}_t $ 是15×15维，$ \mathbf{G}_t $ 是15×12维，$ \delta \mathbf{z}_t^{b_k}$ 是15×1维，$\mathbf{n}_t $ 是12×1维。
+式(\ref{eqn:3.33})是式(\ref{eqn:3.17})在连续时间下的IMU误差状态方程，其中$ \mathbf{F}_t $ 是15×15维，$ \mathbf{G}_t $ 是15×12维，$ \delta \mathbf{z}_t^{b_k}$ 是15×1维，$\mathbf{n}_t $ 是12×1维。
 
 将式(\ref{eqn:3.33})简写为：
 \begin{equation}
 \label{eqn:3.34}
 \dot{\delta \mathbf{z}}_t^{b_k} = \mathbf{F}_t \delta \mathbf{z}_t^{b_k} + \mathbf{G}_t\mathbf{n}_t
 \end{equation}
-由导数定义知，
+由导数定义知：
 \begin{equation}
 \label{eqn:3.35}
 \dot{\delta \mathbf{z}}_t^{b_k} = \lim _{\delta t \rightarrow 0} \frac{\delta \mathbf{z}_{t+\delta t}^{b_k} - \delta \mathbf{z}_t^{b_k}}{\delta t}
 \end{equation}
-所以，
+所以：
 \begin{equation}
 \label{eqn:3.36}
 \delta \mathbf{z}_{t+\delta t}^{b_k} = \delta \mathbf{z}_t^{b_k} + \dot{\delta \mathbf{z}}_t^{b_k} \delta t
 \end{equation}
-将式(\ref{eqn:3.34})代入式(\ref{eqn:3.36})得，
+将式(\ref{eqn:3.34})代入式(\ref{eqn:3.36})得：
 \begin{equation}
 \label{eqn:3.37}
 \setlength{\abovedisplayskip}{6pt}
 \setlength{\belowdisplayskip}{6pt}
 \delta \mathbf{z}_{t+\delta t}^{b_k} = ( \mathbf{I}+ \mathbf{F}_t \delta t )\delta \mathbf{z}_t^{b_k} + ( \mathbf{G}_t \delta t )\mathbf{n}_t
 \end{equation}
-式(\ref{eqn:3.37})表示当前时刻IMU的预积分误差与上一时刻的IMU的预积分误差成线性关系，将式(\ref{eqn:3.37})与扩展卡尔曼滤波的运动方程对比发现，其与EKF对非线性系统线性化的过程如出一辙。所以，可以根据当前时刻IMU预积分的误差预测出下一时刻IMU预积分的误差的均值和协方差。均值预测可以通过式(\ref{eqn:3.37})计算，而协方差预测公式可以类比EKF协方差更新公式得到，
+式(\ref{eqn:3.37})表示当前时刻IMU的预积分误差与上一时刻的IMU的预积分误差成线性关系，将式(\ref{eqn:3.37})与扩展卡尔曼滤波的运动方程对比发现，其与EKF对非线性系统线性化的过程如出一辙。所以，可以根据当前时刻IMU预积分的误差预测出下一时刻IMU预积分的误差的均值和协方差。均值预测可以通过式(\ref{eqn:3.37})计算，而协方差预测公式可以类比EKF协方差更新公式得到：
 \begin{equation}
 \label{eqn:3.38}
 \setlength{\abovedisplayskip}{6pt}
@@ -470,14 +470,14 @@ IMU在两个图像帧之间积分出来的值是有误差的，然后研究IMU�
 }\end{array}\right]
 \end{equation}
 
-由公式(\ref{eqn:3.37})可以得到误差项的Jacobian递归计算公式， 
+由公式(\ref{eqn:3.37})可以得到误差项的Jacobian递归计算公式： 
 \begin{equation}
 \label{eqn:3.40}
 \setlength{\abovedisplayskip}{6pt}
 \setlength{\belowdisplayskip}{6pt}
 \mathbf{J}_{t+\delta t}=(\mathbf{I}+\mathbf{F}_t\delta t)\mathbf{J}_t
 \end{equation}
-其中，$\mathbf{J} $ 的初始值为 $\mathbf{J}_{b_k}=\mathbf{I}  $ 。
+其中$\mathbf{J} $ 的初始值为 $\mathbf{J}_{b_k}=\mathbf{I}  $ 。
 
 利用递推公式(\ref{eqn:3.38})和(\ref{eqn:3.40})，可以得到协方差矩阵 $\mathbf{p}_{b_{k+1}}^{b_k}  $ 和雅可比矩阵 $\mathbf{J}_{b_{k+1}} $ 。 $\bm{\alpha}_{b_{k+1}}^{b_k},\bm{\beta}_{b_{k+1}}^{b_k}, \bm{\gamma}_{b_{k+1}}^{b_k} $ 关于偏置的一阶近似可以写成公式(\ref{eqn:3.18})的形式。公式(\ref{eqn:3.18})中 $ \mathbf{J}_{b_a}^\alpha $ 是 $ \mathbf{J}_{b_{k+1}} $ 中的分块矩阵，其位置对应于 $ {\delta\alpha_{b_{k+1}}^{b_k}}/{\delta b_{a_k}} $ ， $ \mathbf{J}_{b_w}^\alpha,\mathbf{J}_{b_a}^\beta,\mathbf{J}_{b_w}^\beta,\mathbf{J}_{b_w}^\gamma. $ 类似，不再累述。当bias估计发生轻微变化时，使用公式(\ref{eqn:3.18})近似校正预积分结果，而不是重新传播。
 
@@ -494,14 +494,14 @@ IMU在两个图像帧之间积分出来的值是有误差的，然后研究IMU�
 
 考虑到实际编程需求，接下来对连续时间下的IMU误差状态方程(\ref{eqn:3.33})进行离散化。设IMU离散化的误差状态量为 $[\delta \bm{\alpha}_{k}, {\delta \bm{\theta}_{k}}, {\delta \bm{\beta}_{k}}, \delta \mathbf{b}_{a_{k}}, \delta \mathbf{b}_{w_{k}}]^T $ 。
 
-式(\ref{eqn:3.32})是角度增量误差导数的连续形式，对其进行离散化，得，
+式(\ref{eqn:3.32})是角度增量误差导数的连续形式，对其进行离散化，得：
 \begin{equation}
 \label{eqn:3.42}
 \delta \dot{\bm{\theta}}_{k}=-\left[\frac{\hat{\bm{\omega}}_{k}+\hat{\bm{\omega}}_{k+1}}{2}-\mathbf{b}_{\omega_{k}}\right]_\times \delta \bm{\theta}_{k}
 -\frac{\mathbf{n}_{\omega_{k}}+\mathbf{n}_{\omega_{k+1}}}{2}-\delta \mathbf{b}_{\omega_{k}}
 \end{equation}
 
-根据导数的定义，得到下一时刻的角度增量误差为，
+根据导数的定义，得到下一时刻的角度增量误差为：
 \begin{equation}
 \label{eqn:3.43}
 \delta \bm{\theta}_{k+1}=\left(\mathbf{I}-\left[\frac{\hat{\bm{\omega}}_{k}+\hat{\bm{\omega}}_{k+1}}{2}-\mathbf{b}_{\omega_{k}}\right]_\times \delta t\right) \delta \bm{\theta}_{k}
@@ -509,7 +509,7 @@ IMU在两个图像帧之间积分出来的值是有误差的，然后研究IMU�
 - \delta t \delta \mathbf{b}_{\omega_{k}}
 \end{equation}
 
-式(\ref{eqn:3.26})是速度增量误差导数的连续形式，对其进行离散化，得，
+式(\ref{eqn:3.26})是速度增量误差导数的连续形式，对其进行离散化，得：
 \begin{equation}
 \label{eqn:3.44}
 \begin{aligned}
@@ -521,7 +521,7 @@ IMU在两个图像帧之间积分出来的值是有误差的，然后研究IMU�
 \end{aligned}
 \end{equation}
 
-将式(\ref{eqn:3.43})代入式(\ref{eqn:3.44})得，
+将式(\ref{eqn:3.43})代入式(\ref{eqn:3.44})得：
 \begin{equation}
 \label{eqn:3.45}
 \begin{aligned}
@@ -538,7 +538,7 @@ IMU在两个图像帧之间积分出来的值是有误差的，然后研究IMU�
 \end{aligned}
 \end{equation}
 
-根据导数的定义，得到下一时刻的速度增量误差为，
+根据导数的定义，得到下一时刻的速度增量误差为：
 \begin{equation}
 \label{eqn:3.46}
 \begin{aligned}
@@ -546,7 +546,7 @@ IMU在两个图像帧之间积分出来的值是有误差的，然后研究IMU�
 & -\frac{1}{2} \mathbf{R}_{k} \delta t \mathbf{n}_{a_{k}} +v_{21} \mathbf{n}_{\omega_{k}}-\frac{1}{2} \mathbf{R}_{k+1} \delta t \mathbf{n}_{a_{k+1}}+v_{23} \mathbf{n}_{\omega_{k+1}}
 \end{aligned}
 \end{equation}
-其中，
+其中
 \begin{equation}
 \label{eqn:3.47}
 \begin{aligned}
@@ -556,14 +556,14 @@ f_{24} &= \frac{1}{2} \mathbf{R}_{k+1}\left[\hat{\mathbf{a}}_{k+1}-\mathbf{b}_{a
 v_{21} &= v_{23}=\frac{1}{4} \mathbf{R}_{k+1}\left[\hat{\mathbf{a}}_{k+1}-\mathbf{b}_{a_{k}}\right]_\times \delta t^{2}
 \end{aligned}
 \end{equation}
-由式(\ref{eqn:3.21})知，位置增量误差导数的连续时间形式为，
+由式(\ref{eqn:3.21})知，位置增量误差导数的连续时间形式为：
 \begin{equation}
 \label{eqn:3.48}
 \setlength{\abovedisplayskip}{6pt}
 \setlength{\belowdisplayskip}{6pt}
 \delta \dot{\bm{\alpha}_k}=\delta \bm{\beta}_k
 \end{equation}
-对其离散化得，
+对其离散化得：
 \begin{equation}
 \label{eqn:3.49}
 \begin{aligned}
@@ -572,7 +572,7 @@ v_{21} &= v_{23}=\frac{1}{4} \mathbf{R}_{k+1}\left[\hat{\mathbf{a}}_{k+1}-\mathb
 & -\frac{1}{4} \mathbf{R}_{k} \delta t \mathbf{n}_{a_{k}} +\frac{1}{2} v_{21} \mathbf{n}_{\omega_{k}}-\frac{1}{4} \mathbf{R}_{k+1} \delta t \mathbf{n}_{a_{k+1}}+\frac{1}{2} v_{23} \mathbf{n}_{\omega_{k+1}}
 \end{aligned}
 \end{equation}
-根据导数的定义，得到下一时刻的位置增量误差为，
+根据导数的定义，得到下一时刻的位置增量误差为：
 \begin{equation}
 \label{eqn:3.50}
 \begin{aligned}
@@ -580,7 +580,7 @@ v_{21} &= v_{23}=\frac{1}{4} \mathbf{R}_{k+1}\left[\hat{\mathbf{a}}_{k+1}-\mathb
 & -\frac{1}{4} \mathbf{R}_{k} \delta t^{2} \mathbf{n}_{a_{k}} +\frac{\delta t}{2} v_{21} \mathbf{n}_{\omega_{k}}-\frac{1}{4} \mathbf{R}_{k+1} \delta t^{2} \mathbf{n}_{a_{k+1}}+\frac{\delta t}{2} v_{23} \mathbf{n}_{\omega_{k+1}}
 \end{aligned}
 \end{equation}
-由式(\ref{eqn:2.43})、(\ref{eqn:3.46})和(\ref{eqn:3.50})可得离散形式的IMU增量误差状态方程，
+由式(\ref{eqn:2.43})、(\ref{eqn:3.46})和(\ref{eqn:3.50})可得离散形式的IMU增量误差状态方程：
 \begin{equation}
 \label{eqn:3.51}
 \begin{aligned}
@@ -608,7 +608,7 @@ v_{21} &= v_{23}=\frac{1}{4} \mathbf{R}_{k+1}\left[\hat{\mathbf{a}}_{k+1}-\mathb
 \end{array}\right]
 \end{aligned}
 \end{equation}
-其中，
+其中
 \begin{equation}
 \label{eqn:3.52}
 \left\{
@@ -642,7 +642,7 @@ v_{21} &= v_{23}=\frac{1}{4} \mathbf{R}_{k+1}\left[\hat{\mathbf{a}}_{k+1}-\mathb
 \label{eqn:3.54}
 \delta \mathbf{z}_{k+1} =\mathbf{F} \delta \mathbf{Z}_{k} + \mathbf{V} \mathbf{Q}
 \end{equation}
-其中，$\delta \mathbf{z}_{k+1}$ 为15×1维， $\mathbf{F}$ 为15×15维，$\delta \mathbf{Z}_{k} $ 为15×1维，$\mathbf{V} $ 为15×18维，$\mathbf{Q} $ 为18×1维。雅可比迭代公式为：
+其中$\delta \mathbf{z}_{k+1}$ 为15×1维， $\mathbf{F}$ 为15×15维，$\delta \mathbf{Z}_{k} $ 为15×1维，$\mathbf{V} $ 为15×18维，$\mathbf{Q} $ 为18×1维。雅可比迭代公式为：
 \begin{equation}
 \label{eqn:3.55}
 \mathbf{J}_{k+1} = \mathbf{F} \mathbf{J}_{k}
@@ -655,7 +655,7 @@ v_{21} &= v_{23}=\frac{1}{4} \mathbf{R}_{k+1}\left[\hat{\mathbf{a}}_{k+1}-\mathb
 \mathbf{ P}_{k+1} 
 =\mathbf{F} \mathbf{P}_{k} \mathbf{F}^{T}+\mathbf{V} \mathbf{Q} \mathbf{V}^{T}
 \end{equation}
-其中，协方差矩阵的初始值为 $\mathbf{P}_k=\mathbf{0} $ 。 $\mathbf{Q} $ 为噪声项协方差矩阵，是一个对角矩阵：
+其中协方差矩阵的初始值为 $\mathbf{P}_k=\mathbf{0} $ 。 $\mathbf{Q} $ 为噪声项协方差矩阵，是一个对角矩阵：
 \begin{equation}
 \label{eqn:3.57}
 \mathbf{Q}=\left[ \begin{array}{cccccc}
@@ -691,7 +691,7 @@ s_{1} \boldsymbol{p}_{1} &= \boldsymbol{K} \boldsymbol{P},  \\
 s_{2} \boldsymbol{p}_{2} &= \boldsymbol{K}(\boldsymbol{R} \boldsymbol{P}+\boldsymbol{t})
 \end{aligned}
 \end{equation}
-其中， $\bm{K} $ 为相机内参， $s_1,s_2 $ 为尺度因子。如果使用齐次坐标，式(\ref{eqn:3.58})可以写为：
+其中 $\bm{K} $ 为相机内参， $s_1,s_2 $ 为尺度因子。如果使用齐次坐标，式(\ref{eqn:3.58})可以写为：
 \begin{equation}
 \label{eqn:3.59}
 \setlength{\abovedisplayskip}{6pt}
@@ -760,7 +760,7 @@ s_{2} \boldsymbol{p}_{2} &= \boldsymbol{K}(\boldsymbol{R} \boldsymbol{P}+\boldsy
 
 矩阵 $\left[\boldsymbol{t}\right]_\times \boldsymbol{R}  $ 有六个自由度，由对极约束(\ref{eqn:3.64})可知 $\bm{E} $ 具有尺度不确定性，所以 $\bm{E} $ 只有五个自由度。这表明，最少使用五对匹配的关键点就可以求出 $\bm{E} $ \upcite{nister2004efficient}。由于本质矩阵 $\bm{E} $ 的奇异值形式是 $[\sigma, \sigma, 0]^{T} $ \upcite{hartley2003multiple}，这种非线性性质使得求解线性方程变得困难。因此，通常使用八对匹配的关键点来求解 $\bm{E} $ ，这种方法称为八点发（Eight-point-algorithm）\upcite{hartley2003multiple}\upcite{Hartley1997In}\upcite{longuet1981computer}。
 
-假设有一对匹配好的关键点，其归一化的齐次坐标为：$\boldsymbol{x}_{1}=\left[u_{1}, v_{1}, 1\right]^{T}$ ，$\boldsymbol{x}_{2}=\left[u_{2}, v_{2}, 1\right]^{T}  $ 。由对极约束(3.64)可得，
+假设有一对匹配好的关键点，其归一化的齐次坐标为：$\boldsymbol{x}_{1}=\left[u_{1}, v_{1}, 1\right]^{T}$ ，$\boldsymbol{x}_{2}=\left[u_{2}, v_{2}, 1\right]^{T}  $ 。由对极约束(3.64)可得：
 \begin{equation}
 \label{eqn:3.67}
 \left(u_{1}, v_{1}, 1\right) \left( \begin{array}{ccc}{e_{1}} & {e_{2}} & {e_{3}} \\ {e_{4}} & {e_{5}} & {e_{6}} \\ {e_{7}} & {e_{8}} & {e_{9}}\end{array}\right) \left( \begin{array}{l}{u_{2}} \\ {v_{2}} \\ {1}\end{array}\right)=0
@@ -793,7 +793,7 @@ s_{2} \boldsymbol{p}_{2} &= \boldsymbol{K}(\boldsymbol{R} \boldsymbol{P}+\boldsy
 \setlength{\belowdisplayskip}{6pt}
 \boldsymbol{E}= \boldsymbol{U} \boldsymbol{\Sigma} \boldsymbol{V}^{T}
 \end{equation}
-其中，$\boldsymbol{U},\boldsymbol{V} $ 是正交矩阵，$\boldsymbol{\Sigma} $ 是奇异值矩阵。由 $\bm{E} $ 的非线性性质可得 $\boldsymbol{\Sigma}=\operatorname{diag}(\sigma, \sigma, 0) $ 。在SVD分解过程中可以发现，一个本质矩阵对应两组可能的 $\boldsymbol{R}, \boldsymbol{t} $：
+其中$\boldsymbol{U},\boldsymbol{V} $ 是正交矩阵，$\boldsymbol{\Sigma} $ 是奇异值矩阵。由 $\bm{E} $ 的非线性性质得 $\boldsymbol{\Sigma}=\operatorname{diag}(\sigma, \sigma, 0) $ 。在SVD分解过程中可以发现，一个本质矩阵对应两组可能的 $\boldsymbol{R}, \boldsymbol{t} $：
 \begin{equation}
 \label{eqn:3.71}
 \begin{aligned}
@@ -801,7 +801,7 @@ s_{2} \boldsymbol{p}_{2} &= \boldsymbol{K}(\boldsymbol{R} \boldsymbol{P}+\boldsy
 \left[\boldsymbol{t}_{2}\right]_\times &= \boldsymbol{U} \boldsymbol{R}_{Z}\left(-\frac{\pi}{2}\right) \boldsymbol{\Sigma} \boldsymbol{U}^{T}, \quad \boldsymbol{R}_{2}=\boldsymbol{U} \boldsymbol{R}_{Z}^{T}\left(-\frac{\pi}{2}\right) \boldsymbol{V}^{T} 
 \end{aligned}
 \end{equation}
-其中，$\boldsymbol{R}_{Z}\left(\frac{\pi}{2}\right) $ 表示绕 轴旋转90°的旋转矩阵。$\bm{E} $ 的尺度不确定性导致 $\bm{E} $ 和 $-\bm{E} $ 是等价的，故对于 $-t$ 也会得到式(\ref{eqn:3.71})的结果。所以总共有四种可能的情况，如图\ref{fig3_9}所示。根据实际情况，分解出来的 $\boldsymbol{R}, \boldsymbol{t} $ 应该满足使得路标点的深度为正值，也就是说关键点对应的3D空间点 $P$ 应该和相机成像平面在同一侧，可见在图\ref{fig3_9}的4种情形中，只有第一种符合要求，从而确定该解为正确的解。
+其中$\boldsymbol{R}_{Z}\left(\frac{\pi}{2}\right) $ 表示绕 轴旋转90°的旋转矩阵。$\bm{E} $ 的尺度不确定性导致 $\bm{E} $ 和 $-\bm{E} $ 是等价的，故对于 $-t$ 也会得到式(\ref{eqn:3.71})的结果。所以总共有四种可能的情况，如图\ref{fig3_9}所示。根据实际情况，分解出来的 $\boldsymbol{R}, \boldsymbol{t} $ 应该满足使得路标点的深度为正值，也就是说关键点对应的3D空间点 $P$ 应该和相机成像平面在同一侧，可见在图\ref{fig3_9}的4种情形中，只有第一种符合要求，从而确定该解为正确的解。
 \begin{figure}[h]\setlength{\belowcaptionskip}{-12pt}
 	\centering
 	\includegraphics[width=0.3\textwidth, angle=-90]{figures/chapter3/fig3_9}
@@ -817,7 +817,7 @@ s_{2} \boldsymbol{p}_{2} &= \boldsymbol{K}(\boldsymbol{R} \boldsymbol{P}+\boldsy
 	\caption{三角化计算路标点深度}\label{fig3_10}
 \end{figure}
 
-以左边图像 $I_1 $ 为参考帧，假设右边图像  $I_2 $ 的旋转和平移为 $\boldsymbol{R}, \boldsymbol{t} $ 。理想情况下，射线 $O_1p_1 $ 和射线$O_2p_2 $ 会相交于点 $P$ ，点 $P$ 是 $p_1,p_2 $ 对应的三维空间坐标点。但是，实际情况下，由于传感器有噪声，射线 $O_1p_1 $ 和射线$O_2p_2 $通常不会严格的相交于点 $P$ ，甚至在三维空间中都不能相交。这种情况下通常利用最小二乘法来求解。
+以左边图像 $I_1 $ 为参考帧，假设右边图像  $I_2 $ 的旋转和平移为 $\boldsymbol{R}, \boldsymbol{t} $ 。理想情况下，射线 $O_1p_1 $ 和射线$O_2p_2 $ 会相交于点 $P$ ，点 $P$ 是 $p_1,p_2 $ 对应的三维空间坐标点。但是，实际情况下，由于传感器有噪声，射线 $O_1p_1 $ 和$O_2p_2 $通常不会严格的相交于点 $P$ ，甚至在三维空间中都不能相交。这种情况下通常利用最小二乘法来求解。
 
 设 $\boldsymbol{x}_{1}, \boldsymbol{x}_{2} $ 是 $p_1,p_2 $ 的归一化坐标，由对极约束可得：
 \begin{equation}
@@ -826,7 +826,7 @@ s_{2} \boldsymbol{p}_{2} &= \boldsymbol{K}(\boldsymbol{R} \boldsymbol{P}+\boldsy
 \setlength{\belowdisplayskip}{6pt}
 s_{1} \boldsymbol{x}_{1}=s_{2} \boldsymbol{R} \boldsymbol{x}_{2}+\boldsymbol{t}
 \end{equation}
-其中 $s_{1}, s_{2} $ 分别为 $p_1,p_2 $ 的深度。将等式(\ref{eqn:3.72})两边同时乘以 $\left[ \bm{x}_1 \right]_\times$ 得，
+其中 $s_{1}, s_{2} $ 分别为 $p_1,p_2 $ 的深度。将等式(\ref{eqn:3.72})两边同时乘以 $\left[ \bm{x}_1 \right]_\times$ 得：
 \begin{equation}
 \label{eqn:3.73}
 \setlength{\abovedisplayskip}{6pt}
@@ -854,7 +854,7 @@ s_{1} \left[\boldsymbol{x}_{1}\right]_\times \boldsymbol{x}_{1}=0=s_{2} \left[\b
 
 求解PnP有很多种方法，比如使用3对点的P3P\upcite{gao2003complete}，直接线性变换（Direct Linear Transform，DLT），EPnP（Efficient PnP）\upcite{lepetit2009epnp}，UPnP\upcite{penate2013exhaustive}等等。下面研究DLT方法。
 
-假设3D空间中的一点 $P$ ，用齐次坐标表示为 $\boldsymbol{P}=(X, Y, Z, 1)^{T} $ ，其在某一副图像中的投影点为 $\boldsymbol{x}_{1}$ ，用齐次坐标表示其在归一化平面上的坐标 $\boldsymbol{x}_{1}=\left(u_{1}, v_{1}, 1\right)^{T} $ 。该图像对应的相机位姿为 $\boldsymbol{R}, \boldsymbol{t} $ ，将 $\boldsymbol{R}, \boldsymbol{t} $ 放在一起构成一个增广矩阵 $\boldsymbol{T}= [ \boldsymbol{R} | \boldsymbol{t}] $ ， $ \boldsymbol{T} $ 为3×4矩阵。根据3D空间点和归一化平面坐标点之间的映射关系可得，
+假设3D空间中的一点 $P$ ，用齐次坐标表示为 $\boldsymbol{P}=(X, Y, Z, 1)^{T} $ ，其在某一副图像中的投影点为 $\boldsymbol{x}_{1}$ ，用齐次坐标表示其在归一化平面上的坐标 $\boldsymbol{x}_{1}=\left(u_{1}, v_{1}, 1\right)^{T} $ 。该图像对应的相机位姿为 $\boldsymbol{R}, \boldsymbol{t} $ ，将 $\boldsymbol{R}, \boldsymbol{t} $ 放在一起构成一个增广矩阵 $\boldsymbol{T}= [ \boldsymbol{R} | \boldsymbol{t}] $ ， $ \boldsymbol{T} $ 为3×4矩阵。根据3D空间点和归一化平面坐标点之间的映射关系可得：
 \begin{equation}
 \label{eqn:3.74}
 s \left( \begin{array}{c}{u_{1}} \\ {v_{1}} \\ {1}\end{array}\right)=\left( \begin{array}{cccc}{t_{1}} & {t_{2}} & {t_{3}} & {t_{4}} \\ {t_{5}} & {t_{6}} & {t_{7}} & {t_{8}} \\ {t_{9}} & {t_{10}} & {t_{11}} & {t_{12}}\end{array}\right) \left( \begin{array}{c}{X} \\ {Y} \\ {Z} \\ {1}\end{array}\right)
@@ -905,7 +905,7 @@ s_{i} \boldsymbol{u}_{i} &= \boldsymbol{K} \exp \left(  \left[\boldsymbol{\xi}\r
 s_{i} \left[ \begin{array}{c}{u_{i}} \\ {v_{i}} \\ {1}\end{array}\right] &= \boldsymbol{K} \exp \left(  \left[\boldsymbol{\xi}\right]_\times \right) \left[ \begin{array}{c}{X_{i}} \\ {Y_{i}} \\ {Z_{i}} \\ {1}\end{array}\right]
 \end{aligned}
 \end{equation}
-其中，$s_i $ 是尺度，$\bm{K} $ 是相机内参。然而，实际情况中相机是有噪声的，噪声使得等式(\ref{eqn:3.79})不相等，有一个误差。将每个观测点噪声带来的误差相加构成一个代价函数，建模为最小二乘问题，通过最小化代价函数来寻找最优的 $\bm{P}_i$ 和 $ \left[\boldsymbol{\xi}\right]_\times  $ ：
+其中$s_i $ 是尺度，$\bm{K} $ 是相机内参。然而，实际情况中相机是有噪声的，噪声使得等式(\ref{eqn:3.79})不相等，有一个误差。将每个观测点噪声带来的误差相加构成一个代价函数，建模为最小二乘问题，通过最小化代价函数来寻找最优的 $\bm{P}_i$ 和 $ \left[\boldsymbol{\xi}\right]_\times  $ ：
 \begin{equation}
 \label{eqn:3.80}
 \boldsymbol{e} =\arg \min _{\boldsymbol{\xi}} \frac{1}{2} \sum_{i=1}^{n}\left\|\boldsymbol{u}_{i}-\frac{1}{s_{i}} \boldsymbol{K} \exp \left(  \left[\boldsymbol{\xi}\right]_\times  \right) \boldsymbol{P}_{i}\right\|_{2}^{2}
@@ -953,7 +953,7 @@ s_{i} \left[ \begin{array}{c}{u_{i}} \\ {v_{i}} \\ {1}\end{array}\right] &= \bol
 s\bar{\mathbf{p}}_{b_k}^{c_0}&=s\bar{\mathbf{p}}_{c_k}^{c_0}-\mathbf{R}_{b_k}^{c_0}\mathbf{p}_c^b,
 \end{split}
 \end{equation}
-其中，$ \mathbf{p}_c^b,\mathbf{q}_c^b $ 是外参（Visual到IMU）。
+其中$ \mathbf{p}_c^b,\mathbf{q}_c^b $ 是外参（Visual到IMU）。
 \subsection{视觉/惯性联合初始化}
 如图\ref{fig3_12}所示，视觉/惯性联合初始化是将IMU预积分的值和出视觉初始化的值进行对齐，从而计算出绝对尺度 $s $ 、陀螺仪bias、重力矢量 $\mathbf{g} $ 和速度 $\mathbf{v}$ 。注意，不计算加速度计的bias，因为重力加速度的值要远远大于加速度计的bias，这导致加速度计的bias很难被观测到\upcite{mur2017visual}，因此忽略加速度计bias的影响，只计算陀螺仪的bias。
 \begin{figure}[h]\setlength{\belowcaptionskip}{-12pt}
@@ -969,7 +969,7 @@ s\bar{\mathbf{p}}_{b_k}^{c_0}&=s\bar{\mathbf{p}}_{c_k}^{c_0}-\mathbf{R}_{b_k}^{c
 \label{eqn:3.84}
 \underset{\delta b_w}{\text{min}}\sum_{k\in \mathcal{B} }\left\|{\mathbf{q}_{b_{k+1}}^{c_0}}^{-1}\otimes\mathbf{q}_{b_k}^{c_0}\otimes\bm{\gamma}_{b_{k+1}}^{b_k}\right\|^2 
 \end{equation}
-其中，$\mathcal{B} $ 代表窗口中的所有帧，
+其中$\mathcal{B} $ 代表窗口中的所有帧，
 \begin{equation}
 \label{eqn:3.85}
 \bm{\gamma}_{b_{k+1}}^{b_k}\approx\hat{\bm{\gamma}}_{b_{k+1}}^{b_k}\otimes\begin{bmatrix}
@@ -981,7 +981,7 @@ s\bar{\mathbf{p}}_{b_k}^{c_0}&=s\bar{\mathbf{p}}_{c_k}^{c_0}-\mathbf{R}_{b_k}^{c
 \label{eqn:3.86}
 { \mathbf{ q}_{b_{k+1}}^{c_{0}}}^{-1} \otimes \mathbf{q}_{b_{k}}^{c_{0}} \otimes \bm{\gamma}_{b_{k+1}}^{b_{k}}=\left[ \begin{array}{l}{\mathbf{1}} \\ {0}\end{array}\right]
 \end{equation}
-将式(\ref{eqn:3.85})代入式(\ref{eqn:3.86})得，
+将式(\ref{eqn:3.85})代入式(\ref{eqn:3.86})得：
 \begin{equation}
 \label{eqn:3.87}
 \begin{aligned}
@@ -1079,7 +1079,7 @@ s\bar{\mathbf{p}}_{b_k}^{c_0}&=s\bar{\mathbf{p}}_{c_k}^{c_0}-\mathbf{R}_{b_k}^{c
 \end{array}\right]
 \end{aligned}
 \end{equation}
-式(\ref{eqn:3.94})通过Cholesky分解可以解出 $\mathcal{X}_I $ 。
+式(\ref{eqn:3.94})通过LU分解可以解出 $\mathcal{X}_I $ 。
 
 （3）重力矢量修正
 
@@ -1095,9 +1095,9 @@ s\bar{\mathbf{p}}_{b_k}^{c_0}&=s\bar{\mathbf{p}}_{c_k}^{c_0}-\mathbf{R}_{b_k}^{c
 \label{eqn:3.95}
 \hat{\mathbf{g}} = g \cdot \overline{\hat{\mathbf{g}}} +w_{1} \mathbf{b}_{1}+w_{2} \mathbf{b}_{2}
 \end{equation}
-其中，$\overline{\hat{\mathbf{g}}} $ 为上一步估计出来的重力的方向向量，$\mathbf{b}_1, \mathbf{b}_2 $ 是垂直于 $\overline{\hat{\mathbf{g}}} $ 的两个正交基。
+其中$\overline{\hat{\mathbf{g}}} $ 为上一步估计出来的重力的方向向量，$\mathbf{b}_1, \mathbf{b}_2 $ 是垂直于 $\overline{\hat{\mathbf{g}}} $ 的两个正交基。
 
-将式(3.95)代入式(3.94)可得，
+将式(3.95)代入式(3.94)可得：
 \begin{equation}
 \label{eqn:3.96}
 \begin{aligned}
@@ -1114,7 +1114,7 @@ s\bar{\mathbf{p}}_{b_k}^{c_0}&=s\bar{\mathbf{p}}_{c_k}^{c_0}-\mathbf{R}_{b_k}^{c
 \end{array}\right]
 \end{aligned}
 \end{equation}
-其中，$\bm{\omega} =\left[\omega_{1}, \omega_{2}\right]^{T} $ ，$\mathbf{b} =\left[b_{1}, b_{2}\right]^{T} $ 。通过求解式(\ref{eqn:3.96})，可以得到 $\bm{\omega} $ ，从而可以得到修正后的 $\mathbf{g}^{c_{0}} $。通过 $\mathbf{g}^{c_{0}} $ 和世界坐标系的 $Z$ 轴方向，可以得到第一帧图像坐标系到世界坐标系的旋转 $\mathbf{q}_{C_{0}}^{w} $ ，从而可以将所有的状态变量变换到世界坐标系下。至此，初始化完成。
+其中$\bm{\omega} =\left[\omega_{1}, \omega_{2}\right]^{T} $ ，$\mathbf{b} =\left[b_{1}, b_{2}\right]^{T} $ 。通过求解式(\ref{eqn:3.96})，可以得到 $\bm{\omega} $ ，从而可以得到修正后的 $\mathbf{g}^{c_{0}} $。通过 $\mathbf{g}^{c_{0}} $ 和世界坐标系的 $Z$ 轴方向，可以得到第一帧图像坐标系到世界坐标系的旋转 $\mathbf{q}_{C_{0}}^{w} $ ，从而可以将所有的状态变量变换到世界坐标系下。至此，初始化完成。
 
 （4）初始航向修正
 

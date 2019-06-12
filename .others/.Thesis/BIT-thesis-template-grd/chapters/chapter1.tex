@@ -38,7 +38,7 @@ Ayache和Faugeras最先从事视觉SLAM的研究。Smith等人提出移动机器
 
 %[9][10][11]
 
-A. J. Davison可以说是视觉SLAM领域中的领头人，他在单目视觉SLAM中做了奠基性的工作\upcite{davison2007monoslam}\upcite{Davison03real-timesimultaneous}，极大的推动了视觉SLAM的发展。他在2007年的一篇文章中提出了MonoSLAM\upcite{davison2007monoslam}，该系统有一个重大突破——可以实时运行。MonoSLAM仅仅依靠单目相机，检测每一帧图像中的Shi-Tomasi角点\upcite{Shi94goodfeatures}，该角点是很稀疏的角点，然后在投影椭圆中实施特征匹配。经典的扩展卡尔曼滤波器（EKF）被用于SLAM后端，路标点的位置被建模为高斯分布，位姿及其关联的路标点构成状态向量，并实时更新其均值和协方差。
+A. J. Davison可以说是视觉SLAM领域中的领头人，他在单目视觉SLAM中做了奠基性的工作\upcite{davison2007monoslam}\upcite{Davison03real-timesimultaneous}，极大的推动了视觉SLAM的发展。他在2007年的一篇文章中提出了MonoSLAM\upcite{davison2007monoslam}，该系统有一个重大突破——可以实时运行。MonoSLAM仅仅依靠单目相机，检测每一帧图像中的Shi-Tomasi角点，该角点是很稀疏的角点，然后在投影椭圆中实施特征匹配。经典的扩展卡尔曼滤波器（EKF）被用于SLAM后端，路标点的位置被建模为高斯分布，位姿及其关联的路标点构成状态向量，并实时更新其均值和协方差。
 
 %[11][12]
 
@@ -112,6 +112,7 @@ LSD-SLAM和SVO的运行效果如图\ref{fig1_2}所示。
 	\includegraphics[width=0.75\textwidth]{figures/chapter1/fig1_3}
 	\caption{(a) LSD-SLAM；(b) SVO.}\label{fig1_3}
 \end{figure}
+
 
 %  1.3
 \section{本文主要工作及结构安排}

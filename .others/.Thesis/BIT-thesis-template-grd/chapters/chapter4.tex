@@ -36,7 +36,7 @@ _{\mathbf{p}_l^{c_j}}^2)
 \right\}
 \end{split}
 \end{equation}
-其中，$\mathbf{r}_\mathcal{B}(\hat{\mathbf{z}}_{b_{k+1}}^{b_k},\mathcal{X})  $ 和 $\mathbf{r}_\mathcal{C}(\hat{\mathbf{z}}_l^{c_j},\mathcal{X})  $ 分别是IMU和视觉测量的残差。$\mathcal{B} $ 是所有IMU测量的集合，$\mathcal{C} $ 是在当前滑动窗口中至少观察到两次的一组特征。$\left\{ \mathbf{r}_p,\mathbf{H}_p\right\} $ 是来自边缘化的先验信息。$\rho (\cdot) $ 为：
+其中$\mathbf{r}_\mathcal{B}(\hat{\mathbf{z}}_{b_{k+1}}^{b_k},\mathcal{X})  $ 和 $\mathbf{r}_\mathcal{C}(\hat{\mathbf{z}}_l^{c_j},\mathcal{X})  $ 分别是IMU和视觉测量的残差。$\mathcal{B} $ 是所有IMU测量的集合，$\mathcal{C} $ 是在当前滑动窗口中至少观察到两次的一组特征。$\left\{ \mathbf{r}_p,\mathbf{H}_p\right\} $ 是来自边缘化的先验信息。$\rho (\cdot) $ 为：
 \begin{equation}
 \label{eqn:4.3}
 \rho(s)=
@@ -45,7 +45,7 @@ s & s\leq 1,\\
 2\sqrt{s}-1 & s\textgreater 1.
 \end{array}\right. 
 \end{equation}
-将 $\left\| \mathbf{r}_\mathcal{C} \right\|^2 $ 代入式(\ref{eqn:4.3})得，
+将 $\left\| \mathbf{r}_\mathcal{C} \right\|^2 $ 代入式(\ref{eqn:4.3})得：
 \begin{equation}
 \label{eqn:4.4}
 \frac{1}{2}\rho( \left\| \mathbf{r}_\mathcal{C} \right\| )=\left\{\begin{array}{lc}
@@ -87,12 +87,12 @@ H(e)=\left \{
 + \mathbf{J}_{b_{k+1}}^{b_k} \Delta \mathcal{X}  \right\| _{P_{b_{k+1}}^{b_k}}^{2}
 \end{aligned}
 \end{equation}
-其中，$\mathbf{J}_{b_{k+1}}^{b_k}  $ 是IMU残差项 $\mathbf{r}_{\mathcal{B}} $ 关于状态向量 $\mathcal{X} $ 的雅可比矩阵。上式可以展开成 $\mathbf{H}\Delta \mathbf{x}=\mathbf{b} $ 的形式：
+其中$\mathbf{J}_{b_{k+1}}^{b_k}  $ 是IMU残差项 $\mathbf{r}_{\mathcal{B}} $ 关于状态向量 $\mathcal{X} $ 的雅可比矩阵。上式可以展开成 $\mathbf{H}\Delta \mathbf{x}=\mathbf{b} $ 的形式：
 \[
 (\mathbf{J} _{b_{k+1}}^{b_{k}})^{T} (\mathbf{P}_{b_{k+1}}^{b_{k}})^{-1} \mathbf{J}_{b_{k+1}}^{b_{k}} \Delta \mathcal{X}
 =- (\mathbf{J}_{b_{k+1}}^{b_{k}})^{T} (\mathbf{P}_{b_{k+1}}^{b_{k}})^{-1} \mathbf{r}_{B}
 \]
-其中，$\mathbf{P}_{b_{k+1}}^{b_k} $ 是IMU预积分中噪声项的协方差矩阵。
+其中$\mathbf{P}_{b_{k+1}}^{b_k} $ 是IMU预积分中噪声项的协方差矩阵。
 
 同理，可以写出视觉残差项的增量方程。整体目标函数的增量方程为：
 \begin{equation}
@@ -102,7 +102,7 @@ H(e)=\left \{
 & = \mathbf{b}_{p}+\sum \mathbf{J}_{b_{k+1}}^{b_{k}} (\mathbf{P}_{b_{k+1}}^{b_{k}})^{-1} \mathbf{r}_{B}+\sum {\mathbf{J}_{l}^{C_{j}} }^T  (\mathbf{P}_{l}^{C_j})^{-1}  \mathbf{r}_{C}
 \end{aligned}
 \end{equation}
-其中，$\mathbf{P}_{l}^{C_{j}} $ 是视觉噪声的协方差。暂时不考虑先验信息，用 $(\mathbf{H}_p, \mathbf{b}_p) $ 表示。称 ${\mathbf{P}_{b_{k+1}}^{b_{k}}}^{-1} $ 为信息矩阵，其大小可以代表IMU测量数据的可靠程度，越大代表越可靠，越小代表越不可靠。可以观察到，IMU噪声越大，信息矩阵就越小，此时IMU观测量就越不可靠，可以直观的理解为目标函数“更加相信”视觉的观测量。
+其中$\mathbf{P}_{l}^{C_{j}} $ 是视觉噪声的协方差。暂时不考虑先验信息，用 $(\mathbf{H}_p, \mathbf{b}_p) $ 表示。称 ${\mathbf{P}_{b_{k+1}}^{b_{k}}}^{-1} $ 为信息矩阵，其大小可以代表IMU测量数据的可靠程度，越大代表越可靠，越小代表越不可靠。可以观察到，IMU噪声越大，信息矩阵就越小，此时IMU观测量就越不可靠，可以直观的理解为目标函数“更加相信”视觉的观测量。
 
 将增量方程(\ref{eqn:4.7})简化为：
 \begin{equation}
@@ -111,7 +111,7 @@ H(e)=\left \{
 \setlength{\belowdisplayskip}{6pt}
 \left( \bm{\Lambda}_{p}+\bm{\Lambda}_{\mathcal{B}}+\bm{\Lambda}_{\mathcal{C}} \right) \Delta \mathcal{X}=\mathbf{b}_{p}+\mathbf{b}_{\mathcal{B}}+\mathbf{b}_{\mathcal{C}}
 \end{equation}
-其中，$\bm{\Lambda}_{p}, \bm{\Lambda}_{\mathcal{B}}, \bm{\Lambda}_{\mathcal{C}} $ 分别为先验残差项，IMU残差项和视觉残差项的海森（Hessian）矩阵。
+其中$\bm{\Lambda}_{p}, \bm{\Lambda}_{\mathcal{B}}, \bm{\Lambda}_{\mathcal{C}} $ 分别为先验残差项，IMU残差项和视觉残差项的海森（Hessian）矩阵。
 \subsection{IMU约束}
 考虑滑动窗口中连续两帧图像（ $b_{k} $和 $b_{k+1} $）内的IMU测量，根据式(3.41)中定义的IMU测量模型，预积分残差可以定义为：
 \begin{equation}
@@ -126,7 +126,7 @@ H(e)=\left \{
 \end{bmatrix}
 \end{split}
 \end{equation}
-其中，$[\cdot]_{x y z}$ 表示四元数的向量。$\delta \boldsymbol{\theta}_{b_{k+1}}^{b_{k}}$ 是四元数对应的三维误差状态。$\left[\hat{\boldsymbol{\alpha}}_{b_{k+1}}^{b_{k}}, \hat{\boldsymbol{\beta}}_{b_{k+1}}^{b_{k}}, \hat{\gamma}_{b_{k+1}}^{b_{k}}\right]^{T}$ 是在两个连续图像帧之间的间隔时间内带有噪声的预积分IMU测量项。$\delta \mathbf{b}_a, \delta \mathbf{b}_g $ 是加速度计bias和陀螺仪bias的误差。
+其中$[\cdot]_{x y z}$ 表示四元数的向量。$\delta \boldsymbol{\theta}_{b_{k+1}}^{b_{k}}$ 是四元数对应的三维误差状态。$\left[\hat{\boldsymbol{\alpha}}_{b_{k+1}}^{b_{k}}, \hat{\boldsymbol{\beta}}_{b_{k+1}}^{b_{k}}, \hat{\gamma}_{b_{k+1}}^{b_{k}}\right]^{T}$ 是在两个连续图像帧之间的间隔时间内带有噪声的预积分IMU测量项。$\delta \mathbf{b}_a, \delta \mathbf{b}_g $ 是加速度计bias和陀螺仪bias的误差。
 
 IMU残差项的优化变量为：
 \[
@@ -157,10 +157,10 @@ IMU残差项的优化变量为：
 \mathbf{J}[0]^{15 \times 7} &= \left[\frac{\partial \mathbf{r}_{\mathcal{B}}}{\partial \mathbf{p}_{b_{k}}^{w}}, \frac{\partial \mathbf{r}_{\mathcal{B}}}{\partial \mathbf{q}_{b_{k}}^{w}}\right] \\
 &= \left[\begin{array}{cc}
 -\mathbf{R}_{w}^{b_{k}} & \left[ \mathbf{R}_{w}^{b_{k}}\left(\mathbf{p}_{b_{k+1}}^{w} - \mathbf{p}_{b_{k}}^{w} - \mathbf{v}_{b_{k}}^{w} \Delta t_{k}+\frac{1}{2} \mathbf{g}^{w} \Delta t_{k}^{2}\right) \right]_\times \\ 
-0                       & -{\left[ (\mathbf{q}_{b_{k+1}}^{w})^{-1} \otimes \mathbf{q}_{b_{k}}^{w}\right]}_L {\left[\bm{\gamma}_{b_{k+1}}^{b_{k}}\right]}_R \\
-0                       & \left[ \mathbf{R}_{w}^{b_{k}}\left(\mathbf{v}_{b_{k+1}}^{w} - \mathbf{v}_{b_{k}}^{w} + \mathbf{g}^{w} \Delta t_{k}\right) \right]_\times \\
-0                       & 0 \\
-0                       & 0
+\bm{0}                       & -{\left[ (\mathbf{q}_{b_{k+1}}^{w})^{-1} \otimes \mathbf{q}_{b_{k}}^{w}\right]}_L {\left[\bm{\gamma}_{b_{k+1}}^{b_{k}}\right]}_R \\
+\bm{0}                       & \left[ \mathbf{R}_{w}^{b_{k}}\left(\mathbf{v}_{b_{k+1}}^{w} - \mathbf{v}_{b_{k}}^{w} + \mathbf{g}^{w} \Delta t_{k}\right) \right]_\times \\
+\bm{0}                       &\bm{0}\\
+\bm{0}                      & \bm{0}
 \end{array}\right]
 \end{aligned}
 \end{equation}
@@ -170,9 +170,9 @@ IMU残差项的优化变量为：
 \mathbf{J}[1]^{15 \times 9} &= \left[\frac{\partial \mathbf{r}_{\mathcal{B}}}{\partial \mathbf{v}_{b_{k}}^{w}}, \frac{\partial \mathbf{r}_{\mathcal{B}}}{\partial \mathbf{b}_{k}}, \frac{\partial \mathbf{r}_{\mathcal{B}}}{\partial \mathbf{b}_{w_{k}}}\right] \\
 &= \left[ \begin{array}{ccc}
 {-\mathbf{R}_{w}^{b_{k}} \Delta t} & {-\mathbf{J}_{b_{a}}^{\alpha}} & {-\mathbf{J}_{b_{\omega}}^{\alpha}} \\ 
-{0} & {0} & {\left[{\mathbf{q}_{b_{k+1}}^{w}}^{-1} \otimes \mathbf{q}_{b_{k}}^{w} \otimes \bm{\gamma}_{b_{k+1}}^{b_{k}}\right]_L \mathbf{J}_{b_{\omega}}^{\gamma}} \\ 
+{\bm{0}} & {\bm{0}} & {\left[{\mathbf{q}_{b_{k+1}}^{w}}^{-1} \otimes \mathbf{q}_{b_{k}}^{w} \otimes \bm{\gamma}_{b_{k+1}}^{b_{k}}\right]_L \mathbf{J}_{b_{\omega}}^{\gamma}} \\ 
 {-\mathbf{R}_{w}^{b_{k}}} & {-\mathbf{J}_{b_{a}}^{\beta}} & {-\mathbf{J}_{b_{\omega}}^{\beta}} \\ 
-{0} & {-\mathbf{I}} & {0} \\ {0} & {0} & {\mathbf{-}I}\end{array}\right]
+{\bm{0}} & {-\mathbf{I}} & {\bm{0}} \\ {\bm{0}} & {\bm{0}} & {\mathbf{-I}}\end{array}\right]
 \end{aligned}
 \end{equation}
 \begin{equation}
@@ -180,17 +180,17 @@ IMU残差项的优化变量为：
 \begin{aligned}
 \mathbf{J}[2]^{15 \times 7} = \left[\frac{\partial \mathbf{r}_{\mathcal{B}}}{\partial \mathbf{p}_{b_{k+1}}^{w}}, \frac{\partial \mathbf{r}_{\mathcal{B}}}{\partial \mathbf{q}_{b_{k+1}}^{w}}\right] 
 = \left[ \begin{array}{cc}
-\mathbf{R}_{w}^{b_k} & {0} \\ 
-{0} & \left[{\bm{\gamma}_{b_{k+1}}^{b_{k}}}^{-1} \otimes \mathbf{q}_{b_{k}}^{w-1} \otimes \mathbf{q}_{b_{k+1}}^{w}\right]_L \\ 
-{0} & {0}  \\ 
-{0} & {0} 
+\mathbf{R}_{w}^{b_k} & {\bm{0}} \\ 
+{\bm{0}} & \left[{\bm{\gamma}_{b_{k+1}}^{b_{k}}}^{-1} \otimes \mathbf{q}_{b_{k}}^{w-1} \otimes \mathbf{q}_{b_{k+1}}^{w}\right]_L \\ 
+{\bm{0}} & {\bm{0}}  \\ 
+{\bm{0}} & {\bm{0}} 
 \end{array}\right]
 \end{aligned}
 \end{equation}
 \begin{equation}
 \label{eqn:4.13}
 \mathbf{J}[3]^{15 \times 9}=\left[\frac{\partial \mathbf{r}_{\mathcal{B}}}{\partial \mathbf{v}_{b_{k+1}}^{w}}, \frac{\partial \mathbf{r}_{\mathcal{B}}}{\partial \mathbf{b}_{a_{k+1}}}, \frac{\partial \mathbf{r}_{\mathcal{B}}}{\partial \mathbf{b}_{w_{k+1}}}\right]
-=\left[ \begin{array}{ccc}{0} & {0} & {0} \\ {0} & {0} & {0} \\ {\mathbf{R}_{w}^{b_{k}}} & {0} & {0} \\ {0} & {I} & {0} \\ {0} & {0} & {\mathbf{I}}\end{array}\right]
+=\left[ \begin{array}{ccc}{\bm{0}} & {\bm{0}} & {\bm{0}} \\ {\bm{0}} & {\bm{0}} & {\bm{0}} \\ {\mathbf{R}_{w}^{b_{k}}} & {\bm{0}} & {\bm{0}} \\ {\bm{0}} & {\mathbf{I}} & {\bm{0}} \\ {\bm{0}} & {\bm{0}} & {\mathbf{I}}\end{array}\right]
 \end{equation}
 
 协方差矩阵是\ref{chap:3.2.3}小节中研究的预积分中的IMU增量误差的协方差矩阵，即公式(\ref{eqn:3.56})。
@@ -202,7 +202,7 @@ IMU残差项的优化变量为：
 \setlength{\belowdisplayskip}{6pt}
 \mathbf{P}_{uv_{i}}  =\lambda_{l} \pi_{c}\left( \mathbf{T}_{b \leftarrow c}^{-1} \mathbf{T}_{w \leftarrow b_{i}}^{-1} \mathbf{P}^w_{l}\right)
 \end{equation}
-其中，$\pi_{c} $ 将世界坐标点映射为像素坐标点，$\mathbf{T}_{b \leftarrow c}^{-1} $ 将坐标从IMU系变换到相机系，$\mathbf{T}_{w \leftarrow b_{i}}^{-1} $ 将世界坐标系下的坐标变换到IMU坐标系下。$\lambda_l $ 是第 $l$ 个特征在第 $i$ 幅图像下的逆深度。由式(\ref{eqn:4.14})可得，
+其中$\pi_{c} $ 将世界坐标点映射为像素坐标点，$\mathbf{T}_{b \leftarrow c}^{-1} $ 将坐标从IMU系变换到相机系，$\mathbf{T}_{w \leftarrow b_{i}}^{-1} $ 将世界坐标系下的坐标变换到IMU坐标系下。$\lambda_l $ 是第 $l$ 个特征在第 $i$ 幅图像下的逆深度。由式(\ref{eqn:4.14})可得：
 \begin{equation}
 \label{eqn:4.15}
 \begin{aligned}
@@ -229,7 +229,7 @@ IMU残差项的优化变量为：
 &= \mathbf{R}_{b_{j}}^{w}\left(\mathbf{R}_{c}^{b} \mathcal{P}_{l}^{c_{j}}+\mathbf{p}_{c}^{b}\right)+\mathbf{p}_{b_{j}}^{w}
 \end{aligned}
 \end{equation}
-联立式(\ref{eqn:4.15})和(\ref{eqn:4.17})可得，
+联立式(\ref{eqn:4.15})和(\ref{eqn:4.17})可得：
 \begin{equation}
 \label{eqn:4.18}
 \mathcal{P}_l^{c_j}=\mathbf{R}_b^c(\mathbf{R}_w^{b_j}(\mathbf{R}_{b_i}^w(\mathbf{R}_c^b\frac{1}{\lambda_l}{\pi_c}^{-1}(\begin{bmatrix}  u_l^{c_j} \\ v_l^{c_j}
@@ -242,7 +242,7 @@ IMU残差项的优化变量为：
 \mathbf{r}_\mathcal{C}(\hat{\mathbf{z}}_l^{c_j},\mathcal{X})= 
 \hat{\bar{\mathcal{P}}}_l^{c_j}-\frac{ \mathcal{P}_l^{c_j} }{\left\|\mathcal{P}_l^{c_j}\right\|}
 \end{equation}
-其中，$\mathcal{P}_l^{c_j} $ 为 $\mathbf{P}_l^{w} $ 在第 $j$ 副图像上对应的归一化平面坐标，
+其中$\mathcal{P}_l^{c_j} $ 为 $\mathbf{P}_l^{w} $ 在第 $j$ 副图像上对应的归一化平面坐标，
 \begin{equation}
 \label{eqn:4.20}
 \hat{\bar{\mathcal{P}}}_l^{c_j}={\pi_c}^{-1}
@@ -284,7 +284,7 @@ IMU残差项的优化变量为：
 \subsection{边缘化}
 前面在研究残差项的时候，忽略了先验残差项，这个先验残差项就是通过边缘化（Marginalization）\upcite{Paz2008Divide}来的。整个后端是基于滑动窗口来进行非线性优化的，滑动窗口内的图像帧数量是固定的（在实际工程中取10帧），这样会带来一个问题：窗口在向前滑动的过程中，总会有新的图像帧和路标点进来，而窗口中最旧的图像帧和路标点会滑出窗口。要对滑窗内的所有图像位姿及其路标点进行优化，那么不能直接将最旧的图像帧及其观测到的路标点直接删除，因为这样会丢失观测信息，降维约束项。那么怎么才能在不减少约束项的情况下丢掉最旧的图像帧及其路标点呢？边缘化就是用来解决此问题的。
 
-（1）舒尔补消元
+1. 舒尔补消元
 
 采用高斯牛顿或者LM方法进行非线性优化时，每次迭代都需要求解增量方程 $\mathbf{H}\delta \mathbf{x}=\mathbf{b} $ ，将 $\mathbf{H}\delta \mathbf{x}=\mathbf{b} $ 写为：
 \begin{equation}
@@ -300,7 +300,7 @@ IMU残差项的优化变量为：
 {l}{\mathbf{b}_{1}} \\ {\mathbf{b}_{2}}
 \end{array}\right]
 \end{equation}
-其中，$\delta \mathbf{x}_1 $ 是想要边缘化掉的优化变量，$\delta \mathbf{x}_2 $ 是与 $\delta \mathbf{x}_1 $ 有约束关系的想要保留的优化变量。定义舒尔项\upcite{sibley2010sliding}：
+其中$\delta \mathbf{x}_1 $ 是想要边缘化掉的优化变量，$\delta \mathbf{x}_2 $ 是与 $\delta \mathbf{x}_1 $ 有约束关系的想要保留的优化变量。定义舒尔项\upcite{sibley2010sliding}：
 \begin{equation}
 \label{eqn:4.23}
 \left[ \begin{array}{cc}
@@ -363,7 +363,7 @@ b_{2}- \bm{\Lambda}_{b}^{T} \bm{\Lambda}_{a}^{-1} \mathbf{b}_{1} \\
 \hat{\mathbf{b}}^{*} - \mathbf{H}^{*} \delta \mathbf{x}_{2}^{*}
 \end{equation}
 
-（2）边缘化过程
+2. 边缘化过程
 
 假设相机在四个不同的地方拍摄了四张图像，相机的位姿分别为 $ \mathbf{x}_{p_1},  \mathbf{x}_{p_2},  \mathbf{x}_{p_3},  \mathbf{x}_{p_4} $ ，四张图像总共观测到了六个路标点 $ \mathbf{x}_{m_1},  \mathbf{x}_{m_2}, \mathbf{x}_{m_3}, \mathbf{x}_{m_4}, \mathbf{x}_{m_5}, \mathbf{x}_{m_6}$ ，他们之间的关系如图\ref{fig4_2}所示。
 \begin{figure}[h]\setlength{\belowcaptionskip}{-12pt}
@@ -442,7 +442,7 @@ b_{2}- \bm{\Lambda}_{b}^{T} \bm{\Lambda}_{a}^{-1} \mathbf{b}_{1} \\
 \setlength{\belowdisplayskip}{6pt}
 s(\boldsymbol{A}, \boldsymbol{B})=1-\frac{1}{W}\|\boldsymbol{A}-\boldsymbol{B}\|_{1}
 \end{equation}
-其中， $W $是词袋中“单词”的个数，这里 $W =3$，当然，实际中的 $W $会大得多。 $||\cdot || $代表$L_1 $ 范数，也可以选用其他范数，依据具体情况而定。可以发现，当向量 $\bm{A},\bm{B} $ 完全一样时，$s=1$ ；完全相反时，$s=0$ 。这样就可以用 $s$ 的大小来描述图像的相似性了。
+其中 $W $是词袋中“单词”的个数，这里 $W =3$，当然，实际中的 $W $会大得多。 $||\cdot || $代表$L_1 $ 范数，也可以选用其他范数，依据具体情况而定。可以发现，当向量 $\bm{A},\bm{B} $ 完全一样时，$s=1$ ；完全相反时，$s=0$ 。这样就可以用 $s$ 的大小来描述图像的相似性了。
 \subsection{字典构建}
 字典是由“单词”构成，而单词是从图像中抽象而来的。一个“单词”往往是一类特征的集合，所以可以通过聚类（Clustering）来确定“单词”。
 
@@ -515,7 +515,11 @@ s(\boldsymbol{A}, \boldsymbol{B})=1-\frac{1}{W}\|\boldsymbol{A}-\boldsymbol{B}\|
   \end{equation}
   当然相似度的计算方法有很多种，这里采用 $L_1 $ 范数形式。
   
-  在滑动窗口策略中，会实时计算当前帧与字典里词袋的相似度分数，并与之前的所有关键帧进行比较，并对其实施闭环一致性检验，从而得到闭环候选帧。  
+  在滑动窗口策略中，会实时计算当前帧与字典里词袋的相似度分数，并与之前的所有关键帧进行比较，并对其实施闭环一致性检验，从而得到闭环候选帧。
+\subsection{闭环检测方案}
+本系统采用基于BRIEF描述子的DboW2词袋进行闭环检测。在视觉前端通常会检测出100 \textasciitilde 150个左右个FAST角点，这对于闭环检测来说是远远不够的。因此会对滑动窗口中滑出的关键帧（即非线性优化处理完的帧）再次提取出500个左右的FAST角点，同时计算所有角点的BRIEF描述子。然后计算当前帧与词袋的相似度分数，并于关键帧数据库中的所有关键帧对比，进行闭环一致性检测，获得闭环候选帧。
+
+检测到闭环后，利用BRIEF描述子对闭环候选帧中旧帧的500个FAST角点和当前帧中的100 \textasciitilde 150个FAST角点进行基于描述子的邻域匹配，如果匹配的点对大于设定的阈值，则利用基础矩阵进行RANSAC异常点剔除。如果经过异常点剔除后的匹配点仍然超过设定的阈值，则认为该候选帧是一个正确的闭环帧。
 \section{重定位和闭环优化}
 \subsection{重定位}
 在后端采用的滑动窗口和边缘化方案极大的降低了计算的复杂性，但也给系统带来了累积误差。更确切地说，累积误差主要发生在全局三维位置 $(x,y,z) $ 和与重力方向垂直的偏航角上。为了减少误差，提出了一种利用闭环检测来矫正误差图像位置的重定位方法。
@@ -532,14 +536,14 @@ _{\mathbf{p}_{b_{k+1}}^{b_k}}^2 \right.  +
 \left.\sum_{(l,j)\in\mathcal{L}}\rho(\left\|\mathbf{r}_\mathcal{C}(\hat{\mathbf{z}}_l^v,\mathcal{X},\hat{\mathbf{q}}_v^w,\hat{\mathbf{p}}_v^w) \right\|_{\mathbf{p}_l^{c_v}}^2) \right\}
 \end{split}
 \end{equation}
-其中， $(\hat{\mathbf{q}}_v^w,\hat{\mathbf{p}}_v^w) $ 是回环帧的姿态，被视为常数。$\mathcal{L} $ 是闭环帧中检索到的路标点的集合。$(l,v) $ 是指在闭环帧 $v $ 中观察到的第 $l $ 个特征。注意，虽然目标函数与之前略有不同，但待解状态量的维数保持不变，因为回环帧的姿态被视为常数。当滑动窗口建立多个回环时，使用来自所有闭环帧及其对应的路标点进行优化。这就为重新定位提供了多视角的约束，从而提高了定位的精度和平滑性。
+其中 $(\hat{\mathbf{q}}_v^w,\hat{\mathbf{p}}_v^w) $ 是回环帧的姿态，被视为常数。$\mathcal{L} $ 是闭环帧中检索到的路标点的集合。$(l,v) $ 是指在闭环帧 $v $ 中观察到的第 $l $ 个特征。注意，虽然目标函数与之前略有不同，但待解状态量的维数保持不变，因为回环帧的姿态被视为常数。当滑动窗口建立多个回环时，使用来自所有闭环帧及其对应的路标点进行优化。这就为重新定位提供了多视角的约束，从而提高了定位的精度和平滑性。
 \begin{figure}[h]\setlength{\belowcaptionskip}{-12pt}
 	\centering
 	\includegraphics[width=0.4\textwidth, angle=-90]{figures/chapter4/fig4_8}
 	\caption{重定位过程示意图}\label{fig4_8}
 \end{figure}
 \subsection{闭环优化}
-之前讨论的BA优化，往往是同时优化位姿及其3D路标点，这样会存在一个问题：随着时间的累计，相机的运动距离越来越远，路标点也在不断增加，如果不使用滑窗优化，而是优化过去所有的位姿和路标点，那么计算量会逐渐增加，计算效率会逐渐下降。当然，本系统中使用了滑窗策略，避免了这种情况。但是，为了达到全局一致性的目的，当检测到闭环的时候，希望进行一次全局优化。为了避免极低的计算效率，采用位姿图优化，而不是全局BA优化。位姿图优化，顾名思义，只对位姿进行优化，而忽略路标点。这样做的原因是，通常路标点经过多次观测优化后会收敛到一个固定值，而那些发散的异常点会消失不见。对于那些收敛的点，不需一直进行优化。在闭环之前，路标点肯定都经过了多次优化，已经收敛，所以闭环的时候没有必要再次优化，而只需要优化位姿即可。
+之前讨论的BA优化，往往是同时优化位姿及其3D路标点，这样会存在一个问题：随着时间的累计，相机的运动距离越来越远，路标点也在不断增加，如果不使用滑窗优化，而是优化过去所有的位姿和路标点，那么计算量会逐渐增加，计算效率会逐渐下降。当然，本系统中使用了滑窗策略，避免了这种情况。为了达到全局一致性的目的，当检测到闭环的时候，需要进行一次全局优化。为了避免极低的计算效率，采用位姿图优化，而不是全局BA优化。位姿图优化，只对位姿进行优化，而忽略路标点。通常路标点经过多次观测优化后会收敛到一个固定值，而那些发散的异常点会消失不见。对于那些收敛的点，不需一直进行优化。在闭环之前，路标点肯定都经过了多次优化，已经收敛，所以闭环的时候没有必要再次优化，而只需要优化位姿即可。
 
 图优化是由节点和边构成的，节点是待优化的变量，边是约束关系。那么位姿图呢？位姿图的节点表示相机位姿，用李代数 $ \bm{ \xi}_{1}, {\ldots}, \bm{\xi}_{n} $ 表示，位姿图的边是位姿间相机的运动，用 $\Delta \boldsymbol{\xi}_{i j} $ 表示位姿 $\bm{\xi}_{i} $和$\bm{\xi}_{i} $ 之间的相机运动，则，
 \begin{equation}
@@ -575,7 +579,7 @@ _{\mathbf{p}_{b_{k+1}}^{b_k}}^2 \right.  +
 \ln \left(\boldsymbol{T}_{i j}^{-1} \boldsymbol{T}_{i}^{-1} \exp \left(\left[-\boldsymbol{\delta} \boldsymbol{\xi}_{i}\right]_\times\right) 
 \exp \left(\left[\delta \boldsymbol{\xi}_{j}\right]_\times\right) \boldsymbol{T}_{j}\right)^{\vee}
 \end{equation}
-其中， $\delta \bm{\xi}_{i} $和 $\delta \bm{\xi}_{j} $为 $\bm{\xi}_{i}  $和 $\bm{\xi}_{j}  $的左扰动。根据李群上的伴随性质，即
+其中 $\delta \bm{\xi}_{i} $和 $\delta \bm{\xi}_{j} $为 $\bm{\xi}_{i}  $和 $\bm{\xi}_{j}  $的左扰动。根据李群上的伴随性质，即
 \begin{equation}
 \label{eqn:4.39}
 \setlength{\abovedisplayskip}{6pt}
@@ -583,9 +587,9 @@ _{\mathbf{p}_{b_{k+1}}^{b_k}}^2 \right.  +
 \exp \left(\left[\operatorname{Ad}(\boldsymbol{T}) \boldsymbol{\xi}\right]_\times\right)=
 \boldsymbol{T} \exp \left( \left[\boldsymbol{\xi}\right]_\times\right) \boldsymbol{T}^{-1}
 \end{equation}
-其中，
+其中
 \[\operatorname{Ad}(\boldsymbol{T})=\left[ \begin{array}{cc}{\boldsymbol{R}} & {\left[\boldsymbol{t}\right]_\times \boldsymbol{R}} \\ {0} & {\boldsymbol{R}}\end{array}\right]\]
-可得，
+可得：
 \begin{equation}
 \label{eqn:4.40}
 \exp \left( \left[\boldsymbol{\xi}\right]_\times\right) \boldsymbol{T}=
@@ -615,7 +619,7 @@ _{\mathbf{p}_{b_{k+1}}^{b_k}}^2 \right.  +
 + \frac{\partial \boldsymbol{e}_{i j}}{\partial \delta \xi_{j}} \boldsymbol{\delta} \boldsymbol{\xi}_{j}
 \end{aligned}
 \end{equation}
-其中，
+其中
 \begin{equation}
 \label{eqn:4.42}
 \begin{aligned}
@@ -666,7 +670,7 @@ _{\mathbf{p}_{b_{k+1}}^{b_k}}^2 \right.  +
 \psi_j-\psi_i-\hat{\psi}_{ij}
 \end{bmatrix}
 \end{equation}
-其中，$\hat{\phi}_i,\hat{\theta}_i $ 是单目VIO估计出的横滚角和俯仰角。
+其中$\hat{\phi}_i,\hat{\theta}_i $ 是单目VIO估计出的横滚角和俯仰角。
 
 所有的序列边和闭环边的残差项之和构成了整体的目标函数：
 \begin{equation}

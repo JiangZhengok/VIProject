@@ -1,4 +1,4 @@
-\begin{thebibliography}{78}
+\begin{thebibliography}{77}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{#1}
 \providecommand{\href}[2]{#2}
@@ -22,8 +22,8 @@ Davison A J, Reid I D, Molton N D, et~al.
 
 \bibitem[Barfoot(2017)]{barfoot2017state}
 Barfoot T D.
-\newblock State estimation for robotics
-\newblock Cambridge University Press, 2017.
+\newblock State estimation for robotics: number~1
+\newblock Cambridge University Press, 2017: 327--339.
 
 \bibitem[Smith\ et~al.(1986)Smith and Cheeseman]{smith1986representation}
 Smith R C, Cheeseman P.
@@ -61,11 +61,6 @@ Thrun S, Burgard W, Fox D.
 Davison A J.
 \newblock Real-time simultaneous localisation and mapping with a single camera
 \newblock , 2003: 1403--1410.
-
-\bibitem[Shi\ et~al.(1994)Shi and Tomasi]{Shi94goodfeatures}
-Shi J, Tomasi C.
-\newblock Good features to track
-\newblock \allowbreak[M], 1994.
 
 \bibitem[Klein\ et~al.(2007)Klein and Murray]{klein2007parallel}
 Klein G, Murray D.

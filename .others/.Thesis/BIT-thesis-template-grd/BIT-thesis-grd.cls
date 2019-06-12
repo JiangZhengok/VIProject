@@ -225,7 +225,8 @@ footskip=0.7cm% 页脚 1.8cm %
 
 \RequirePackage{titletoc}
 \titlecontents{chapter}[0pt]{\songti \zihao{4}}
-    {\bf\thecontentslabel\hspace{\ccwd}}{\bf}
+   % {\bf\thecontentslabel\hspace{\ccwd}}{\bf}
+   {\thecontentslabel\hspace{\ccwd}}{}
     {\hspace{.5em}\titlerule*{.}\contentspage}
 \titlecontents{section}[2\ccwd]{\songti \zihao{-4}}
     {\thecontentslabel\hspace{\ccwd}}{}
@@ -684,7 +685,7 @@ footskip=0.7cm% 页脚 1.8cm %
  \newenvironment{abstract}
  {
   \cleardoublepage
-  \chapter{\BIT@label@abstract}
+  \chapter*{\BIT@label@abstract}
  }
  {}
 %下一页从偶数页开始
@@ -703,11 +704,11 @@ footskip=0.7cm% 页脚 1.8cm %
  \newenvironment{englishabstract}
  {
   \clearpage
-  \chapter{\BIT@label@englishabstract}
+  \chapter*{\BIT@label@englishabstract}
  }
  {}
 
- % 英文摘要
+ % 英文关键字
  \newcommand\englishkeywords[1]{%
   \vspace{2ex}\noindent{\bf \BIT@label@englishkeywords} #1}
 

@@ -43,7 +43,7 @@
 \label{eqn:2.5}
 \left\{\begin{array}{l}{u=f_{x} \frac{X}{Z}+c_{x}} \\ {v=f_{y} \frac{Y}{Z}+c_{y}}\end{array}\right.
 \end{equation}
-其中，$f_x=\alpha f$ ，$f_y=\beta f  $ 。 $f $ 的单位为米，$\alpha ,\beta $ 得单位为像素每米，$f_x $  和 $f_y $  的单位为像素。通过齐次坐标，将式写成矩阵形式，得：
+其中$f_x=\alpha f$ ，$f_y=\beta f  $ 。 $f $ 的单位为米，$\alpha ,\beta $ 得单位为像素每米，$f_x $  和 $f_y $  的单位为像素。通过齐次坐标，将式写成矩阵形式，得：
 \begin{equation}
 \label{eqn:2.6}
 \left( 
@@ -53,7 +53,7 @@
 \begin{array}{ccc}{f_{x}} & {0} & {c_{x}} \\ {0} & {f_{y}} & {c_{y}} \\ {0} & {0} & {1}\end{array}
 \right) 
 \left( 
-\begin{array}{l}{X} \\ {Y} \\ {z}\end{array}
+\begin{array}{l}{X} \\ {Y} \\ {Z}\end{array}
 \right) 
 \triangleq \frac{1}{Z} \bm{K} \bm{P}
 \end{equation}
@@ -61,7 +61,7 @@
 \begin{equation}\label{eqn:2.7}
 Z \left( \begin{array}{l}{u} \\ {v} \\ {1}\end{array}\right)=\left( \begin{array}{ccc}{f_{x}} & {0} & {c_{x}} \\ {0} & {f_{y}} & {c_{y}} \\ {0} & {0} & {1}\end{array}\right) \left( \begin{array}{l}{X} \\ {Y} \\ {Z}\end{array}\right) \triangleq \bm{K} \bm{P}
 \end{equation}
-其中，$\bm{K} $ 为相机的内参矩阵，下文中的相机标定需要标定此参数。有时候，为了不失一般性，可以在内参矩阵中添加一个扭曲参数 $\gamma $ ，该参数用来表示像素坐标系的两个坐标轴之间的扭曲程度。此时，内参矩阵$\bm{K} $有5个参数：
+其中$\bm{K} $ 为相机的内参矩阵，下文中的相机标定需要标定此参数。有时候，为了不失一般性，可以在内参矩阵中添加一个扭曲参数 $\gamma $ ，该参数用来表示像素坐标系的两个坐标轴之间的扭曲程度。此时，内参矩阵$\bm{K} $有5个参数：
 \begin{equation}
 \label{eqn:2.8}
 \bm{K} = \left[\begin{array}{ccc}f_x&\gamma&c_x\\0&f_y&c_y\\0&0&1\end{array}\right]
@@ -73,7 +73,7 @@ Z \left( \begin{array}{l}{u} \\ {v} \\ {1}\end{array}\right)=\left( \begin{array
 Z \bm{P}_{u v}=Z \left[ \begin{array}{l}{u} \\ {v} \\ {1}\end{array}\right]
 =\bm{K}\left(\bm{R} \bm{P}_{w}+\bm{t}\right)=\bm{K} \bm{T} \bm{P}_{w}
 \end{equation}
-其中，$\bm{T} $为变换矩阵，又叫做特殊欧式群（Special Euclidean Group）：
+其中$\bm{T} $为变换矩阵，又叫做特殊欧式群（Special Euclidean Group）：
 \begin{equation}
 \label{eqn:2.10}
 S E(3)=\left\{
@@ -112,7 +112,7 @@ S E(3)=\left\{
 \label{eqn:2.12}
 \left\{\begin{aligned} x_{\text {corrected}} &=x\left(1+k_{1} r^{2}+k_{2} r^{4}+k_{3} r^{6}\right) \\ y_{\text {corrected}} &=y\left(1+k_{1} r^{2}+k_{2} r^{4}+k_{3} r^{6}\right) \end{aligned}\right.
 \end{equation}
-其中，$\left[x_{\text {corrected }}, y_{\text {corrected}}\right]^{T} $ 表示去畸变后的坐标。公式(\ref{eqn:2.12})中，越靠近图像中心，畸变越小，畸变系数 $k_1$  起主导作用。越远离图像中心，畸变越大，畸变系数 $k_2$ 起主导作用。一般的针孔相机用这两个系数就能去除径向畸变。对于像鱼眼镜头等畸变较大的相机，可以加入 $k_3$  来去畸变。
+其中$\left[x_{\text {corrected }}, y_{\text {corrected}}\right]^{T} $ 表示去畸变后的坐标。公式(\ref{eqn:2.12})中，越靠近图像中心，畸变越小，畸变系数 $k_1$  起主导作用。越远离图像中心，畸变越大，畸变系数 $k_2$ 起主导作用。一般的针孔相机用这两个系数就能去除径向畸变。对于像鱼眼镜头等畸变较大的相机，可以加入 $k_3$  来去畸变。
 
 对于切向畸变，可以使用参数$p_1,p_2$来进行去畸变：
 \begin{equation}
@@ -153,7 +153,7 @@ v_{\text {corrected}}&=f_{y} y_{\text {corrected}}+c_{y}
 \label{eqn:2.16}
 \mathbf{q}=q_{w}+q_{x} i+q_{y} j+q_{z} k \quad \Leftrightarrow \quad \mathbf{q}=q_{w}+\mathbf{q}_{v}
 \end{equation}
-其中，$i,j,k$ 是四元数的虚部，满足：
+其中$i,j,k$ 是四元数的虚部，满足：
 \begin{equation}
 \label{eqn:2.17}
 \left\{\begin{array}{l}{i^{2}=j^{2}=k^{2}=-1} \\ {i j=k, j i=-k} \\ {j k=i, k j=-i} \\ {k i=j, i k=-j}\end{array}\right.
@@ -186,7 +186,7 @@ v_{\text {corrected}}&=f_{y} y_{\text {corrected}}+c_{y}
 \label{eqn:2.22}
 \mathbf{p} \otimes \mathbf{q}=\left[ \begin{array}{c}{p_{w} q_{w}-p_{x} q_{x}-p_{y} q_{y}-p_{z} q_{z}} \\ {p_{w} q_{x}+p_{x} q_{w}+p_{y} q_{z}-p_{z} q_{y}} \\ {p_{w} q_{y}-p_{x} q_{z}+p_{y} q_{w}+p_{z} q_{x}} \\ {p_{w} q_{z}+p_{x} q_{y}-p_{y} q_{x}+p_{z} q_{w}}\end{array}\right]
 \end{equation}
-其中， $\otimes$ 表示四元数相乘。写成标量和矢量部分，
+其中 $\otimes$ 表示四元数相乘。写成标量和矢量部分：
 \begin{equation}
 \label{eqn:2.23}
 \mathbf{p} \otimes \mathbf{q}=\left[ \begin{array}{c}{p_{w} q_{w}-\mathbf{p}_{v}^{\top} \mathbf{q}_{v}} \\ {p_{w} \mathbf{q}_{v}+q_{w} \mathbf{p}_{v}+\mathbf{p}_{v} \times \mathbf{q}_{v}}\end{array}\right]
@@ -207,34 +207,34 @@ v_{\text {corrected}}&=f_{y} y_{\text {corrected}}+c_{y}
 \text{and}
 \quad(\mathbf{p}+\mathbf{q}) \otimes \mathbf{r}=\mathbf{p} \otimes \mathbf{r}+\mathbf{q} \otimes \mathbf{r}
 \end{equation}
-两个四元数的乘积可以等效的表示为两个矩阵的乘积，
+两个四元数的乘积可以等效的表示为两个矩阵的乘积：
 \begin{equation}
 \label{eqn:2.27}
 \setlength{\abovedisplayskip}{6pt}
 \setlength{\belowdisplayskip}{6pt}
 \mathbf{q}_{1} \otimes \mathbf{q}_{2}=\left[\mathbf{q}_{1}\right]_{L} \mathbf{q}_{2} \quad \text { and } \quad \mathbf{q}_{1} \otimes \mathbf{q}_{2}=\left[\mathbf{q}_{2}\right]_{R} \mathbf{q}_{1}
 \end{equation}
-其中 $\left[\mathbf{q}\right]_{L}$ 和 $\left[\mathbf{q}\right]_{R}$ 分别为，
+其中 $\left[\mathbf{q}\right]_{L}$ 和 $\left[\mathbf{q}\right]_{R}$ 分别为：
 \begin{equation}
 \label{eqn:2.28}
 [\mathbf{q}]_{L}=\left[ \begin{array}{cccc}{q_{w}} & {-q_{x}} & {-q_{y}} & {-q_{z}} \\ {q_{x}} & {q_{w}} & {-q_{z}} & {q_{y}} \\ {q_{y}} & {q_{z}} & {q_{w}} & {-q_{x}} \\ {q_{z}} & {-q_{y}} & {q_{x}} & {q_{w}}\end{array}\right], \quad[\mathbf{q}]_{R}=\left[ \begin{array}{cccc}{q_{w}} & {-q_{x}} & {-q_{y}} & {-q_{z}} \\ {q_{x}} & {q_{w}} & {q_{z}} & {-q_{y}} \\ {q_{y}} & {-q_{z}} & {q_{w}} & {q_{x}} \\ {q_{z}} & {q_{y}} & {-q_{x}} & {q_{w}}\end{array}\right]
 \end{equation}
-或者，
+或者
 \begin{equation}
 \label{eqn:2.29}
 [\mathbf{q}]_{L}=q_{w} \mathbf{I}+\left[ \begin{array}{cc}{0} & {-\mathbf{q}_{v}^{\top}} \\ {\mathbf{q}_{v}} & {\left[\mathbf{q}_{v}\right]_{ \times}}\end{array}\right], \quad[\mathbf{q}]_{R}=q_{w} \mathbf{I}+\left[ \begin{array}{cc}{0} & {-\mathbf{q}_{v}^{\top}} \\ {\mathbf{q}_{v}} & {-\left[\mathbf{q}_{v}\right]_{ \times}}\end{array}\right]
 \end{equation}
-这里，用运算符 $[\bullet]_{\times} $ 产生反对称矩阵，
+这里，用运算符 $[\bullet]_{\times} $ 产生反对称矩阵：
 \begin{equation}
 \label{eqn:2.30}
 [\mathbf{a}]_{ \times} \triangleq \left[ \begin{array}{ccc}{0} & {-a_{z}} & {a_{y}} \\ {a_{z}} & {0} & {-a_{x}} \\ {-a_{y}} & {a_{x}} & {0}\end{array}\right]
 \end{equation}
-因为，
+因为
 \begin{equation}
 \label{eqn:2.31}
 (\mathbf{q} \otimes \mathbf{x}) \otimes \mathbf{p}=[\mathbf{p}]_{R}[\mathbf{q}]_{L} \mathbf{x} \quad \text { and } \quad \mathbf{q} \otimes(\mathbf{x} \otimes \mathbf{p})=[\mathbf{q}]_{L}[\mathbf{p}]_{R} \mathbf{x}
 \end{equation}
-所以，
+所以
 \begin{equation}
 \label{eqn:2.32}
 [\mathbf{p}]_{R}[\mathbf{q}]_{L}=[\mathbf{q}]_{L}[\mathbf{p}]_{R}
@@ -244,7 +244,7 @@ v_{\text {corrected}}&=f_{y} y_{\text {corrected}}+c_{y}
 \label{eqn:2.33}
 \mathbf{q}^{*} \triangleq q_{w}-\mathbf{q}_{v}=\left[ \begin{array}{cc}{q_{w}} & {-\mathbf{q}_{v}}\end{array}\right]^T
 \end{equation}
-有以下特性，
+有以下特性：
 \begin{equation}
 \label{eqn:2.34}
 \mathbf{q} \otimes \mathbf{q}^{*}=\mathbf{q}^{*} \otimes \mathbf{q}=q_{w}^{2}+q_{x}^{2}+q_{y}^{2}+q_{z}^{2}=\left[ \begin{array}{c}{q_{w}^{2}+q_{x}^{2}+q_{y}^{2}+q_{z}^{2}} \\ {\mathbf{0}_{v}}\end{array}\right]
@@ -269,23 +269,23 @@ v_{\text {corrected}}&=f_{y} y_{\text {corrected}}+c_{y}
 \end{equation}
 （6）单位四元数：
 
-对于单位四元数，因为$\|\mathbf{q}\|=1 $ ，所以，
+对于单位四元数，因为$\|\mathbf{q}\|=1 $ ，所以
 \begin{equation}
 \label{eqn:2.39}
 \setlength{\abovedisplayskip}{6pt}
 \setlength{\belowdisplayskip}{6pt}
 \mathbf{q}^{-1}=\mathbf{q}^{*}
 \end{equation}
-当把单位四元数解释为方向变换或旋转算子时，这个性质意味着可以用共轭四元数实现相反的旋转。单位四元数总是可以写成这种形式，
+当把单位四元数解释为方向变换或旋转算子时，这个性质意味着可以用共轭四元数实现相反的旋转。单位四元数总是可以写成这种形式：
 \begin{equation}
 \label{eqn:2.40}
 \setlength{\abovedisplayskip}{6pt}
 \setlength{\belowdisplayskip}{6pt}
 \mathbf{q}=\left[ \begin{array}{cc}{\cos \theta} & {\mathbf{u} \sin \theta}\end{array}\right]^T
 \end{equation}
-其中，$\mathbf{u}=u_{x} i+u_{y} j+u_{z} k $ 为单位向量， $\theta $为标量。
+其中$\mathbf{u}=u_{x} i+u_{y} j+u_{z} k $ 为单位向量， $\theta $为标量。
 IMU状态模型主要由运动模型以及观测和噪声模型构成\upcite{sola2017quaternion}，状态量包括：$[\mathbf{p}_t, \mathbf{v}_t, \mathbf{q}_t, \mathbf{b}_{a_t}, \bm{b}_{\omega_t},\mathbf{g}^w]$
- ，分别表示 $t$  时刻IMU的位置，速度，姿态（旋转），加速度bias，角速度bias以及世界坐标系下的重力向量。根据式(\ref{eqn:2.22})(\ref{eqn:2.27})(\ref{eqn:2.28})(\ref{eqn:2.29})(\ref{eqn:2.40})可得，
+ ，分别表示 $t$  时刻IMU的位置，速度，姿态（旋转），加速度bias，角速度bias以及世界坐标系下的重力向量。根据式(\ref{eqn:2.22})(\ref{eqn:2.27})(\ref{eqn:2.28})(\ref{eqn:2.29})(\ref{eqn:2.40})可得：
 \begin{equation}
 \label{eqn:2.41}
 \begin{aligned} 
@@ -313,7 +313,7 @@ IMU状态模型主要由运动模型以及观测和噪声模型构成\upcite{sol
 &= \frac{1}{2} \left[\mathbf{q}_{t}\right]_L \otimes \left[ \begin{array}{l}{\omega} \\ {0}\end{array}\right]
 \end{aligned}
 \end{equation}
-假设，$\mathbf{a}_t $ 和$\bm{\omega}_t $ 表示IMU真实的加速度和角速率。假设用$\hat{\textbf{a}}_t $ 和 $\hat{\bm{\omega}}_t $表示加速度和角速率的观测值，即传感器读数，测量噪声为$\mathbf{n}_a $ 和$\mathbf{n}_w $ ，那么，
+假设，$\mathbf{a}_t $ 和$\bm{\omega}_t $ 表示IMU真实的加速度和角速率。假设用$\hat{\textbf{a}}_t $ 和 $\hat{\bm{\omega}}_t $表示加速度和角速率的观测值，即传感器读数，测量噪声为$\mathbf{n}_a $ 和$\mathbf{n}_w $ ，那么
 \begin{equation}
 \label{eqn:2.43}
 \setlength{\abovedisplayskip}{6pt}
@@ -430,39 +430,41 @@ IMU的测量值是在IMU自身坐标系下测量得到的，其中包含了重�
 	\caption{相机参数} \label{tab2.1}
 	\begin{tabular}{m{0.15\textwidth}<{\centering} m{0.4\textwidth}<{\centering}}%
 		\toprule
+		参 \ \  数 \ \  项        &参 \ \  数 \ \  值       \\
+		\midrule
 		型 \quad\quad 号			&GS3-U3-123S6M-C	 \\
-		 \midrule
+		% \midrule
 		分 \ \  辨 \ \  率	       &1920 x 1200         \\
-		 \midrule
+		% \midrule
 		帧 \quad\quad 率	    	&163 FPS	         \\
-		 \midrule
+		% \midrule
 		传 \ \  感 \ \  器	   &Sony IMX174, CMOS, 1/1.2"	 \\
-		 \midrule
+		% \midrule
 		快门方式	              &全局快门             \\
-		\midrule
+		%\midrule
 		模数转换                  &10位/12位           \\
-		\midrule
-		曝光时间                  &0.005 ms ~ 31.9 s   \\
-		\midrule
+		%\midrule
+		曝光时间                  &0.005 ms \textasciitilde 31.9 s   \\
+		%\midrule
 		触发方式                  &Standard, bulb, overlapped, multi-shot \\
-		\midrule
+		%\midrule
 		输出格式                  &Mono8, Mono12, Mono16\\
-		\midrule
+		%\midrule
 		数据接口                  &USB 3.0                \\
-		\midrule
+		%\midrule
 		传输速率                  &5 Gbit/s                \\
-		\midrule
+		%\midrule
 		存 \quad\quad 储          &128MB帧缓存，2MB永久闪存    \\
-		\midrule
+		%\midrule
 		外观尺寸                  &44 mm×29 mm×58 mm        \\
-		\midrule
+		%\midrule
 		重 \quad\quad 量          &90g                    \\
-		\midrule
+		%\midrule
 		功 \quad\quad 耗          &≤4.5 W                 \\
-		\midrule
+		%\midrule
 		镜头接口                  &C                      \\
-		\midrule
-		工作温度 	              &0℃~ +50℃               \\
+		%\midrule
+		工作温度 	              &0℃\textasciitilde+50℃               \\
 		\bottomrule
 	\end{tabular}
 \end{table}
@@ -479,27 +481,29 @@ IMU的测量值是在IMU自身坐标系下测量得到的，其中包含了重�
 	\caption{沃乐斯WL1412-1K-1镜头参数} \label{tab2.2}
 	\begin{tabular}{m{0.13\textwidth}<{\centering} m{0.4\textwidth}<{\centering}}%
 		\toprule
-		型 \quad\quad 号			&GS3-U3-123S6M-C	 \\
+		参 \ \  数 \ \  项                   &参 \ \  数 \ \  值       \\
 		\midrule
-		焦 \quad\quad 距	       &1920 x 1200         \\
-		\midrule
-		接 \quad\quad 口	    	&163 FPS	         \\
-		\midrule
-		光圈范围	   &Sony IMX174, CMOS, 1/1.2"	 \\
-		\midrule
-		视 \ \  场\ \  角	              &全局快门             \\
-		\midrule
-		后 \ \  焦 \ \  距                  &10位/12位           \\
-		\midrule
-		畸 \ \  变 \ \  率                  &0.005 ms ~ 31.9 s   \\
-		\midrule
-		分 \ \  辨 \ \  率                  &Standard, bulb, overlapped, multi-shot \\
-		\midrule
-		外观尺寸                  &Mono8, Mono12, Mono16\\
-		\midrule
-		工作温度                  &USB 3.0                \\
-		\midrule
-		重 \quad\quad 量                  &5 Gbit/s                \\
+		型 \quad\quad 号			&WL1412-1K-1	 \\
+		%\midrule
+		焦 \quad\quad 距	       &12.5mm         \\
+		%\midrule
+		接 \quad\quad 口	    	&C	         \\
+		%\midrule
+		光圈范围	              &F1.4	 \\
+		%\midrule
+		视 \ \  场\ \  角	              &53.5°×41.6°×64.5°      \\
+		%\midrule
+		后 \ \  焦 \ \  距                  &15.7mm           \\
+		%\midrule
+		畸 \ \  变 \ \  率                  &＜ 1.8 \% \\
+		%\midrule
+		分 \ \  辨 \ \  率                  &1000万像素 \\
+		%\midrule
+		外观尺寸                  &48mm×57.6mm\\
+		%\midrule
+		工作温度                  &-20℃\textasciitilde +60℃               \\
+		%\midrule
+		重 \quad\quad 量                  &270g                \\
 		\bottomrule
 	\end{tabular}
 \end{table}
@@ -518,21 +522,21 @@ IMU的测量值是在IMU自身坐标系下测量得到的，其中包含了重�
 	\zihao{5}  
 	\centering
 	\caption{STIM300性能参数} \label{tab2.3}
-	\begin{tabular}{m{0.13\textwidth}<{\centering} m{0.13\textwidth}<{\centering} m{0.13\textwidth}<{\centering} m{0.13\textwidth}<{\centering} m{0.13\textwidth}<{\centering} m{0.13\textwidth}<{\centering}}%
+	\begin{tabular}{m{0.13\textwidth}<{\centering} m{0.14\textwidth}<{\centering} m{0.13\textwidth}<{\centering} m{0.13\textwidth}<{\centering} m{0.13\textwidth}<{\centering} m{0.13\textwidth}<{\centering}}%
 		\toprule
 		\multicolumn{2}{c}{整体指标}  &\multicolumn{2}{c}{陀螺仪性能}       & \multicolumn{2}{c}{加速度计性能}  \\
 		\midrule
 		重 \quad\quad 量  &	55g	    &测量范围  &	±400°/s	             &测量范围  & ±10g \\
-		\midrule
+		%\midrule
 		输出形式          &	RS422     &零\quad\quad 偏  & 0.3°/h           &零\quad\quad 偏  &	0.05mg \\
-		\midrule
-		工作温度	      & -20℃~ +85℃     &随机游走 & 0.15°/$\sqrt{h}$ 
+		%\midrule
+		工作温度	      & -20℃\textasciitilde+85℃     &随机游走 & 0.15°/$\sqrt{h}$ 
   &随机游走 & 0.07m/s°/$\sqrt{h}$ \\ 	
-		\midrule
+		%\midrule
 		工作电压	      & 5V±0.5V	      &分 \ \  辨 \ \  率   & 0.22°/h	&分 \ \  辨 \ \  率 &	1.9ug \\
-		\midrule
+		%\midrule
 		功\quad\quad 耗  & ＜1.5W	    &全温零偏	   &  ±10°/h rms	   &全温零偏  & ±2mg rms \\
-		\midrule
+		%\midrule
 		采样频率  & ≤2kHz & & & & \\
 		\bottomrule
 	\end{tabular}
@@ -553,14 +557,14 @@ IMU的测量值是在IMU自身坐标系下测量得到的，其中包含了重�
 		\toprule
 		算法分类  &	算法	&   优点   &	缺点   &	标定物  \\
 		\midrule
-		\multirow{3}*{\tabincell{c}{传统 \\ 标定法} }  & 直接线性变换 （DLT） & \tabincell{c}{模型简单，\\ 计算量小。}&误差较大  & \tabincell{c}{3D立体 \\ 靶标} \\
-		\cline{2-5}
+		\multirow{3}*{\tabincell{c}{ \\ 传统 \\ 标定法} }  & \tabincell{c}{直接线性变换（DLT）}& \tabincell{c}{模型简单，\\ 计算量小。}&误差较大  & \tabincell{c}{3D立体 \\ 靶标} \\
+		%\cline{2-5}
 		&\tabincell{c}{径向一致约束（RAC）}  & 	\tabincell{c}{标定精度高，\\ 计算量适中。} &	--	 &  \tabincell{c}{3D立体\\靶标} \\
-		\cline{2-5}
-		&张正友标定法 &	\tabincell{c}{计算量较小，精度 \\ 较高，应用广泛。} &	--   &	\tabincell{c}{2D棋盘格\\标定板}\\
-		\midrule
+		%\cline{2-5}
+		&\tabincell{c}张正友标定法 &	\tabincell{c}{计算量较小，精度 \\ 较高，应用广泛。} &	--   &	\tabincell{c}{2D棋盘格\\标定板}\\
+		%\midrule
 		\tabincell{c}{主动视觉\\标定法}&基于纯旋转的标定 &\tabincell{c}{方法简单，\\鲁棒性高。} &\tabincell{c}{成本高，\\要求高。} & 无标定物 \\
-		\midrule
+		%\midrule
 		自标定法 & Kruppa方程标定法 &\tabincell{c}{方法简单，\\灵活性强。} &\tabincell{c}{精度较差，\\计算量大}& 无标定物\\			
 		\bottomrule
 	\end{tabular}
@@ -573,8 +577,8 @@ IMU的测量值是在IMU自身坐标系下测量得到的，其中包含了重�
 \setlength{\belowdisplayskip}{6pt}
 \boldsymbol{P}_{u v}=\boldsymbol{K} \boldsymbol{T} \boldsymbol{P}_{w}
 \]
-其中，$\bm{P}_w $  为世界坐标点，$\bm{P}_w = [X,Y,Z]^T$ ， $\bm{P}_{uv} $ 为像素坐标点，$\bm{P}_{uv} = [u,v]^T$ 。
-令$\bm{T}=[ \bm{r}_1, \bm{r}_2, \bm{r}_3, \bm{t}] $  ，棋盘格所在平面为 $Z=0 $  的平面，则，
+其中$\bm{P}_w $  为世界坐标点，$\bm{P}_w = [X,Y,Z]^T$ ， $\bm{P}_{uv} $ 为像素坐标点，$\bm{P}_{uv} = [u,v]^T$ 。
+令$\bm{T}=[ \bm{r}_1, \bm{r}_2, \bm{r}_3, \bm{t}] $  ，棋盘格所在平面为 $Z=0 $  的平面，则
 \begin{figure}[h]\setlength{\belowcaptionskip}{-12pt}
 	\centering
 	\includegraphics[width=0.2\textwidth]{figures/chapter2/fig2_11}
@@ -593,7 +597,7 @@ IMU的测量值是在IMU自身坐标系下测量得到的，其中包含了重�
 
 $\bm{H} $ 矩阵有八个未知数，棋盘格的每对对应角点能提供两个方程，因此至少需要四个对应角点就可以算出世界平面到像素平面的映射矩阵，即单应矩阵$\bm{H} $ 。
 
-设$\bm{H}=[ \bm{h}_1 \quad \bm{h}_2 \quad  \bm{h}_3 ]=\lambda \bm{K}[ \bm{r}_1 \quad \bm{r}_2 \quad  \bm{t} ] $ ，由式(\ref{eqn:2.51})得，
+设$\bm{H}=[ \bm{h}_1 \quad \bm{h}_2 \quad  \bm{h}_3 ]=\lambda \bm{K}[ \bm{r}_1 \quad \bm{r}_2 \quad  \bm{t} ] $ ，由式(\ref{eqn:2.51})得：
 \begin{equation}
 \label{eqn:2.52}
 \left\{
@@ -614,7 +618,7 @@ $\bm{H} $ 矩阵有八个未知数，棋盘格的每对对应角点能提供两�
 \end{aligned}
 \right.
 \end{equation}
-由式(\ref{eqn:2.52})和(\ref{eqn:2.53})可得，
+由式(\ref{eqn:2.52})和(\ref{eqn:2.53})可得：
 \begin{equation}
 \label{eqn:2.54}
 \left\{
@@ -648,7 +652,7 @@ B_{31} & B_{32} & B_{33}
 \right]
 \end{aligned}
 \end{equation}
-注意，$\bm{B}$是一个对称矩阵，其有效元素为6个，将这6个元素写成向量的形式，
+注意，$\bm{B}$是一个对称矩阵，其有效元素为6个，将这6个元素写成向量的形式：
 \begin{equation}
 \label{eqn:2.56}
 \setlength{\abovedisplayskip}{6pt}
@@ -662,12 +666,12 @@ B_{31} & B_{32} & B_{33}
 \setlength{\belowdisplayskip}{6pt}
 \bm{h}_i = [h_{i1},h_{i2},h_{i3}]^T
 \end{equation}
-所以，
+所以
 \begin{equation}
 \label{eqn:2.58}
 \bm{h}_i \bm{K}^{-T}\bm{K}^{-1} \bm{h}_j = \bm{h}_i \bm{B} \bm{h}_j = \bm{v}_{ij}^T \bm{b}
 \end{equation}
-其中，
+其中
 \[
 \setlength{\abovedisplayskip}{6pt}
 \setlength{\belowdisplayskip}{6pt}
@@ -678,7 +682,7 @@ h_{i1}h_{j1} & h_{i1}h_{j2}+h_{i2}h_{j1} & h_{i2}h_{j2} & h_{i3}h_{j1}+h_{i1}h_{
 \end{array} \right]^T
 \end{aligned}
 \]
-进一步，由式(\ref{eqn:2.51})可推得，
+进一步，由式(\ref{eqn:2.51})可推得：
 \begin{equation}
 \label{eqn:2.59}
 \left\{
@@ -688,7 +692,7 @@ h_{i1}h_{j1} & h_{i1}h_{j2}+h_{i2}h_{j1} & h_{i2}h_{j2} & h_{i3}h_{j1}+h_{i1}h_{
 \end{aligned}
 \right.
 \end{equation}
-写成矩阵形式，
+写成矩阵形式：
 \begin{equation}
 \label{eqn:2.60}
 \left[ 
@@ -702,7 +706,7 @@ h_{i1}h_{j1} & h_{i1}h_{j2}+h_{i2}h_{j1} & h_{i2}h_{j2} & h_{i3}h_{j1}+h_{i1}h_{
 \setlength{\belowdisplayskip}{6pt}
 \bm{Vb} = 0
 \end{equation}
-其中，$\bm{V} $ 是一个 $2n \times 6 $的矩阵， $\bm{b} $ 是一个6维列向量，所以，当有三张或者三张以上棋盘格图像时，就可以计算得到$\bm{B} $ ，进而得到相机的内参数矩阵 $\bm{K} $。
+其中$\bm{V} $ 是一个 $2n \times 6 $的矩阵， $\bm{b} $ 是一个6维列向量，所以，当有三张或者三张以上棋盘格图像时，就可以计算得到$\bm{B} $ ，进而得到相机的内参数矩阵 $\bm{K} $。
 
 以上结果是在理想情况下推导得出的，但是现实中往往存在高斯噪声，所以为了增加标定结果的可靠性，使用MLE（Maximum Likelihood Estimation）来优化上面计算的结果。假设相机从不同的角度采集了$n$ 张包含棋盘格的图像，每张图像里有$m$ 个棋盘格角点。设第$i$ 张图像上的第 $j$个角点的三维点为$\bm{M}_{ij} $ ，则	
 \begin{equation}
@@ -711,7 +715,7 @@ h_{i1}h_{j1} & h_{i1}h_{j2}+h_{i2}h_{j1} & h_{i2}h_{j2} & h_{i3}h_{j1}+h_{i1}h_{
 \setlength{\belowdisplayskip}{6pt}
 \hat{m}( \bm{K},\bm{R}_i,\bm{t}_i,\bm{M}_{ij}) = \bm{K}\bm{T}\bm{M}_{ij}
 \end{equation}
-其中，$\hat{m}( \bm{K},\bm{R}_i,\bm{t}_i,\bm{M}_{ij} )  $ 表示$\bm{M}_{ij} $ 对应的图像角点， $\bm{R}_i,\bm{t}_i $表示相机拍摄第  $i$ 张图像时的旋转和平移，$\bm{K} $ 是相机内参矩阵，角点$m_{ij} $ 的概率密度函数是：
+其中$\hat{m}( \bm{K},\bm{R}_i,\bm{t}_i,\bm{M}_{ij} )  $ 表示$\bm{M}_{ij} $ 对应的图像角点， $\bm{R}_i,\bm{t}_i $表示相机拍摄第  $i$ 张图像时的旋转和平移，$\bm{K} $ 是相机内参矩阵，角点$m_{ij} $ 的概率密度函数是：
 \begin{equation}
 \label{eqn:2.63}
 f(m_{ij})=\frac{1}{\sqrt{2\pi}}e^{\frac{-(\hat{m}( \bm{K},\bm{R}_i,\bm{t}_i,\bm{M}_{ij} )^2}{\sigma^2}}
@@ -738,9 +742,9 @@ L(\bm{K},\bm{R}_i,\bm{t}_i,\bm{M}_{ij}  ) = \prod^{n,m}_{i=1,j=1}f(m_{ij})=\frac
 \end{aligned}
 \right.
 \end{equation}
-其中， $(x,y)$和$(\hat{x},\hat{y}) $ 分别是畸变前和畸变后归一化成像平面的坐标。
+其中 $(x,y)$和$(\hat{x},\hat{y}) $ 分别是畸变前和畸变后归一化成像平面的坐标。
 
-设 $(u,v)$和$(\hat{u},\hat{v}) $ 分别是畸变前和畸变后的像素坐标，式(\ref{eqn:2.8})中的 $\gamma = 0 $ ，则，
+设 $(u,v)$和$(\hat{u},\hat{v}) $ 分别是畸变前和畸变后的像素坐标，式(\ref{eqn:2.8})中的 $\gamma = 0 $ ，则
 \begin{equation}
 \label{eqn:2.67}
 \left\{
@@ -771,7 +775,7 @@ k_1 \\ k_2
 \right]
 \end{equation}
 
-式(\ref{eqn:2.68})是从一张图像上的一个角点得到的，假设相机从不同的角度采集了 $n$ 张包含棋盘格的图像，每张图像里有 $m$个棋盘格角点，那么总共可以得到 $2mn$个等式，记作，
+式(\ref{eqn:2.68})是从一张图像上的一个角点得到的，假设相机从不同的角度采集了 $n$ 张包含棋盘格的图像，每张图像里有 $m$个棋盘格角点，那么总共可以得到 $2mn$个等式，记作
 \begin{equation}
 \label{eqn:2.69}
 \bm{Dk} = \bm{d}
@@ -781,7 +785,7 @@ k_1 \\ k_2
 \label{eqn:2.70}
 \bm{k}=[k_1\ k_2]^T = (\bm{D}^T \bm{D})^{-1} \bm{D}^T\bm{d}
 \end{equation}
-同样，使用最大似然估计求最优解，使用LM方法最小化下面的式子求取参数，
+同样，使用最大似然估计求最优解，使用LM方法最小化下面的式子求取参数。
 \begin{equation}
 \label{eqn:2.71}
 \sum^n_{i=1}\sum^m_{j=1} \| \hat{m}( \bm{K},\bm{k},\bm{R}_i,\bm{t}_i,\bm{M}_{ij}  )-m_{ij} \|^2
@@ -866,7 +870,7 @@ Allan 方差可以分析任何信号，以确定潜在噪声过程的特征。�
 
 \begin{figure}[!h]\setlength{\belowcaptionskip}{-12pt}
 	\centering
-	\includegraphics[width=0.8\textwidth]{figures/chapter2/fig2_14}
+	\includegraphics[width=0.8\textwidth]{figures/chapter2/fig2_14_change2}
 	\caption{加速度计Allan方差曲线}\label{fig2_14}
 \end{figure}
 \begin{table}[h]\setlength{\abovecaptionskip}{6pt}
@@ -877,10 +881,10 @@ Allan 方差可以分析任何信号，以确定潜在噪声过程的特征。�
 		\toprule
 					&X轴		&Y轴	  &Z轴	&平均值 \\
 		\midrule
-		Gyr\_n (rad/s)	&1.25251e-03	&1.44058e-03	&1.23255e-03	&1.30854e-03\\
-		Gyr\_w (rad/s)	&4.15778e-06	&6.66752e-06	&1.79872e-06	&4.20800e-06\\
-		Acc\_n ($m/s^2$)	&1.70161e-02	&1.74575e-02	&1.56289e-02	&1.67009e-02\\
-		Acc\_w ($m/s^2$)	&4.58804e-04	&4.14023e-04	&4.63646e-04	&4.45491e-04\\		
+		Gyr\_n ($rad/s/\sqrt{Hz}$)	&1.25251e-03	&1.44058e-03	&1.23255e-03	&1.30854e-03\\
+		Gyr\_w ($rad\sqrt{Hz}/s$)	&4.15778e-06	&6.66752e-06	&1.79872e-06	&4.20800e-06\\
+		Acc\_n ($m/s^2/\sqrt{Hz}$)	&1.70161e-02	&1.74575e-02	&1.56289e-02	&1.67009e-02\\
+		Acc\_w ($m\sqrt{Hz}/s^2$)	&4.58804e-04	&4.14023e-04	&4.63646e-04	&4.45491e-04\\		
 		\bottomrule
 	\end{tabular*}
 \end{table}
@@ -896,7 +900,7 @@ Allan 方差可以分析任何信号，以确定潜在噪声过程的特征。�
 	\caption{硬件同步示意图}\label{fig2_15}
 \end{figure}
 
-使用开源的视觉/惯性标定工具：kalibr\upcite{furgale2012continuous}\upcite{furgale2013unified}进行联合标定。联合标定需要动态标定，需要的输入文件包括：相机内参及畸变参数，IMU噪声参数，带IMU信息的视频以及标定板信息。其中，相机内参和IMU噪声参数是\ref{chap:2.2.1}和\ref{chap:2.2.2}小节标定出来的结果。视频是在不同角度下拍摄的标定板图像，需要注意的是，在拍摄视频时需要激活IMU所有的轴向信息（包括偏航、横滚和俯仰）。采用的标定板和传统标定相机的棋盘格标定板（图\ref{fig2_11}）不一样，是Aprilgrid标定板，如图\ref{fig2_16}所示。Aprilgrid标定板能够给出序号信息，可以避免姿态计算出现跳跃的情况。视IMU坐标系和载体坐标系重合，相机和IMU的坐标系定义如图\ref{fig2_17}所示。
+使用开源的视觉/惯性标定工具：kalibr\upcite{furgale2012continuous}\upcite{furgale2013unified}进行联合标定。联合标定需要动态标定，需要的输入文件包括：相机内参及畸变参数，IMU噪声参数，带IMU信息的视频以及标定板信息。其中相机内参和IMU噪声参数是\ref{chap:2.2.1}和\ref{chap:2.2.2}小节标定出来的结果。视频是在不同角度下拍摄的标定板图像，需要注意的是，在拍摄视频时需要激活IMU所有的轴向信息（包括偏航、横滚和俯仰）。采用的标定板和传统标定相机的棋盘格标定板（图\ref{fig2_11}）不一样，是Aprilgrid标定板，如图\ref{fig2_16}所示。Aprilgrid标定板能够给出序号信息，可以避免姿态计算出现跳跃的情况。视IMU坐标系和载体坐标系重合，相机和IMU的坐标系定义如图\ref{fig2_17}所示。
 \begin{figure}[h]\setlength{\belowcaptionskip}{-12pt}
 	\centering	
 	\begin{minipage}[t]{0.35\linewidth}				
@@ -929,15 +933,17 @@ Allan 方差可以分析任何信号，以确定潜在噪声过程的特征。�
 	\caption{联合标定结果} \label{tab2.6}
 	\begin{tabular*}{0.75\textwidth}{@{\extracolsep{\fill}}cc}
 		\toprule
-		T\_ic			& $\left[ \begin{array}{cccc}
+		标定项             & 标定值 \\
+		\midrule
+		\tabincell{c}{T\_ic}			& $\left[ \begin{array}{cccc}
 			0.99956 & 0.02956 & 0.00015 & 0.10048 \\ 
 			 0.00028 & -0.00458 & -0.99999 & 0.01208 \\ 
 			-0.02955 & 0.99955 & -0.00459 & -0.07922 \\ 
 			{0} & {0} & {0} & 1
 		\end{array}\right]$\\
-		\midrule
+		%\midrule
 		\tabincell{c}{Timeshift(s)}            &   -0.009307066448628993 \\
-	    \midrule
+	    %\midrule
 		\tabincell{c}{Gravity vector($m/s^2$)}            &   [ 0.12538627\ \  -9.80181878\ \   -0.27757847] \\
 		\bottomrule
 	\end{tabular*}
@@ -968,7 +974,7 @@ Allan 方差可以分析任何信号，以确定潜在噪声过程的特征。�
 	\caption{硬件系统构成}\label{fig2_20}
 \end{figure}
 
-图中\mycircled{1}是灰点单目相机（配镜头），\mycircled{2}是IMU（STIM300），\mycircled{3}是磁力计，\mycircled{4}是RTK，\mycircled{5}是12v锂电池，\mycircled{6}是稳压模块，\mycircled{7}是RS232串口转USB，\mycircled{8}是相机和IMU的同步电路，\mycircled{9}是Intel NUC处理器，\mycircled{10}是磁力计和底座连接的连接杆，\mycircled{11}是底座。其中，RTK不属于多传感器融合系统，主要用他来采集差分GPS信号，将GPS的轨迹当作真实值并和本系统输出轨迹作比较，方便分析系统的定位精度。为了避免载体（汽车）本身对磁力计的干扰，将磁力计用\mycircled{10}架高，相对于底座的高度为60cm。而且为了尽量避免铁磁性物体对磁场的干扰，硬件系统的底座以及连接杆都是铝制的。
+图中\mycircled{1}是灰点单目相机（配镜头），\mycircled{2}是IMU（STIM300），\mycircled{3}是磁力计，\mycircled{4}是RTK，\mycircled{5}是12v锂电池，\mycircled{6}是稳压模块，\mycircled{7}是RS232串口转USB，\mycircled{8}是相机和IMU的同步电路，\mycircled{9}是Intel NUC处理器，\mycircled{10}是磁力计和底座连接的连接杆，\mycircled{11}是底座。其中RTK不属于多传感器融合系统，主要用他来采集差分GPS信号，将GPS的轨迹当作真实值并和本系统输出轨迹作比较，方便分析系统的定位精度。为了避免载体（汽车）本身对磁力计的干扰，将磁力计用\mycircled{10}架高，相对于底座的高度为60cm。而且为了尽量避免铁磁性物体对磁场的干扰，硬件系统的底座以及连接杆都是铝制的。
 \subsection{ROS信息采集}
 ROS（Robot Operating System）译作机器人操作系统\upcite{Fairchild2016ROS}，通常应用在机器人上，它操作简单，功能强大，尤其适用于向机器人这种多任务、多节点的复杂环境。ROS的功能非常丰富，本文不打算一一介绍，只对其通信机制中的“话题”作简要研究。
 

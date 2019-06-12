@@ -10,8 +10,9 @@ A level-1 auxiliary file: chapters/chapter4.aux
 A level-1 auxiliary file: chapters/chapter5.aux
 A level-1 auxiliary file: chapters/conclusion.aux
 A level-1 auxiliary file: chapters/pub.aux
+A level-1 auxiliary file: chapters/thanks.aux
 Database file #1: reference/chap1.bib
-Repeated entry---line 688 of file reference/chap1.bib
+Repeated entry---line 686 of file reference/chap1.bib
  : @article{mur2015orb
  :                    ,
 I'm skipping whatever remains of this entry
@@ -40,12 +41,6 @@ while executing---line 1615 of file GBT7714-2005NLang.bst
 You can't pop an empty literal stack for entry Davison03real-timesimultaneous
 while executing---line 1615 of file GBT7714-2005NLang.bst
 You can't pop an empty literal stack for entry Davison03real-timesimultaneous
-while executing---line 1615 of file GBT7714-2005NLang.bst
-0 is an integer literal, not a function, for entry Shi94goodfeatures
-while executing---line 1615 of file GBT7714-2005NLang.bst
-You can't pop an empty literal stack for entry Shi94goodfeatures
-while executing---line 1615 of file GBT7714-2005NLang.bst
-You can't pop an empty literal stack for entry Shi94goodfeatures
 while executing---line 1615 of file GBT7714-2005NLang.bst
 0 is an integer literal, not a function, for entry klein2007parallel
 while executing---line 1615 of file GBT7714-2005NLang.bst
@@ -236,45 +231,45 @@ You can't pop an empty literal stack for entry delmerico2018benchmark
 while executing---line 1615 of file GBT7714-2005NLang.bst
 You can't pop an empty literal stack for entry delmerico2018benchmark
 while executing---line 1615 of file GBT7714-2005NLang.bst
-You've used 78 entries,
+You've used 77 entries,
             3342 wiz_defined-function locations,
-            1202 strings with 19104 characters,
-and the built_in function-call counts, 193685 in all, are:
-= -- 3957
-> -- 25239
-< -- 16667
-+ -- 9001
-- -- 455
-* -- 2538
-:= -- 22257
-add.period$ -- 263
-call.type$ -- 78
-change.case$ -- 156
-chr.to.int$ -- 8018
-cite$ -- 82
-duplicate$ -- 17526
-empty$ -- 4211
-format.name$ -- 496
-if$ -- 42629
+            1199 strings with 19044 characters,
+and the built_in function-call counts, 192427 in all, are:
+= -- 3931
+> -- 25080
+< -- 16562
++ -- 8940
+- -- 451
+* -- 2531
+:= -- 22107
+add.period$ -- 260
+call.type$ -- 77
+change.case$ -- 154
+chr.to.int$ -- 7971
+cite$ -- 81
+duplicate$ -- 17413
+empty$ -- 4172
+format.name$ -- 490
+if$ -- 42336
 int.to.chr$ -- 2
-int.to.str$ -- 79
+int.to.str$ -- 78
 missing$ -- 0
-newline$ -- 428
-num.names$ -- 234
-pop$ -- 8741
+newline$ -- 423
+num.names$ -- 231
+pop$ -- 8685
 preamble$ -- 1
-purify$ -- 78
+purify$ -- 77
 quote$ -- 0
-skip$ -- 17651
+skip$ -- 17528
 stack$ -- 0
-substring$ -- 10256
+substring$ -- 10226
 swap$ -- 83
 text.length$ -- 161
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 734
+type$ -- 725
 warning$ -- 4
-while$ -- 442
+while$ -- 441
 width$ -- 0
-write$ -- 1218
-(There were 109 error messages)
+write$ -- 1206
+(There were 106 error messages)

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/W32TeX) (preloaded format=xelatex 2018.2.2)  22 MAY 2019 15:36
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/W32TeX) (preloaded format=xelatex 2018.2.2)  10 JUN 2019 16:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1738,7 +1738,7 @@ LaTeX Info: Redefining \LaTeXe on input line 219.
 . - 'bold italic small caps'  (bx/itsc) with NFSS spec.: <->"Times New
 . Roman/BI/OT:script=latn;language=DFLT;+smcp;mapping=tex-text;"
 .................................................
-LaTeX Info: Redefining \rmfamily on input line 318.
+LaTeX Info: Redefining \rmfamily on input line 319.
 \g__fontspec_family_Arial_int=\count199
 .................................................
 . fontspec info: "defining-font"
@@ -1765,7 +1765,7 @@ LaTeX Info: Redefining \rmfamily on input line 318.
 . - 'bold italic small caps'  (bx/itsc) with NFSS spec.:
 . <->"Arial/BI/OT:script=latn;language=DFLT;+smcp;mapping=tex-text;"
 .................................................
-LaTeX Info: Redefining \sffamily on input line 319.
+LaTeX Info: Redefining \sffamily on input line 320.
 \g__fontspec_family_CourierNew_int=\count266
 .................................................
 . fontspec info: "defining-font"
@@ -1804,7 +1804,7 @@ LaTeX Info: Redefining \sffamily on input line 319.
 . \fontdimen 4\font =0\fontdimen 4\font \fontdimen 7\font =0\fontdimen 2\font
 . \hyphenchar \font =\c_minus_one 
 .................................................
-LaTeX Info: Redefining \ttfamily on input line 320.
+LaTeX Info: Redefining \ttfamily on input line 321.
 
 (f:/texlive2017/texmf-dist/tex/latex/subfigure/subfigure.sty
 Package: subfigure 2002/03/15 v2.1.5 subfigure package
@@ -2011,10 +2011,10 @@ tly
 )
 \Hy@SectionHShift=\skip88
 )
-Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 432.
+Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 433.
 
-Package hyperref Info: Option `colorlinks' set `true' on input line 432.
-Package hyperref Info: Option `plainpages' set `false' on input line 432.
+Package hyperref Info: Option `colorlinks' set `true' on input line 433.
+Package hyperref Info: Option `plainpages' set `false' on input line 433.
 
 (f:/texlive2017/texmf-dist/tex/latex/enumitem/enumitem.sty
 Package: enumitem 2011/09/28 v3.5.2 Customized lists
@@ -2353,7 +2353,7 @@ Package: xeCJK-listings 2017/05/15 v3.4.8 xeCJK patch file for listings
 ) (./demo.aux
 (./chapters/abstract.aux) (./chapters/chapter1.aux) (./chapters/chapter2.aux)
 (./chapters/chapter3.aux) (./chapters/chapter4.aux) (./chapters/chapter5.aux)
-(./chapters/conclusion.aux) (./chapters/pub.aux))
+(./chapters/conclusion.aux) (./chapters/pub.aux) (./chapters/thanks.aux))
 \openout1 = `demo.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 48.
@@ -2460,7 +2460,7 @@ LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 * paper: a4paper
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
-* modes: 
+* modes: twoside 
 * h-part:(L,W,R)=(76.82234pt, 443.86319pt, 76.82234pt)
 * v-part:(T,H,B)=(99.58464pt, 674.33032pt, 71.13188pt)
 * \paperwidth=597.50787pt
@@ -2474,7 +2474,7 @@ LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 * \headsep=19.8738pt
 * \topskip=12.0pt
 * \footskip=19.91684pt
-* \marginparwidth=38.0pt
+* \marginparwidth=88.0pt
 * \marginparsep=7.0pt
 * \columnsep=10.0pt
 * \skip\footins=10.8pt plus 4.0pt minus 2.0pt
@@ -2482,8 +2482,8 @@ LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 * \voffset=0.0pt
 * \mag=1000
 * \@twocolumnfalse
-* \@twosidefalse
-* \@mparswitchfalse
+* \@twosidetrue
+* \@mparswitchtrue
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
@@ -2576,6 +2576,10 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 
 
 
+] [2
+
+
+
 ]
 LaTeX Info: Redefining \rmfamily on input line 101.
 LaTeX Info: Redefining \rmfamily on input line 101.
@@ -2612,11 +2616,17 @@ LaTeX Info: Redefining \rmfamily on input line 101.
 LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <15.05624> not available
 (Font)              size <14.4> substituted on input line 101.
 
-[2
+[3
+
+
+] [4
 
 
 
-] [3
+] [5
+
+
+] [6
 
 
 
@@ -2745,11 +2755,47 @@ Overfull \hbox (4.015pt too wide) in paragraph at lines 106--106
 \TU/SimHei(0)/m/n/16.06 究 
  []
 
-[4
+
+Overfull \hbox (4.015pt too wide) in paragraph at lines 106--106
+[]\TU/SimHei(0)/m/n/16.06 北
+ []
+
+
+Overfull \hbox (4.015pt too wide) in paragraph at lines 106--106
+\TU/SimHei(0)/m/n/16.06 京
+ []
+
+
+Overfull \hbox (4.015pt too wide) in paragraph at lines 106--106
+\TU/SimHei(0)/m/n/16.06 理
+ []
+
+
+Overfull \hbox (4.015pt too wide) in paragraph at lines 106--106
+\TU/SimHei(0)/m/n/16.06 工
+ []
+
+
+Overfull \hbox (4.015pt too wide) in paragraph at lines 106--106
+\TU/SimHei(0)/m/n/16.06 大
+ []
+
+
+Overfull \hbox (4.015pt too wide) in paragraph at lines 106--106
+\TU/SimHei(0)/m/n/16.06 学 
+ []
+
+[7
+
+
+] [8
 
 
 
-] [5
+] [9
+
+
+] [10
 
 
 
@@ -2819,15 +2865,19 @@ Overfull \hbox (4.015pt too wide) in paragraph at lines 106--106
 
 
 
-]) [2
+
+] [2
 
 
-] (./demo.toc [3
+
+]) [3] [4
 
 
-] [4]
+
+] (./demo.toc [5]
+[6]
 Overfull \hbox (2.40897pt too wide) detected at line 63
- []\TU/TimesNewRoman(0)/m/n/14.05249 100[]
+ []\TU/TimesNewRoman(0)/m/n/14.05249 104[]
  []
 
 
@@ -2839,7 +2889,10 @@ Overfull \hbox (2.40897pt too wide) detected at line 64
 \tf@toc=\write5
 \openout5 = `demo.toc'.
 
- [5]
+ [7] [8
+
+
+]
 \openout2 = `chapters/chapter1.aux'.
 
  (./chapters/chapter1.tex
@@ -2862,6 +2915,7 @@ File: figures/chapter1/fig1_3.pdf Graphic file (type QTm)
 第2章
 File: figures/chapter2/fig2_1.eps Graphic file (type eps)
 <figures/chapter2/fig2_1.eps> [9
+
 
 
 
@@ -2900,86 +2954,89 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [20]
+
+LaTeX Warning: Text page 21 contains only floats.
+
+[21]
 File: figures/chapter2/fig2_10.eps Graphic file (type eps)
- <figures/chapter2/fig2_10.eps> [21]
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[22]
-Overfull \hbox (11.24466pt too wide) in paragraph at lines 558--558
+ <figures/chapter2/fig2_10.eps> [22]
+Overfull \hbox (9.09355pt too wide) in paragraph at lines 560--560
  []|[]| 
  []
 
 
-Overfull \hbox (2.7448pt too wide) in paragraph at lines 560--561
+Overfull \hbox (11.24466pt too wide) in paragraph at lines 562--562
  []|[]| 
  []
 
 
-Overfull \hbox (0.69148pt too wide) in paragraph at lines 564--564
+Overfull \hbox (2.7448pt too wide) in paragraph at lines 564--566
+ []|[]| 
+ []
+
+
+Overfull \hbox (0.69148pt too wide) in paragraph at lines 568--568
  []|[]| 
  []
 
 File: figures/chapter2/fig2_11.pdf Graphic file (type QTm)
-<use  "figures/chapter2/fig2_11.pdf" >
+<use  "figures/chapter2/fig2_11.pdf" > [23] [24] [25] [26]
+File: figures/chapter2/fig2_12.pdf Graphic file (type QTm)
+
+<use  "figures/chapter2/fig2_12.pdf" >
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[23] [24] [25] [26] [27]
-File: figures/chapter2/fig2_12.pdf Graphic file (type QTm)
- <use  "figures/chapter2/fig2_12.pdf" > [28]
+[27] [28]
 File: figures/chapter2/fig2_13.eps Graphic file (type eps)
+ <figures/chapter2/fig2_13.eps>
+File: figures/chapter2/fig2_14_change2.eps Graphic file (type eps)
 
-<figures/chapter2/fig2_13.eps>
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-File: figures/chapter2/fig2_14.eps Graphic file (type eps)
-<figures/chapter2/fig2_14.eps>
+<figures/chapter2/fig2_14_change2.eps>
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [29]
-
-LaTeX Warning: Text page 30 contains only floats.
-
-[30]
 File: figures/chapter2/fig2_15.pdf Graphic file (type QTm)
  <use  "figures/chapter2/fig2_15.pdf" >
-File: figures/chapter2/fig2_16.pdf Graphic file (type QTm)
 
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+File: figures/chapter2/fig2_16.pdf Graphic file (type QTm)
 <use  "figures/chapter2/fig2_16.pdf" >
-Overfull \hbox (15.36874pt too wide) in paragraph at lines 903--904
+Overfull \hbox (15.36874pt too wide) in paragraph at lines 907--908
 [][] 
  []
 
 File: figures/chapter2/fig2_17.pdf Graphic file (type QTm)
-<use  "figures/chapter2/fig2_17.pdf" > [31]
-Overfull \hbox (2.25908pt too wide) in alignment at lines 930--943
+<use  "figures/chapter2/fig2_17.pdf" > [30]
+Overfull \hbox (2.25908pt too wide) in alignment at lines 934--949
 [] [] 
  []
 
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[31]
 File: figures/chapter2/fig2_18(a).pdf Graphic file (type QTm)
-<use  "figures/chapter2/fig2_18(a).pdf" >
+ <use  "figures/chapter2/fig2_18(a).pdf" >
 File: figures/chapter2/fig2_18(b).pdf Graphic file (type QTm)
 
 <use  "figures/chapter2/fig2_18(b).pdf" >
 File: figures/chapter2/fig2_19.png Graphic file (type QTm)
 
 <use  "figures/chapter2/fig2_19.png" >
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
 File: figures/chapter2/fig2_20.png Graphic file (type QTm)
-<use  "figures/chapter2/fig2_20.png" > [32] [33]
+ <use  "figures/chapter2/fig2_20.png" >
+[32] [33]
 File: figures/chapter2/fig2_21.pdf Graphic file (type QTm)
-
-<use  "figures/chapter2/fig2_21.pdf" >) [34] [35]
+ <use  "figures/chapter2/fig2_21.pdf" >) [34]
 \openout2 = `chapters/chapter3.aux'.
 
  (./chapters/chapter3.tex
 第3章
-[36
+[35
+
 
 
 
@@ -2992,18 +3049,18 @@ File: figures/chapter3/fig3_2.pdf Graphic file (type QTm)
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[37]
+[36]
 File: figures/chapter3/fig3_3.pdf Graphic file (type QTm)
  <use  "figures/chapter3/fig3_3.pdf" >
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[38] [39]
+[37] [38]
 File: figures/chapter3/LK1.png Graphic file (type QTm)
  <use  "figures/chapter3/LK1.png" >
 File: figures/chapter3/LK2.png Graphic file (type QTm)
 
-<use  "figures/chapter3/LK2.png" > [40] [41]
+<use  "figures/chapter3/LK2.png" > [39] [40]
 File: figures/chapter3/fig3_5.pdf Graphic file (type QTm)
 
 <use  "figures/chapter3/fig3_5.pdf" >
@@ -3014,10 +3071,10 @@ File: figures/chapter3/RAN2.png Graphic file (type QTm)
 <use  "figures/chapter3/RAN2.png" >
 File: figures/chapter3/fig3_7.pdf Graphic file (type QTm)
  <use  "figures/chapter3/fig3_7.pdf" >
-[42] [43] [44] [45] [46] [47] [48] [49] [50] [51] [52] [53]
+[41] [42] [43] [44] [45] [46] [47] [48] [49] [50] [51] [52]
 File: figures/chapter3/fig3_8.pdf Graphic file (type QTm)
 
-<use  "figures/chapter3/fig3_8.pdf" > [54] [55]
+<use  "figures/chapter3/fig3_8.pdf" > [53] [54]
 File: figures/chapter3/fig3_9.pdf Graphic file (type QTm)
 
 <use  "figures/chapter3/fig3_9.pdf" >
@@ -3025,17 +3082,17 @@ File: figures/chapter3/fig3_9.pdf Graphic file (type QTm)
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 File: figures/chapter3/fig3_10.pdf Graphic file (type QTm)
-<use  "figures/chapter3/fig3_10.pdf" > [56] [57]
+<use  "figures/chapter3/fig3_10.pdf" > [55] [56]
 File: figures/chapter3/fig3_11.pdf Graphic file (type QTm)
 
-<use  "figures/chapter3/fig3_11.pdf" > [58] [59] [60]
+<use  "figures/chapter3/fig3_11.pdf" > [57] [58] [59]
 File: figures/chapter3/fig3_12.pdf Graphic file (type QTm)
 
 <use  "figures/chapter3/fig3_12.pdf" >
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[61] [62]
+[60] [61]
 Overfull \hbox (10.58101pt too wide) in paragraph at lines 1028--1029
 []\TU/SimSun(1)/m/n/12.045 定 义 残 差 项 为 $\OML/cmm/m/it/12.045 b[]$ \TU/SimSun(1)
 /m/n/12.045 和 $\OML/cmm/m/it/12.045 b[]$ \TU/SimSun(1)/m/n/12.045 帧 图 像 间 的 \TU
@@ -3044,9 +3101,9 @@ Overfull \hbox (10.58101pt too wide) in paragraph at lines 1028--1029
 ML/cmm/m/it/12.045 ; \OML/cmm/b/it/12.045 ^^L[]$
  []
 
-[63]
+[62]
 File: figures/chapter3/fig3_13.pdf Graphic file (type QTm)
- <use  "figures/chapter3/fig3_13.pdf" > [64]) [65]
+ <use  "figures/chapter3/fig3_13.pdf" > [63]) [64]
 \openout2 = `chapters/chapter4.aux'.
 
  (./chapters/chapter4.tex
@@ -3060,7 +3117,8 @@ LaTeX Warning: Command \textgreater invalid in math mode on input line 45.
 
 LaTeX Warning: Command \textgreater invalid in math mode on input line 53.
 
-[66
+[65
+
 
 
 
@@ -3072,15 +3130,15 @@ LaTeX Warning: Command \textgreater invalid in math mode on input line 66.
 LaTeX Warning: Command \textgreater invalid in math mode on input line 66.
 
 File: figures/chapter4/fig4_1.pdf Graphic file (type QTm)
-<use  "figures/chapter4/fig4_1.pdf" > [67]
-Overfull \hbox (14.06226pt too wide) in paragraph at lines 128--130
-\TU/SimSun(1)/m/n/12.045 其 中，| $\OT1/cmr/m/n/12.045 [\OMS/cmsy/m/n/12.045 ^^A\O
-T1/cmr/m/n/12.045 ][]$ \TU/SimSun(1)/m/n/12.045 表 示 四 元 数 的 向 量。| $\OML/cmm/m/i
-t/12.045 ^^N\OML/cmm/b/it/12.045 ^^R[]$ \TU/SimSun(1)/m/n/12.045 是 四 元 数 对 应 的 
-三 维 误 差 状 态。| $[][]$
+<use  "figures/chapter4/fig4_1.pdf" > [66]
+Overfull \hbox (11.27058pt too wide) in paragraph at lines 128--130
+\TU/SimSun(1)/m/n/12.045 其 中 $\OT1/cmr/m/n/12.045 [\OMS/cmsy/m/n/12.045 ^^A\OT1
+/cmr/m/n/12.045 ][]$ \TU/SimSun(1)/m/n/12.045 表 示 四 元 数 的 向 量。| $\OML/cmm/m/it/
+12.045 ^^N\OML/cmm/b/it/12.045 ^^R[]$ \TU/SimSun(1)/m/n/12.045 是 四 元 数 对 应 的 三 
+维 误 差 状 态。| $[][]$
  []
 
-[68] [69] [70] [71] [72]
+[67] [68] [69] [70] [71]
 File: figures/chapter4/fig4_2.pdf Graphic file (type QTm)
  <use  "figures/chapter4/fig4_2.pdf" >
 File: figures/chapter4/fig4_4.pdf Graphic file (type QTm)
@@ -3098,22 +3156,22 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 File: figures/chapter4/fig4_6.pdf Graphic file (type QTm)
-<use  "figures/chapter4/fig4_6.pdf" > [73]
+<use  "figures/chapter4/fig4_6.pdf" > [72]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[74] [75] [76]
+[73] [74] [75]
 File: figures/chapter4/fig4_7.pdf Graphic file (type QTm)
  <use  "figures/chapter4/fig4_7.pdf" >
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[77] [78]
+[76] [77] [78]
 File: figures/chapter4/fig4_8.pdf Graphic file (type QTm)
  <use  "figures/chapter4/fig4_8.pdf" > [79] [80] [81]
 File: figures/chapter4/fig4_9.pdf Graphic file (type QTm)
 
-<use  "figures/chapter4/fig4_9.pdf" > [82]) [83]
+<use  "figures/chapter4/fig4_9.pdf" >) [82]
 \openout2 = `chapters/chapter5.aux'.
 
  (./chapters/chapter5.tex
@@ -3122,7 +3180,8 @@ File: figures/chapter5/fig5_1_1.jpg Graphic file (type QTm)
 <use  "figures/chapter5/fig5_1_1.jpg" >
 File: figures/chapter5/fig5_1_2.jpg Graphic file (type QTm)
 
-<use  "figures/chapter5/fig5_1_2.jpg" > [84
+<use  "figures/chapter5/fig5_1_2.jpg" > [83
+
 
 
 
@@ -3156,11 +3215,11 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[85] [86]
+[84] [85]
 
-LaTeX Warning: Text page 87 contains only floats.
+LaTeX Warning: Text page 86 contains only floats.
 
-[87]
+[86]
 File: figures/chapter5/traject_mh05.pdf Graphic file (type QTm)
  <use  "figures/chapter5/traject_mh05.pdf" >
 File: figures/chapter5/xyz_mh05.pdf Graphic file (type QTm)
@@ -3172,7 +3231,7 @@ File: figures/chapter5/rpy_mh05.pdf Graphic file (type QTm)
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[88] [89]
+[87] [88]
 File: figures/chapter5/ape_map_mh05.pdf Graphic file (type QTm)
  <use  "figures/chapter5/ape_map_mh05.pdf" >
 File: figures/chapter5/ape_err_mh05.pdf Graphic file (type QTm)
@@ -3184,7 +3243,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[90]
+[89]
 File: figures/chapter5/fig5_13_1.png Graphic file (type QTm)
  <use  "figures/chapter5/fig5_13_1.png" >
 File: figures/chapter5/fig5_13_2.png Graphic file (type QTm)
@@ -3198,7 +3257,7 @@ File: figures/chapter5/fig5_14.png Graphic file (type QTm)
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[91]
+[90]
 File: figures/chapter5/traject_3km.pdf Graphic file (type QTm)
  <use  "figures/chapter5/traject_3km.pdf" >
 File: figures/chapter5/xy_3km.pdf Graphic file (type QTm)
@@ -3210,7 +3269,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[92]
+[91]
 File: figures/chapter5/ape_map_3km.pdf Graphic file (type QTm)
  <use  "figures/chapter5/ape_map_3km.pdf" >
 
@@ -3221,7 +3280,7 @@ File: figures/chapter5/ape_err_3km.pdf Graphic file (type QTm)
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[93]
+[92]
 File: figures/chapter5/traject_5km.pdf Graphic file (type QTm)
  <use  "figures/chapter5/traject_5km.pdf" >
 File: figures/chapter5/xy_5km.pdf Graphic file (type QTm)
@@ -3233,24 +3292,29 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[94] [95]
+[93] [94]
 File: figures/chapter5/ape_map_5km.pdf Graphic file (type QTm)
  <use  "figures/chapter5/ape_map_5km.pdf" >
 File: figures/chapter5/ape_err_5km.pdf Graphic file (type QTm)
 
-<use  "figures/chapter5/ape_err_5km.pdf" >) [96] [97]
+<use  "figures/chapter5/ape_err_5km.pdf" >) [95] [96]
 \openout2 = `chapters/conclusion.aux'.
 
 
-(./chapters/conclusion.tex [98
+(./chapters/conclusion.tex [97
 
 
 
-]) [99] (./demo.bbl [100
+
+]) [98] (./demo.bbl [99
 
 
-] [101] [102] [103])
-[104]
+
+] [100] [101] [102])
+[103] [104
+
+
+]
 \openout2 = `chapters/pub.aux'.
 
  (./chapters/pub.tex
@@ -3262,11 +3326,20 @@ LaTeX Warning: Empty `publications' environment on input line 11.
 
 
 ]
+\openout2 = `chapters/thanks.aux'.
+
+ (./chapters/thanks.tex [106
+
+
+
+
+]) [107]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 176.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 176.
- (./demo.aux (./chapters/abstract.aux) (./chapters/chapter1.aux)
-(./chapters/chapter2.aux) (./chapters/chapter3.aux) (./chapters/chapter4.aux)
-(./chapters/chapter5.aux) (./chapters/conclusion.aux) (./chapters/pub.aux))
+ (./demo.aux
+(./chapters/abstract.aux) (./chapters/chapter1.aux) (./chapters/chapter2.aux)
+(./chapters/chapter3.aux) (./chapters/chapter4.aux) (./chapters/chapter5.aux)
+(./chapters/conclusion.aux) (./chapters/pub.aux) (./chapters/thanks.aux))
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 176.
 Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 176.
 
@@ -3276,12 +3349,12 @@ LaTeX Font Warning: Size substitutions with differences
 
  ) 
 Here is how much of TeX's memory you used:
- 46287 strings out of 493005
- 938591 string characters out of 6138377
- 966330 words of memory out of 5000000
- 49382 multiletter control sequences out of 15000+600000
- 554777 words of font info for 199 fonts, out of 8000000 for 9000
+ 46354 strings out of 493005
+ 942868 string characters out of 6138377
+ 964921 words of memory out of 5000000
+ 49444 multiletter control sequences out of 15000+600000
+ 554769 words of font info for 198 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 63i,27n,78p,10429b,1088s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 63i,27n,78p,10431b,1088s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on demo.pdf (115 pages).
+Output written on demo.pdf (125 pages).
