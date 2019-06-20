@@ -1,0 +1,124 @@
+1、挂载U盘：mount -t vfat /dev/sdb /mnt/usb
+   挂载D盘：sudo fdisk -l 
+            sudo ntfsfix /dev/sda2
+   U盘变只读
+   killall nautilus
+2、打开文件夹：nautilus /home/jiang
+3、解压rar：unrar x ./FileName.rar
+   解压zip：unzip  ./FileName.zip
+4、转化成Unix格式（去掉尾行的^M）:dos2unix ./filename
+5、复制~/baidu/文件夹里的所有文件到~/zhidao/文件夹
+    $ cp ~/baidu/* ~/zhidao/
+6、显示目前所支持的语言：echo $LANG
+    修改语言成为英文语系：LANG=en_US
+7、复制目录：cp -a /etc /tmp（.）
+8、更改文件夹权限：sudo chmod -R 0777 ./etc
+9、换源:sudo vi /etc/apt/sources.list   sudo gedit /etc/apt/sources.list
+10、播放VINS数据集
+	rosbag play /media/jiang/DATA/00MyDocuments/PublicDocument/dataset/VI_SLAM/V1_01_easy.bag
+11、ubuntu内部出现错误
+	sudo rm /var/crash/*
+12、ROS键盘控制:
+	rosrun teleop_twist_keyboard teleop_twist_keyboard.py
+13、ROS摇杆控制:
+	
+14、ROS工作空间:
+	mkdir -p ~/catkin_ws/src
+	cd ~/catkin_ws/src
+	catkin_init_workspace
+	cd ~/catkin_ws/
+	catkin_make
+	echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
+	source ~/.bashrc
+15. 单独编译一个包
+	catkin_make -DCMAKE_BUILD_TYPE=Release --pkg pointgrey_camera_driver
+16. bag提取
+	kalibr_bagextractor --image-topics /camera/image_raw --imu-topics /imu_data --output-folder dataset-dir --bag awsome.bag
+	rostopic echo -b file_name.bag -p /topic_name > Txt_name.csv
+	bag制作
+	kalibr_bagcreater --folder dataset-dir --output-bag awsome.bag
+	rosbag record /camera/image_raw /imu_data /dmc_data /rtk_data
+17. ROS相机标定
+	rosrun camera_calibration cameracalibrator.py --size 7x6 --square 0.04 image:=/camera/image_raw camera:=/camera
+
+17. 相机标定
+	kalibr_calibrate_cameras --bag filename.bag --topics /camera/image_raw --models pinhole-equi/pinhole-radtan --target target.yaml
+	联合标定
+	kalibr_calibrate_imu_camera --bag filename.bag --cam camchain.yaml --imu imu.yaml --target target.yaml 
+	--timeoffset-padding 0.1
+	
+	kalibr_calibrate_imu_camera --bag 2018.bag --cam camchain-kalibr.yaml --imu imu_stim300.yaml --target april_6x6.yaml --time-calibration
+
+
+	radial-tangential (radtan) 
+	(distortion_coeffs: [k1 k2 r1 r2])
+	equidistant (equi)
+	(distortion_coeffs: [k1 k2 k3 k4])
+	fov (fov)
+	(distortion_coeffs: [w])
+	none (none)
+	(distortion_coeffs: [])
+18. 远程拷贝
+	scp nvidia@10.42.0.90:/media/data/10.30/* .
+19. 查看USB串口映射
+	ls -l /dev |grep ttyUSB
+20. 设置串口延时
+	sudo chmod 0666 /sys/bus/usb-serial/devices/ttyUSB0/latency_timer
+	cat /sys/bus/usb-serial/devices/ttyUSB0/latency_timer
+	echo 0 > /sys/bus/usb-serial/devices/ttyUSB0/latency_timer
+21. rqt 查看话题及其数据
+	ROS日志级别有五种: DEBUG, INFO, WARN, ERROR,FATAL. 
+	rosrun rqt_console rqt_console 可以查看信息输出 
+22. google static map api key:
+	AIzaSyAUHfOBTarcUCbgU9YOr-quXpzbAUya47U
+---------------------------------------------------------------------------------------------------
+
+rosbag record /camera/image_raw /imu_data /fix /fix_raw
+
+
+1、同步时间
+sudo ntpdate cn.pool.ntp.org
+2、启动相机
+rosrun pointgrey_camera_driver list_cameras
+sudo sh -c 'echo 1000 > /sys/module/usbcore/parameters/usbfs_memory_mb' （设置相机缓存）
+cat /sys/module/usbcore/parameters/usbfs_memory_mb
+roslaunch pointgrey_camera_driver camera.launch
+rqt_image_view
+rosrun rqt_reconfigure rqt_reconfigure
+3、启动IMU 
+（查看串口号和波特率是否一致）
+roslaunch stim300_ros stim300_ros.launch
+rostopic list
+rostopic echo /imu_data
+rviz
+4、录制bag文件
+	rosbag record /camera/image_raw /imu_data /imu/data /fix
+	rosbag record /camera/image_raw /imu_data /dmc_data /fix /raw_fix /imu/data /velocity
+
+5. google-chrome --proxy-server="socks5://127.0.0.1:1080"
+6. 终端代理
+sudo /etc/init.d/privoxy restart
+export http_proxy="127.0.0.1:8118"
+export https_proxy="127.0.0.1:8118"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
